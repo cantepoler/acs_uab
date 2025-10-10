@@ -54,6 +54,7 @@ class Door {
 '+ setClosed(b : boolean)
 '+ getStateName() : String
 - doAction(action : String)
+
 }
 
 
@@ -69,6 +70,42 @@ class Main {
 + {static} main(args : String)
 }
 
+abstract DoorState{
+{abstract}+ changeState(action : String) : DoorState
+}
+
+class DoorStateLocked extends DoorState{
++ changeState(action : String) : DoorState
+}
+
+class DoorStateUnlocked extends DoorState{
++ changeState(action : String) : DoorState
+}
+
+class DoorStateUnlockedShortly extends DoorState{
++ changeState(action : String) : DoorState
+}
+
+class DoorStateOpened extends DoorState{
++ changeState(action : String) : DoorState
+}
+
+class DoorStateClosed extends DoorState{
++ changeState(action : String) : DoorState
+}
+
+abstract Area{
+
+}
+
+class Space extends Area{
+- doors : Door[]
+}
+
+class Partition extends Area{
+- areas : Area[]
+}
+
 note right of Main::main
 DirectoryDoors.makeDoors()
 DiretoryUsers.makeUsers()
@@ -78,4 +115,7 @@ end note
 Main -[hidden]down- Webserver
 Webserver -[hidden]down- DirectoryDoors
 DirectoryDoors -[hidden]right- DirectoryUsers
+Door -->"1" DoorState : doorState
+Partition *-->"*" Area : areas
+Space -->"*" Door : doors
 @enduml

@@ -1,0 +1,50 @@
+# IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# Carpetes de compilació
+/out/
+build/
+target/
+bin/
+
+# Fitxers temporals del sistema
+.DS_Store
+Thumbs.db
+
+# Fitxers de logs
+*.log
+
+# Fitxers de dependències (si s’utilitzen)
+node_modules/
+.gradle/
+.mvn/
+.env
+.env.local
+
+# Fitxers generats per compiladors o eines
+*.class
+*.war
+*.ear
+*.jar
+
+# Fitxers de proves i cobertura
+test-output/
+coverage/
+*.exec
+*.coverage
+*.lcov
+
+# Fitxers d’IDE d’altres editors
+.vscode/
+*.swp
+*.swo
+
+# Fitxers temporals o de còpia de seguretat
+*~
+*.tmp
+*.bak
+*.old
+
