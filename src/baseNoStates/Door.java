@@ -11,7 +11,8 @@ public class Door {
   Space fromSpace;
   Space toSpace;
 
-  public Door(String id, Space fromSpace, Space toSpace) {
+  // public Door(String id, Space fromSpace, Space toSpace) {
+  public Door(String id) {
     this.id = id;
     closed = true;
     this.fromSpace = fromSpace;
@@ -24,43 +25,12 @@ public class Door {
     // its state, and if closed or open
     if (request.isAuthorized()) {
       String action = request.getAction();
-      doAction(action);
+      // En comptes de doAction, deleguem la tasca a DoorState
+      doorState = doorState.changeState(action);    // Això potser hauria de canviar-se directament amb doorState.changeState(action);
     } else {
       System.out.println("not authorized");
     }
     request.setDoorStateName(getStateName());
-  }
-
-  private void doAction(String action) {
-    switch (action) {
-      case Actions.OPEN:
-        if (closed) {
-          closed = false;
-        } else {
-          System.out.println("Can't open door " + id + " because it's already open");
-        }
-        break;
-      case Actions.CLOSE:
-        if (closed) {
-          System.out.println("Can't close door " + id + " because it's already closed");
-        } else {
-          closed = true;
-        }
-        break;
-      case Actions.LOCK:
-        // TODO
-        // fall through
-      case Actions.UNLOCK:
-        // TODO
-        // fall through
-      case Actions.UNLOCK_SHORTLY:
-        // TODO
-        System.out.println("Action " + action + " not implemented yet");
-        break;
-      default:
-        assert false : "Unknown action " + action;
-        System.exit(-1);
-    }
   }
 
   public boolean isClosed() {

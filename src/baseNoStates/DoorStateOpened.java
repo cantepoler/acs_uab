@@ -3,14 +3,9 @@ package baseNoStates;
 public class DoorStateOpened extends DoorState {
   @Override
   public DoorState changeState(String state) {
-    if (state.equals("Close")) {
-      try {
-        wait(5000);
-      } catch (InterruptedException e) {
-        e.printStackTrace();
+      if (state.equals(Actions.CLOSE)) {
+          return new DoorStateClosed();
       }
-      return new DoorStateClosed();
-    }
-    return new DoorStateLocked();
+      return this;
   }
 }
