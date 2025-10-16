@@ -7,10 +7,16 @@ import org.json.JSONObject;
 public class Door {
   private final String id;
   private boolean closed; // physically
+  DoorState doorState;
+  Space fromSpace;
+  Space toSpace;
 
-  public Door(String id) {
+  public Door(String id, Space fromSpace, Space toSpace) {
     this.id = id;
     closed = true;
+    this.fromSpace = fromSpace;
+    this.toSpace = toSpace;
+    this.doorState = new DoorStateLocked();
   }
 
   public void processRequest(RequestReader request) {
