@@ -1,6 +1,6 @@
 package baseNoStates;
 
-public class DirectoryAreas {
+public final class DirectoryAreas {
   private static Area rootArea;
   private static Door[] doors;
 

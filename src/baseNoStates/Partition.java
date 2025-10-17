@@ -16,6 +16,6 @@ public class Partition extends Area {
     for(Area area : areas) {
       spaces.add(area.getSpaces());
     }
-    return null;
+    return spaces;
   }
 }
