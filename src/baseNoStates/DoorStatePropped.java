@@ -1,9 +1,8 @@
 package baseNoStates;
 
-public class DoorStateUnlockedShortly extends DoorState{
+public class DoorStatePropped extends DoorState {
   @Override
   public DoorState changeState(String state) {
-
     return new DoorStateLocked();
   }
 }
