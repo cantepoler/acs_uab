@@ -9,7 +9,7 @@ public final class DirectoryAreas {
   }
 
   public static Area findAreaById(String id){
-    return null;
+    return rootArea.findAreaById(id);
   }
 
   public static Door findDoorById(String id){
