@@ -5,11 +5,12 @@ import java.util.ArrayList;
 public abstract class Area {
   protected String id;
   protected String name;
-  // crec que no cal de moment protected Area parent;
+  protected Area parent;
 
-  public Area(String name, Area parent) {
+  public Area(String id, String name, Area parent) {
+    this.id = id;
     this.name = name;
-    //this.parent = parent;
+    this.parent = parent;
   }
 
   public abstract ArrayList<Space> getSpaces();

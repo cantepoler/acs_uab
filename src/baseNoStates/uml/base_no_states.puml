@@ -28,10 +28,16 @@ end note
 
 class DirectoryAreas
 {
-{static}-allAreas: Area[]
+{static}-rootArea: Area
+{static}-allDoors: Door[]
+{static}+makeAreas()
+{static}+findAreaById(id : String) : Area
+{static}-findDoorsByIds(ids : String[]) : Door[]
+{static}+findDoorById(id : String) : Door
+{static}+getAllDoors() : Door[]
 }
 
-DirectoryAreas --> "*" Area : "allAreas"
+DirectoryAreas --> "*" Area : "rootArea"
 
 class DirectoryDoors {
 - {static} allDoors : Door[]
@@ -99,15 +105,26 @@ class DoorStateePropped extends DoorState{
 }
 
 abstract Area{
-
+#id : String
+#name : String
+#parent: Area
+{abstract}+ getSpaces() : Space[]
+{abstract}+ getDoorsGivingAccess() : Door[]
+{abstract}+ findAreaById(id : String) : Area
 }
 
 class Space extends Area{
 - doors : Door[]
++ getSpaces() : Space[]
++ getDoorsGivingAccess() : Door[]
++ findAreaById(id : String) : Area
 }
 
 class Partition extends Area{
 - areas : Area[]
++ getSpaces() : Space[]
++ getDoorsGivingAccess() : Door[]
++ findAreaById(id : String) : Area
 }
 
 note right of Main::main

@@ -1,9 +1,11 @@
 package baseNoStates;
 
+import java.util.ArrayList;
+
 public class User {
   private final String name;
   private final String credential;
-  private Area[] areas;
+  private ArrayList<Area> areas;
 
   public User(String name, String credential) {
     this.name = name;
@@ -19,8 +21,8 @@ public class User {
     return "User{name=" + name + ", credential=" + credential + "}";
   }
 
-  //Donat un espai, recorre totes les àrees a les que té accés
-  //i retorna si te accés a aquell espai o no
+  //Giving a space, it covers all the areas to which it has access
+  //and returns if you have access to that site or not
   public boolean canBeInSpace(Space space) {
     for(Area area : areas) {
       for (Space space1 : area.getSpaces()) {
@@ -32,7 +34,7 @@ public class User {
     return false;
   }
 
-  private Space[] getSpaces() {
+  private ArrayList<Space> getSpaces() {
     //falta implementació
     return null;
   }
