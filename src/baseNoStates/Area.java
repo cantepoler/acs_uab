@@ -3,6 +3,7 @@ package baseNoStates;
 import java.util.ArrayList;
 
 public abstract class Area {
+  protected String id;
   protected String name;
   // crec que no cal de moment protected Area parent;
 
@@ -10,9 +11,10 @@ public abstract class Area {
     this.name = name;
     //this.parent = parent;
   }
+
   public abstract ArrayList<Space> getSpaces();
 
-  public Door[] getDoorsGivingAccess() {
-    return null;
-  }
+  public abstract ArrayList<Door> getDoorsGivingAccess();
+
+  public abstract Area findAreaById(String id);
 }

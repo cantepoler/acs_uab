@@ -1,6 +1,7 @@
 @startuml
 'https://plantuml.com/class-diagram
 skinparam classAttributeIconSize 0
+!pragma layout smetana
 
 class Webserver {
 - {static} PORT :int
@@ -24,6 +25,13 @@ note right of SocketThread
 inner class
 of Webserver
 end note
+
+class DirectoryAreas
+{
+{static}-allAreas: Area[]
+}
+
+DirectoryAreas --> "*" Area : "allAreas"
 
 class DirectoryDoors {
 - {static} allDoors : Door[]
@@ -86,11 +94,7 @@ class DoorStateUnlockedShortly extends DoorState{
 + changeState(action : String) : DoorState
 }
 
-class DoorStateOpened extends DoorState{
-+ changeState(action : String) : DoorState
-}
-
-class DoorStateClosed extends DoorState{
+class DoorStateePropped extends DoorState{
 + changeState(action : String) : DoorState
 }
 

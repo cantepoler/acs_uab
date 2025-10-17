@@ -1,6 +1,6 @@
 package baseNoStates;
 
-public class DirectoryAreas {
+public final class DirectoryAreas {
   private static Area rootArea;
   private static Door[] doors;
 
@@ -9,7 +9,7 @@ public class DirectoryAreas {
   }
 
   public static Area findAreaById(String id){
-    return null;
+    return rootArea.findAreaById(id);
   }
 
   public static Door findDoorById(String id){
