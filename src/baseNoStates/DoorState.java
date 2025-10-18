@@ -1,10 +1,19 @@
 package baseNoStates;
 
 public abstract class DoorState {
-    // Aquesta classe abstracta és la base dels estats de les portes, mitjançant la funció changeState i totes
-    // les classes que hereten d'aquesta, es delega la tasca de la classe Door de canviar d'estat, evitant
-    // condicionals llargs i reduint l'acoblament en cas de canvi.
+  // This class executes all the actions that involve the door state. It doesn't control the states,
+  // it only implements them.
+  protected Door door;
+  protected String name;
 
-    // Potser s'ha de posar closed i opened també com a atribut, per UnlockedShortly.
-    public abstract DoorState changeState(String state);
+  public DoorState(Door door){
+    this.door = door;
+  }
+
+  public abstract void open();
+  public abstract void close();
+  public abstract void unlock();
+  public abstract void lock();
+  public abstract void unlockShortly();
+  public abstract void prop();
 }

@@ -59,15 +59,15 @@ DirectoryUsers --> "*" User : "users"
 class Door {
 - id : String
 - closed : boolean
-+ Door(id : String)
+- currentState : DoorState
++ Door(id : String, Space : fromSpace, Space : toSpace)
 + processRequest(request : RequestReader)
-+ setState(doorState : DoorState)
 + toJson() : JSONObject
+
 '+ toString() : String
 '+ isClosed() :boolean
 '+ setClosed(b : boolean)
 '+ getStateName() : String
-- doAction(action : String)
 
 }
 
@@ -85,22 +85,36 @@ class Main {
 }
 
 abstract DoorState{
-{abstract}+ changeState(action : String) : DoorState
+# door : Door
+# name : String
++ DoorState(door : Door)
+{abstract}+ open()
+{abstract}+ close()
+{abstract}+ lock()
+{abstract}+ unlock()
+{abstract}+ unlockShortly()
+{abstract}+ prop()
 }
 
-class DoorStateLocked extends DoorState{
+class Locked extends DoorState{
++ DoorState(door : Door)
+{abstract}+ open()
+{abstract}+ close()
+{abstract}+ lock()
+{abstract}+ unlock()
+{abstract}+ unlockShortly()
+{abstract}+ prop()
+}
+
+class Unlocked extends DoorState{
 + changeState(action : String) : DoorState
 }
 
-class DoorStateUnlocked extends DoorState{
+class UnlockedShortly extends DoorState{
 + changeState(action : String) : DoorState
 }
 
-class DoorStateUnlockedShortly extends DoorState{
-+ changeState(action : String) : DoorState
-}
-
-class DoorStateePropped extends DoorState{
+class Propped extends DoorState{
 + changeState(action : String) : DoorState
 }
 
@@ -136,7 +150,7 @@ end note
 Main -[hidden]down- Webserver
 Webserver -[hidden]down- DirectoryDoors
 DirectoryDoors -[hidden]right- DirectoryUsers
-Door -->"1" DoorState : doorState
+Door -->"1" DoorState : currentState
 Partition *-->"*" Area : areas
 Space -->"*" Door : doors
 @enduml

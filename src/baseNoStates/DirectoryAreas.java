@@ -10,7 +10,7 @@ public final class DirectoryAreas {
 
   public static void makeAreas() {
     //create partitions
-    Partition building = new Partition("A1", "Buidind", null);
+    Partition building = new Partition("A1", "Building", null);
     Partition basement = new Partition("A2", "Basement", building);
     Partition ground_floor = new Partition("A3", "Ground floor", building);
     Partition floor_1 = new Partition("A4", "Floor 1", building);
@@ -41,7 +41,8 @@ public final class DirectoryAreas {
     basement.setAreas(basementSpaces);
 
     //ground_floor parent
-    Space hall = new Space("A8", "Floor", hallDoors, ground_floor);
+    // hall = A8
+    Space hall = new Space("hall", "Floor", hallDoors, ground_floor);
     Space room1 = new Space("A9", "Room", room_1Doors, ground_floor);
     Space room2 = new Space("A10", "Room", room_2Doors, ground_floor);
 
@@ -57,6 +58,11 @@ public final class DirectoryAreas {
     ArrayList<Area> floor_1Spaces = new ArrayList<>(Arrays.asList(room3, corridor, it));
 
     floor_1.setAreas(floor_1Spaces);
+
+    ArrayList<Area> buildingSpaces = new ArrayList<>(Arrays.asList(
+        basement, ground_floor, floor_1, stairs, exterior
+    ));
+    building.setAreas(buildingSpaces);
 
     //set spaces from and to
     doors.get(0).fromSpace = exterior;

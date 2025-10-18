@@ -7,9 +7,9 @@ import org.json.JSONObject;
 public class Door {
   private final String id;
   private boolean closed; // physically
-  DoorState doorState;
-  Space fromSpace;
-  Space toSpace;
+  private DoorState currentState;
+  public Space fromSpace;
+  public Space toSpace;
 
   // public Door(String id, Space fromSpace, Space toSpace) {
   public Door(String id) {
@@ -17,7 +17,7 @@ public class Door {
     closed = true;
     this.fromSpace = fromSpace;
     this.toSpace = toSpace;
-    this.doorState = new DoorStateLocked();
+    this.currentState = new Locked(this);
   }
 
   public void processRequest(RequestReader request) {
@@ -25,8 +25,7 @@ public class Door {
     // its state, and if closed or open
     if (request.isAuthorized()) {
       String action = request.getAction();
-      // En comptes de doAction, deleguem la tasca a DoorState
-      doorState = doorState.changeState(action);    // Això potser hauria de canviar-se directament amb doorState.changeState(action);
+      doAction(action);
     } else {
       System.out.println("not authorized");
     }
@@ -37,12 +36,16 @@ public class Door {
     return closed;
   }
 
+  public void setClosed(boolean closed) {this.closed = closed;}
+
+  public void setState(DoorState doorState) {this.currentState = doorState;}
+
   public String getId() {
     return id;
   }
 
   public String getStateName() {
-    return "unlocked";
+    return currentState.name;
   }
 
   @Override
@@ -60,5 +63,25 @@ public class Door {
     json.put("state", getStateName());
     json.put("closed", closed);
     return json;
+  }
+
+  private void doAction(String action) {
+    // This switch controls the action that will be executed in DoorState class
+    switch (action) {
+      case Actions.OPEN:
+        currentState.open();
+        break;
+      case Actions.CLOSE:
+        currentState.close();
+        break;
+      case Actions.UNLOCK:
+        currentState.unlock();
+        break;
+      case Actions.LOCK:
+        currentState.lock();
+        break;
+      default:
+        System.out.println("Unrecognized or unimplemented action: " + action);
+    }
   }
 }
