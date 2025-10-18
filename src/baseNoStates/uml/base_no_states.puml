@@ -48,14 +48,6 @@ class DirectoryDoors {
 
 DirectoryDoors --> "*" Door : "allDoors"
 
-class DirectoryUsers {
-- {static} users : User[]
-+ {static} makeUsers()
-+ {static} findUserByCredential(credential : String) : User
-}
-
-DirectoryUsers --> "*" User : "users"
-
 class Door {
 - id : String
 - closed : boolean
@@ -71,12 +63,45 @@ class Door {
 
 }
 
+class DirectoryUserGroups {
+- userGroups : UserGroup[]
++ makeUserGroups()
++ findUserByCredential(credential : String) : User
+}
+
+DirectoryUserGroups o--> "1..*" UserGroup : "userGroups"
+UserGroup "1 userGroup"*-->"users*" User
+
+class UserGroup {
+- users : User
+- allowedActions : String[]
+- allowedAreas : String[]
+- schedule : Schedule
+}
+
+UserGroup -right->"1" Schedule
+
+class Schedule {
+- weekDays : Set<DayOfWeek>
+- startTime : LocalTime
+- endTime : LocalTime
+- startDate : LocalDate
+- endDate : LocalDate
+
++ Schedule(weekDays : Set<DayOfWeek>, startTime : LocalTime, endTime : LocalTime
+    startDate : LocalDate, endDate : LocalDate)
++ isAllowedAt(dateTime : LocalDateTime)
+}
 
 class User {
 - name : String
 - credential : String
+- userGroup : UserGroup
 + User(name: String, credential: String)
 + toString() : String
++ canSendRequests() : Boolean
++ canBeInSpace() : Boolean
++ canDoAction() : Boolean
 }
 
 
@@ -149,7 +174,7 @@ end note
 
 Main -[hidden]down- Webserver
 Webserver -[hidden]down- DirectoryDoors
-DirectoryDoors -[hidden]right- DirectoryUsers
+DirectoryDoors -[hidden]right- DirectoryUserGroups
 Door -->"1" DoorState : currentState
 Partition *-->"*" Area : areas
 Space -->"*" Door : doors
