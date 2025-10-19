@@ -80,6 +80,9 @@ public class Door {
       case Actions.LOCK:
         currentState.lock();
         break;
+      case Actions.UNLOCK_SHORTLY:
+        currentState.unlockShortly();
+        break;
       default:
         System.out.println("Unrecognized or unimplemented action: " + action);
     }

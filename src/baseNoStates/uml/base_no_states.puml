@@ -130,13 +130,21 @@ class Unlocked extends DoorState{
 + prop()
 }
 
-class UnlockedShortly extends DoorState{
+interface Observer{
+{abstract}+ update(o: Observable, arg: Object)
+}
+
+class UnlockedShortly extends DoorState implements Observer{
+{static}- CLOCK
+-MAX_PERIOD : int
+-seconds: int
 + open()
 + close()
 + lock()
 + unlock()
 + unlockShortly()
 + prop()
++ update(o: Observable, arg: Object)
 }
 
 class Propped extends DoorState{
@@ -171,6 +179,24 @@ class Partition extends Area{
 + findAreaById(id : String) : Area
 }
 
+abstract Observable {
++addObserver(o: Observer)
++deleteObserver(o: Observer)
++notifyObservers()
+}
+
+class Clock extends Observable {
+-date: LocalDateTime
+-timer: Timer
++addObserver(o: Observer)
++deleteObserver(o: Observer)
++notifyObservers()
++start()
++stop()
+}
+
+UnlockedShortly -left->"1" Clock
+
 note right of Main::main
 DirectoryDoors.makeDoors()
 DiretoryUsers.makeUsers()
@@ -178,8 +204,6 @@ new Webserver()
 end note
 
 Main -[hidden]down- Webserver
-Webserver -[hidden]down- DirectoryDoors
-DirectoryDoors -[hidden]right- DirectoryUserGroups
 Door -->"1" DoorState : currentState
 Partition *-->"*" Area : areas
 Space -->"*" Door : doors
