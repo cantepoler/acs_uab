@@ -95,7 +95,11 @@ public class RequestReader implements Request {
     } else {
       //TODO: get the who, where, when and what in order to decide, and if not
       // authorized add the reason(s)
-      authorized = true;
+      authorized = user.
+          canSendRequests(now)
+          && user.canBeInSpace(door.fromSpace)
+          && user.canBeInSpace(door.toSpace)
+          && user.canDoAction(action);
     }
   }
 }
