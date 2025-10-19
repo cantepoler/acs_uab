@@ -1,15 +1,18 @@
 package baseNoStates;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class User {
   private final String name;
   private final String credential;
-  private ArrayList<Area> areas;
+  private UserGroup userGroup;
+  private ArrayList<String> areas;
 
-  public User(String name, String credential) {
+  public User(String name, String credential, UserGroup userGroup) {
     this.name = name;
     this.credential = credential;
+    this.userGroup = userGroup;
   }
 
   public String getCredential() {
@@ -21,17 +24,16 @@ public class User {
     return "User{name=" + name + ", credential=" + credential + "}";
   }
 
-  //Giving a space, it covers all the areas to which it has access
-  //and returns if you have access to that site or not
   public boolean canBeInSpace(Space space) {
-    for(Area area : areas) {
-      for (Space space1 : area.getSpaces()) {
-        if (space1 == space) {
-          return true;
-        }
-      }
-    }
-    return false;
+    return userGroup.canBeInSpace(space);
+  }
+
+  public boolean canSendRequests(LocalDateTime dateTime) {
+    return userGroup.canSendRequests(dateTime);
+  }
+
+  public boolean canDoAction(String action) {
+    return userGroup.canDoAction(action);
   }
 
   private ArrayList<Space> getSpaces() {

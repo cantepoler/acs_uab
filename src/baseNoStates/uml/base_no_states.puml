@@ -77,18 +77,22 @@ class UserGroup {
 - allowedActions : String[]
 - allowedAreas : String[]
 - schedule : Schedule
++ addUser(user : User)
++ canSendRequests() : Boolean
++ canBeInSpace() : Boolean
++ canDoAction() : Boolean
 }
 
 UserGroup -right->"1" Schedule
 
 class Schedule {
-- weekDays : Set<DayOfWeek>
+- weekDays : DayOfWeek[]
 - startTime : LocalTime
 - endTime : LocalTime
 - startDate : LocalDate
 - endDate : LocalDate
 
-+ Schedule(weekDays : Set<DayOfWeek>, startTime : LocalTime, endTime : LocalTime
++ Schedule(weekDays : DayOfWeek[], startTime : LocalTime, endTime : LocalTime
     startDate : LocalDate, endDate : LocalDate)
 + isAllowedAt(dateTime : LocalDateTime)
 }
@@ -99,9 +103,6 @@ class User {
 - userGroup : UserGroup
 + User(name: String, credential: String)
 + toString() : String
-+ canSendRequests() : Boolean
-+ canBeInSpace() : Boolean
-+ canDoAction() : Boolean
 }
 
 
