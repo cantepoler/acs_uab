@@ -34,8 +34,9 @@ public final class DirectoryUserGroups {
         LocalTime.of(17, 0), LocalDate.of(LocalDate.now().getYear(), 9, 1),
         LocalDate.of(LocalDate.now().getYear()+1, 3, 1));
 
-    UserGroup g2 = new UserGroup("employees", new ArrayList<>(Arrays.asList(Actions.UNLOCK_SHORTLY)),
-        new ArrayList<>(Arrays.asList("ground floor", "floor1", "exterior", "stairs")), schedule_g2);
+    UserGroup g2 = new UserGroup("employees", new ArrayList<>(Arrays.asList(Actions.UNLOCK_SHORTLY, Actions.CLOSE,
+        Actions.OPEN)),
+        new ArrayList<>(Arrays.asList("ground_floor", "floor1", "exterior", "stairs")), schedule_g2);
 
     g2.addUser(new User("Ernest", "74984", g2));
     g2.addUser(new User("Eulalia", "43295", g2));
@@ -53,7 +54,7 @@ public final class DirectoryUserGroups {
     ArrayList<String> allActions = new ArrayList<>(Arrays.asList(Actions.UNLOCK_SHORTLY, Actions.UNLOCK, Actions.LOCK,
         Actions.UNLOCK, Actions.CLOSE, Actions.OPEN));
 
-    ArrayList<String> allSpaces = new ArrayList<>(Arrays.asList("ground floor", "floor1", "exterior", "stairs", "parking"));
+    ArrayList<String> allSpaces = new ArrayList<>(Arrays.asList("ground_floor", "floor1", "exterior", "stairs", "parking"));
 
 
     Schedule schedule_g3 = new Schedule(days_g3, LocalTime.of(8, 0),
