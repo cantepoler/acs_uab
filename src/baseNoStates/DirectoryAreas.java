@@ -10,16 +10,17 @@ public final class DirectoryAreas {
 
   public static void makeAreas() {
     //create partitions
-    Partition building = new Partition("A1", "Building", null);
-    Partition basement = new Partition("A2", "Basement", building);
-    Partition ground_floor = new Partition("A3", "Ground floor", building);
-    Partition floor_1 = new Partition("A4", "Floor 1", building);
+    Partition building = new Partition("building", "Building", null);
+    Partition basement = new Partition("basement", "Basement", building);
+    Partition ground_floor = new Partition("ground_floor", "Ground floor", building);
+    Partition floor_1 = new Partition("floor1", "Floor 1", building);
 
     //set rootArea
     rootArea = building;
 
     //create door arrays
-    doors = DirectoryDoors.getAllDoors();
+    makeDoors();
+
     ArrayList<Door> parkingDoors = findDoorsByIds(Arrays.asList("D1", "D2"));
     ArrayList<Door> hallDoors = findDoorsByIds(Arrays.asList("D3", "D4"));
     ArrayList<Door> room_1Doors = findDoorsByIds(Arrays.asList("D5"));
@@ -30,11 +31,11 @@ public final class DirectoryAreas {
 
     //create spaces
     //buiding parent
-    Space stairs = new Space("A5", "Stairs", building);
-    Space exterior = new Space("A6", "Exterior", building);
+    Space stairs = new Space("stairs", "Stairs", building);
+    Space exterior = new Space("exterior", "Exterior", building);
 
     //basement parent
-    Space parking = new Space("A7", "Parking", parkingDoors, basement);
+    Space parking = new Space("parking", "Parking", parkingDoors, basement);
 
     ArrayList<Area> basementSpaces = new ArrayList<>(Arrays.asList(parking));
 
@@ -43,17 +44,17 @@ public final class DirectoryAreas {
     //ground_floor parent
     // hall = A8
     Space hall = new Space("hall", "Floor", hallDoors, ground_floor);
-    Space room1 = new Space("A9", "Room", room_1Doors, ground_floor);
-    Space room2 = new Space("A10", "Room", room_2Doors, ground_floor);
+    Space room1 = new Space("room1", "Room", room_1Doors, ground_floor);
+    Space room2 = new Space("room2", "Room", room_2Doors, ground_floor);
 
     ArrayList<Area> groundFloorSpaces = new ArrayList<>(Arrays.asList(hall, room1, room2));
 
     ground_floor.setAreas(groundFloorSpaces);
 
     //floor_1 parent
-    Space room3 = new Space("A11", "Room", room_3Doors, floor_1);
-    Space corridor = new Space("A12", "Corridor", corridorDoors, floor_1);
-    Space it = new Space("A13", "It", itDoors, floor_1);
+    Space room3 = new Space("room3", "Room", room_3Doors, floor_1);
+    Space corridor = new Space("corridor", "Corridor", corridorDoors, floor_1);
+    Space it = new Space("it", "It", itDoors, floor_1);
 
     ArrayList<Area> floor_1Spaces = new ArrayList<>(Arrays.asList(room3, corridor, it));
 
@@ -83,6 +84,25 @@ public final class DirectoryAreas {
     doors.get(7).toSpace = room3;
     doors.get(8).fromSpace = corridor;
     doors.get(8).toSpace = it;
+  }
+
+  private static void makeDoors() {
+    // basement
+    Door d1 = new Door("D1"); // exterior, parking
+    Door d2 = new Door("D2"); // stairs, parking
+
+    // ground floor
+    Door d3 = new Door("D3"); // exterior, hall
+    Door d4 = new Door("D4"); // stairs, hall
+    Door d5 = new Door("D5"); // hall, room1
+    Door d6 = new Door("D6"); // hall, room2
+
+    // first floor
+    Door d7 = new Door("D7"); // stairs, corridor
+    Door d8 = new Door("D8"); // corridor, room3
+    Door d9 = new Door("D9"); // corridor, IT
+
+    doors = new ArrayList<>(Arrays.asList(d1, d2, d3, d4, d5, d6, d7, d8, d9));
   }
 
   private static ArrayList<Door> findDoorsByIds(List<String> ids) {

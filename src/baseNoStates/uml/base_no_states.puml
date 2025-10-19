@@ -39,15 +39,6 @@ class DirectoryAreas
 
 DirectoryAreas --> "*" Area : "rootArea"
 
-class DirectoryDoors {
-- {static} allDoors : Door[]
-+ {static} makeDoors()
-+ {static} findDoorById(id : String) : Door
-+ {static} getAllDoors() : Door[]
-}
-
-DirectoryDoors --> "*" Door : "allDoors"
-
 class Door {
 - id : String
 - closed : boolean
@@ -112,7 +103,6 @@ class Main {
 abstract DoorState{
 # door : Door
 # name : String
-+ DoorState(door : Door)
 {abstract}+ open()
 {abstract}+ close()
 {abstract}+ lock()
@@ -122,25 +112,39 @@ abstract DoorState{
 }
 
 class Locked extends DoorState{
-+ DoorState(door : Door)
-{abstract}+ open()
-{abstract}+ close()
-{abstract}+ lock()
-{abstract}+ unlock()
-{abstract}+ unlockShortly()
-{abstract}+ prop()
++ open()
++ close()
++ lock()
++ unlock()
++ unlockShortly()
++ prop()
 }
 
 class Unlocked extends DoorState{
-+ changeState(action : String) : DoorState
++ open()
++ close()
++ lock()
++ unlock()
++ unlockShortly()
++ prop()
 }
 
 class UnlockedShortly extends DoorState{
-+ changeState(action : String) : DoorState
++ open()
++ close()
++ lock()
++ unlock()
++ unlockShortly()
++ prop()
 }
 
 class Propped extends DoorState{
-+ changeState(action : String) : DoorState
++ open()
++ close()
++ lock()
++ unlock()
++ unlockShortly()
++ prop()
 }
 
 abstract Area{
