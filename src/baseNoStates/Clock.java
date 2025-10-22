@@ -10,21 +10,6 @@ public class Clock extends Observable {
     timer = new Timer();
   }
 
-  @Override
-  public synchronized void addObserver(Observer o) {
-    super.addObserver(o);
-  }
-
-  @Override
-  public synchronized void deleteObserver(Observer o) {
-    super.deleteObserver(o);
-  }
-
-  @Override
-  public void notifyObservers() {
-    super.notifyObservers();
-  }
-
   public void start() {
     TimerTask task = new TimerTask() {
       @Override
@@ -34,7 +19,7 @@ public class Clock extends Observable {
         notifyObservers(date);
       }
     };
-    timer.scheduleAtFixedRate(task, 0, 1000);
+    timer.scheduleAtFixedRate(task, 0, 1000 );
   }
 
   public void stop() {

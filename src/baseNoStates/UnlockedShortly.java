@@ -1,12 +1,17 @@
 package baseNoStates;
 
+import java.time.Duration;
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.Observable;
 import java.util.Observer;
+import java.util.concurrent.TransferQueue;
 
 public class UnlockedShortly extends DoorState implements Observer {
   private static final Clock CLOCK = new Clock();
-  private final int MAX_PERIOD = 10;
+  private final long MAX_PERIOD = 10;
   private int seconds = 0;
+  private LocalDateTime startingTime;
 
   public UnlockedShortly(Door door) {
     super(door);
@@ -47,8 +52,12 @@ public class UnlockedShortly extends DoorState implements Observer {
 
   @Override
   public void update(Observable o, Object arg) {
-    seconds++;
-    if (seconds >= MAX_PERIOD) {
+    LocalDateTime time = (LocalDateTime) arg;
+    if (startingTime == null)
+    {
+        startingTime = time;
+    }
+    if (timeComplete(time)) {
       if (door.isClosed()) {
         lock();
       }
@@ -59,4 +68,15 @@ public class UnlockedShortly extends DoorState implements Observer {
     }
 
   }
+
+    private boolean timeComplete(LocalDateTime time) {
+      boolean complete = false;
+      Duration elapsed = Duration.between(startingTime, time);
+      if (startingTime.plus(elapsed).equals(startingTime.plus(Duration.of(MAX_PERIOD, ChronoUnit.SECONDS))))
+      {
+          complete = true;
+      }
+
+      return complete;
+    }
 }
