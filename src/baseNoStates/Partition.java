@@ -47,6 +47,9 @@ public class Partition extends Area {
     return find;
   }
 
+  //iterates for every door in each of the doors of the spaces of that area
+  //and if they give access to a space of the area the doors are added to the global
+  //list of the area
   @Override
   public ArrayList<Door> getDoorsGivingAccess() {
     ArrayList<Door> doorsGivingAcces = new ArrayList<>();

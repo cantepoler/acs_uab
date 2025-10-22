@@ -33,17 +33,20 @@ public class Space extends Area {
       return null;
   }
 
-  //if the doors in this area give acces to it they are added to the list
+  //if there is any door on these space and it gives
+  //access to it, the door is added to the list we return.
   @Override
   public ArrayList<Door> getDoorsGivingAccess() {
     ArrayList<Door> doorsGivingAccess = new ArrayList<>();
-      for(Door door : doors)
-      {
-          if (door.toSpace == this){
-              doorsGivingAccess.add(door);
-          }
+    if (this.doors != null) {
+      for (Door door : doors) {
+        if (door.toSpace == this || door.fromSpace == this) {
+          doorsGivingAccess.add(door);
+        }
       }
 
       return doorsGivingAccess;
+    }
+    return doorsGivingAccess;
   }
 }
