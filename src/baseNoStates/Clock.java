@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.util.*;
 
 public class Clock extends Observable {
+  private int period = 1000;
   private LocalDateTime date;
   private Timer timer;
   public Clock() {
@@ -19,7 +20,7 @@ public class Clock extends Observable {
         notifyObservers(date);
       }
     };
-    timer.scheduleAtFixedRate(task, 0, 1000 );
+    timer.scheduleAtFixedRate(task, 0, period );
   }
 
   public void stop() {
