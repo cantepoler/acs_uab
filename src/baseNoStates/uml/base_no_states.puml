@@ -186,6 +186,7 @@ abstract Observable {
 }
 
 class Clock extends Observable {
+-period : int
 -date: LocalDateTime
 -timer: Timer
 +addObserver(o: Observer)
@@ -195,7 +196,7 @@ class Clock extends Observable {
 +stop()
 }
 
-UnlockedShortly -left->"1" Clock
+UnlockedShortly -left->"1" Clock : CLOCK
 
 note right of Main::main
 DirectoryDoors.makeDoors()
