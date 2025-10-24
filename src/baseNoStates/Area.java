@@ -13,6 +13,10 @@ public abstract class Area {
     this.parent = parent;
   }
 
+  public String getId() {
+    return id;
+  }
+
   public abstract ArrayList<Space> getSpaces();
 
   public abstract ArrayList<Door> getDoorsGivingAccess();

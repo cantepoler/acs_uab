@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class User {
   private final String name;
   private final String credential;
-  private UserGroup userGroup;
+  private final UserGroup userGroup;
   private ArrayList<String> areas;
 
   public User(String name, String credential, UserGroup userGroup) {
