@@ -15,7 +15,7 @@ public class Clock extends Observable {
   }
 
   public void start() {
-        // Once the function calls a new clock, it creates a new task to a list which is updated each
+      // Once the function calls a new clock, it creates a new task to a list which is updated each
       //second. As it notifies the observer of it's update, the observer verifies if it has to keep
       //running or the task has finished.
     TimerTask task = new TimerTask() {
@@ -28,9 +28,4 @@ public class Clock extends Observable {
     };
     timer.scheduleAtFixedRate(task, 0, period );
   }
-
-  public void stop() {
-    timer.cancel();
-  }
-
 }
