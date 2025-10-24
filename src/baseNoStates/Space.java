@@ -44,8 +44,6 @@ public class Space extends Area {
           doorsGivingAccess.add(door);
         }
       }
-
-      return doorsGivingAccess;
     }
     return doorsGivingAccess;
   }
