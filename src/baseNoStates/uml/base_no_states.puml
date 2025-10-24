@@ -137,7 +137,7 @@ interface Observer{
 class UnlockedShortly extends DoorState implements Observer{
 {static}- CLOCK
 -MAX_PERIOD : int
--seconds: int
+-startingTime : LocalDateTime
 + open()
 + close()
 + lock()
@@ -145,6 +145,7 @@ class UnlockedShortly extends DoorState implements Observer{
 + unlockShortly()
 + prop()
 + update(o: Observable, arg: Object)
+-timeComplete(time : LocalDateTime) : boolean
 }
 
 class Propped extends DoorState{

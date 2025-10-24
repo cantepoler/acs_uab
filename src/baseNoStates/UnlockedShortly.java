@@ -10,7 +10,6 @@ import java.util.concurrent.TransferQueue;
 public class UnlockedShortly extends DoorState implements Observer {
   private static final Clock CLOCK = new Clock();
   private final long MAX_PERIOD = 10;
-  private int seconds = 0;
   private LocalDateTime startingTime;
 
   public UnlockedShortly(Door door) {
