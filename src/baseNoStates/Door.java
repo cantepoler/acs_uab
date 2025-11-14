@@ -36,9 +36,13 @@ public class Door {
     return closed;
   }
 
-  public void setClosed(boolean closed) {this.closed = closed;}
+  public void setClosed(boolean closed) {
+    this.closed = closed;
+  }
 
-  public void setState(DoorState doorState) {this.currentState = doorState;}
+  public void setState(DoorState doorState) {
+    this.currentState = doorState;
+  }
 
   public String getId() {
     return id;

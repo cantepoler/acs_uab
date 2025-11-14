@@ -15,26 +15,25 @@ public class Space extends Area {
     this.doors = doors;
   }
 
-  //returns itself as an arraylist
+  // returns itself as an arraylist
   @Override
   public ArrayList<Space> getSpaces() {
     return new ArrayList<>(Arrays.asList(this));
   }
 
-  //if this is the area we are searching for returns true
-  //if not returns null
+  // if this is the area we are searching for returns true
+  // if not returns null
   @Override
   public Area findAreaById(String id) {
-      if (id.equals(this.id))
-      {
-          return this;
-      }
+    if (id.equals(this.id)) {
+      return this;
+    }
 
-      return null;
+    return null;
   }
 
-  //if there is any door on these space and it gives
-  //access to it, the door is added to the list we return.
+  // if there is any door on these space, and it gives
+  // access to it, the door is added to the list we return.
   @Override
   public ArrayList<Door> getDoorsGivingAccess() {
     ArrayList<Door> doorsGivingAccess = new ArrayList<>();

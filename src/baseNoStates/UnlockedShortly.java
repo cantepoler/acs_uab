@@ -5,13 +5,12 @@ import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.Observable;
 import java.util.Observer;
-import java.util.concurrent.TransferQueue;
 
 public class UnlockedShortly extends DoorState implements Observer {
-    //the unlockedShortly class is an observer, that when it is created it
-    //starts checking the different time of tasks of the Clock class when it updates
-  private static final Clock CLOCK = new Clock();
-  private final long MAX_PERIOD = 10;
+  // the unlockedShortly class is an observer, that when it is created it
+  // starts checking the different time of tasks of the Clock class when it updates
+  private static final Clock CLOCK = Clock.getClockInstance();
+  private static final long MAX_PERIOD = 10;
   private LocalDateTime startingTime;
 
   public UnlockedShortly(Door door) {
@@ -43,7 +42,8 @@ public class UnlockedShortly extends DoorState implements Observer {
 
   @Override
   public void unlockShortly() {
-    System.out.println("Can't unlock shortly door " + door.getId() + " because it's already unlocked");
+    System.out.println("Can't unlock shortly door " + door.getId()
+            + " because it's already unlocked");
   }
 
   @Override
@@ -51,40 +51,38 @@ public class UnlockedShortly extends DoorState implements Observer {
     this.door.setState(new Propped(this.door));
   }
 
-  //First gets the time in which it has been added to the observer list,
-    // and verifies if the time has passed. Once this happens, if it is closed
-    //it returns the door in a locked state. If the door it's opened, it returns the
-    //door as in a propped state and deletes the observer
+  // First gets the time in which it has been added to the observer list,
+  // and verifies if the time has passed. Once this happens, if it is closed
+  // it returns the door in a locked state. If the door it's opened, it returns the
+  // door as in a propped state and deletes the observer
   @Override
   public void update(Observable o, Object arg) {
     LocalDateTime time = (LocalDateTime) arg;
-    if (startingTime == null)
-    {
-        startingTime = time;
+    if (startingTime == null) {
+      startingTime = time;
     }
     if (timeComplete(time)) {
       CLOCK.deleteObserver(this);
       if (door.isClosed()) {
         lock();
-      }
-      else {
+      } else {
         prop();
       }
     }
   }
 
-  //It compares the actual time and checks if it has passed the MAX_PERIOD
-  //in which the door should be opened.
-  //if the time is bigger, it has to return true, since the period has been completed
-  //and the update() needs to check which action do. If not, it must return false.
+  // It compares the actual time and checks if it has passed the MAX_PERIOD
+  // in which the door should be opened.
+  // if the time is bigger, it has to return true, since the period has been completed
+  // and the update() needs to check which action do. If not, it must return false.
 
   private boolean timeComplete(LocalDateTime time) {
     boolean complete = false;
     Duration elapsed = Duration.between(startingTime, time);
-    if (startingTime.plus(elapsed).isAfter(startingTime.plus(Duration.of(MAX_PERIOD, ChronoUnit.SECONDS))))
-    {
-        complete = true;
+    // TODO: move if statement to a new method
+    if (startingTime.plus(elapsed).isAfter(startingTime.plus(Duration.of(MAX_PERIOD, ChronoUnit.SECONDS)))) {
+      complete = true;
     }
-     return complete;
+    return complete;
   }
 }

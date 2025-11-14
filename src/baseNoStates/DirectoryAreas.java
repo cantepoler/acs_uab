@@ -9,63 +9,65 @@ public final class DirectoryAreas {
   private static ArrayList<Door> doors;
 
   public static void makeAreas() {
-    //create partitions
+    // create partitions
     Partition building = new Partition("building", "Building", null);
     Partition basement = new Partition("basement", "Basement", building);
     Partition ground_floor = new Partition("ground_floor", "Ground floor", building);
     Partition floor_1 = new Partition("floor1", "Floor 1", building);
 
-    //set rootArea
+    // set rootArea
     rootArea = building;
 
-    //create door arrays
+    // create door arrays
     makeDoors();
 
     ArrayList<Door> parkingDoors = findDoorsByIds(Arrays.asList("D1", "D2"));
     ArrayList<Door> hallDoors = findDoorsByIds(Arrays.asList("D3", "D4"));
-    ArrayList<Door> room_1Doors = findDoorsByIds(Arrays.asList("D5"));
-    ArrayList<Door> room_2Doors = findDoorsByIds(Arrays.asList("D6"));
-    ArrayList<Door> room_3Doors = findDoorsByIds(Arrays.asList("D8"));
+    ArrayList<Door> room1Doors = findDoorsByIds(Arrays.asList("D5"));
+    ArrayList<Door> room2Doors = findDoorsByIds(Arrays.asList("D6"));
+    ArrayList<Door> room3Doors = findDoorsByIds(Arrays.asList("D8"));
     ArrayList<Door> corridorDoors = findDoorsByIds(Arrays.asList("D7"));
     ArrayList<Door> itDoors = findDoorsByIds(Arrays.asList("D9"));
 
-    //create spaces
-    //buiding parent
-    Space stairs = new Space("stairs", "Stairs", building);
-    Space exterior = new Space("exterior", "Exterior", building);
+    // create spaces
 
-    //basement parent
+    // basement parent
     Space parking = new Space("parking", "Parking", parkingDoors, basement);
 
     ArrayList<Area> basementSpaces = new ArrayList<>(Arrays.asList(parking));
 
     basement.setAreas(basementSpaces);
 
-    //ground_floor parent
+    // ground_floor parent
     // hall = A8
     Space hall = new Space("hall", "Floor", hallDoors, ground_floor);
-    Space room1 = new Space("room1", "Room", room_1Doors, ground_floor);
-    Space room2 = new Space("room2", "Room", room_2Doors, ground_floor);
+    Space room1 = new Space("room1", "Room", room1Doors, ground_floor);
+    Space room2 = new Space("room2", "Room", room2Doors, ground_floor);
 
     ArrayList<Area> groundFloorSpaces = new ArrayList<>(Arrays.asList(hall, room1, room2));
 
     ground_floor.setAreas(groundFloorSpaces);
 
-    //floor_1 parent
-    Space room3 = new Space("room3", "Room", room_3Doors, floor_1);
+    // floor_1 parent
+    Space room3 = new Space("room3", "Room", room3Doors, floor_1);
     Space corridor = new Space("corridor", "Corridor", corridorDoors, floor_1);
     Space it = new Space("it", "It", itDoors, floor_1);
 
-    ArrayList<Area> floor_1Spaces = new ArrayList<>(Arrays.asList(room3, corridor, it));
+    ArrayList<Area> floor1Spaces = new ArrayList<>(Arrays.asList(room3, corridor, it));
 
-    floor_1.setAreas(floor_1Spaces);
+    floor_1.setAreas(floor1Spaces);
+
+
+    // buiding parent
+    Space stairs = new Space("stairs", "Stairs", building);
+    Space exterior = new Space("exterior", "Exterior", building);
 
     ArrayList<Area> buildingSpaces = new ArrayList<>(Arrays.asList(
         basement, ground_floor, floor_1, stairs, exterior
     ));
     building.setAreas(buildingSpaces);
 
-    //set spaces from and to
+    // set spaces from and to
     doors.get(0).fromSpace = exterior;
     doors.get(0).toSpace = parking;
     doors.get(1).fromSpace = stairs;
@@ -107,22 +109,22 @@ public final class DirectoryAreas {
 
   private static ArrayList<Door> findDoorsByIds(List<String> ids) {
     ArrayList<Door> doors = new ArrayList<>();
-    for(String id : ids){
+    for (String id : ids) {
       Door door = findDoorById(id);
-      if (door != null){
+      if (door != null) {
         doors.add(door);
       }
     }
     return doors;
   }
 
-  public static Area findAreaById(String id){
+  public static Area findAreaById(String id) {
     return rootArea.findAreaById(id);
   }
 
-  public static Door findDoorById(String id){
-    for (Door door : doors){
-      if(door.getId().equals(id)){
+  public static Door findDoorById(String id) {
+    for (Door door : doors) {
+      if (door.getId().equals(id)) {
         return door;
       }
     }

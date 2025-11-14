@@ -10,9 +10,9 @@ public class UserGroup {
 
   private String name;
   public ArrayList<User> users = new ArrayList<>();
-  private ArrayList<String> allowedActions;
-  private ArrayList<String> allowedAreas;
-  private Schedule schedule;
+  private final ArrayList<String> allowedActions;
+  private final ArrayList<String> allowedAreas;
+  private final Schedule schedule;
 
   // The constructor has no "users" parameter, because we will want to add
   // new users while executing.
@@ -29,16 +29,16 @@ public class UserGroup {
   }
 
   public boolean canSendRequests(LocalDateTime dateTime) {
-    if (this.schedule != null){
+    if (this.schedule != null) {
       return schedule.isAllowedAt(dateTime);
     }
-    return false  ;
+    return false;
   }
 
-  //Giving a space, it covers all the areas to which it has access
-  //and returns if you have access to that site or not
+  // Giving a space, it covers all the areas to which it has access
+  // and returns if you have access to that site or not
   public boolean canBeInSpace(Space space) {
-    if (this.allowedAreas != null){
+    if (this.allowedAreas != null) {
       // as we have the id, not the Area object, we have to findAreaById.
       for (String areaId : this.allowedAreas) {
         Area area = DirectoryAreas.findAreaById(areaId);
@@ -56,7 +56,7 @@ public class UserGroup {
   }
 
   public boolean canDoAction(String action) {
-    if (this.allowedActions != null){
+    if (this.allowedActions != null) {
       return allowedActions.contains(action);
     }
     return false;
@@ -64,7 +64,9 @@ public class UserGroup {
 
   public User findUserByCredential(String credential) {
     for (User user : users) {
-      if (user.getCredential().equals(credential)) return user;
+      if (user.getCredential().equals(credential)) {
+        return user;
+      }
     }
     return null;
   }

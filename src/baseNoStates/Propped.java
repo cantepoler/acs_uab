@@ -25,10 +25,9 @@ public class Propped extends DoorState {
   @Override
   public void lock() {
     if (door.isClosed()) {
-        this.door.setState(new Locked(this.door));
-    }
-    else {
-        System.out.println("Door is not closed");
+      this.door.setState(new Locked(this.door));
+    } else {
+      System.out.println("Door is not closed");
     }
   }
 

@@ -1,6 +1,5 @@
 package baseNoStates;
 
-import java.lang.reflect.Array;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -25,16 +24,22 @@ public final class DirectoryUserGroups {
     // week days 9-17h
     // just shortly unlock
     // ground floor, floor1, exterior, stairs (this, for all), that is, everywhere but the parking
-    ArrayList<DayOfWeek> weekDays = new ArrayList<>(Arrays.asList(DayOfWeek.MONDAY, DayOfWeek.TUESDAY,
-        DayOfWeek.WEDNESDAY,  DayOfWeek.THURSDAY, DayOfWeek.FRIDAY));
+    ArrayList<DayOfWeek> weekDays = new ArrayList<>(
+            Arrays.asList(
+                    DayOfWeek.MONDAY, DayOfWeek.TUESDAY,
+                    DayOfWeek.WEDNESDAY,  DayOfWeek.THURSDAY,
+                    DayOfWeek.FRIDAY));
 
-    Schedule schedule_g2 = new Schedule(weekDays, LocalTime.of(9, 0),
+    Schedule scheduleG2 = new Schedule(weekDays, LocalTime.of(9, 0),
         LocalTime.of(17, 0), LocalDate.of(LocalDate.now().getYear(), 9, 1),
-        LocalDate.of(LocalDate.now().getYear()+1, 3, 1));
+        LocalDate.of(LocalDate.now().getYear() + 1, 3, 1));
 
-    UserGroup g2 = new UserGroup("employees", new ArrayList<>(Arrays.asList(Actions.UNLOCK_SHORTLY, Actions.CLOSE,
-        Actions.OPEN)),
-        new ArrayList<>(Arrays.asList("ground_floor", "floor1", "exterior", "stairs")), schedule_g2);
+    UserGroup g2 = new UserGroup("employees",
+                                 new ArrayList<>(Arrays.asList(Actions.UNLOCK_SHORTLY,
+                                                 Actions.CLOSE, Actions.OPEN)),
+                                 new ArrayList<>(Arrays.asList("ground_floor",
+                                                               "floor1", "exterior", "stairs")),
+                                 scheduleG2);
 
     g2.addUser(new User("Ernest", "74984", g2));
     g2.addUser(new User("Eulalia", "43295", g2));
@@ -46,21 +51,25 @@ public final class DirectoryUserGroups {
     // all actions
     // all spaces
 
-    ArrayList<DayOfWeek> days_g3 = new ArrayList<>(weekDays);
-    days_g3.add(DayOfWeek.SATURDAY);
+    ArrayList<DayOfWeek> daysG3 = new ArrayList<>(weekDays);
+    daysG3.add(DayOfWeek.SATURDAY);
 
-    ArrayList<String> allActions = new ArrayList<>(Arrays.asList(Actions.UNLOCK_SHORTLY, Actions.UNLOCK, Actions.LOCK,
-        Actions.UNLOCK, Actions.CLOSE, Actions.OPEN));
+    ArrayList<String> allActions = new ArrayList<>(Arrays.asList(Actions.UNLOCK_SHORTLY,
+                                                                 Actions.UNLOCK, Actions.LOCK,
+                                                                 Actions.UNLOCK, Actions.CLOSE,
+                                                                 Actions.OPEN));
 
-    ArrayList<String> allSpaces = new ArrayList<>(Arrays.asList("ground_floor", "floor1", "exterior", "stairs", "parking"));
+    ArrayList<String> allSpaces = new ArrayList<>(Arrays.asList("ground_floor",
+                                                                "floor1", "exterior",
+                                                                "stairs", "parking"));
 
 
-    Schedule schedule_g3 = new Schedule(days_g3, LocalTime.of(8, 0),
-        LocalTime.of(20,0),  LocalDate.of(LocalDate.now().getYear(), 9, 1),
-        LocalDate.of(LocalDate.now().getYear()+1, 3, 1));
+    Schedule scheduleG3 = new Schedule(daysG3, LocalTime.of(8, 0),
+        LocalTime.of(20, 0),  LocalDate.of(LocalDate.now().getYear(), 9, 1),
+        LocalDate.of(LocalDate.now().getYear() + 1, 3, 1));
 
 
-    UserGroup g3 = new UserGroup("managers", allActions, allSpaces, schedule_g3);
+    UserGroup g3 = new UserGroup("managers", allActions, allSpaces, scheduleG3);
     g3.addUser(new User("Manel", "95783", g3));
     g3.addUser(new User("Marta", "05827", g3));
     userGroups.add(g3);
@@ -71,14 +80,14 @@ public final class DirectoryUserGroups {
     // all actions
     // all spaces
 
-    ArrayList<DayOfWeek> days_g4 = new ArrayList<>(days_g3);
-    days_g4.add(DayOfWeek.SUNDAY);
+    ArrayList<DayOfWeek> daysG4 = new ArrayList<>(daysG3);
+    daysG4.add(DayOfWeek.SUNDAY);
 
-    Schedule schedule_g4 = new Schedule(days_g4, LocalTime.of(0, 0),
-        LocalTime.of(23,59),  LocalDate.of(LocalDate.now().getYear(), 1, 1),
+    Schedule scheduleG4 = new Schedule(daysG4, LocalTime.of(0, 0),
+        LocalTime.of(23, 59),  LocalDate.of(LocalDate.now().getYear(), 1, 1),
         LocalDate.of(2100, 1, 1));
 
-    UserGroup g4 = new UserGroup("admin", allActions, allSpaces, schedule_g4);
+    UserGroup g4 = new UserGroup("admin", allActions, allSpaces, scheduleG4);
 
     g4.addUser(new User("Ana", "11343", g4));
     userGroups.add(g4);
@@ -86,9 +95,11 @@ public final class DirectoryUserGroups {
 
   public static User findUserByCredential(String credential) {
     for (UserGroup userGroup : userGroups) {
-        User user = userGroup.findUserByCredential(credential);
-        if (user != null) return user;
+      User user = userGroup.findUserByCredential(credential);
+      if (user != null) {
+        return user;
       }
+    }
     System.out.println("user with credential " + credential + " not found");
     return null; // otherwise we get a Java error
   }

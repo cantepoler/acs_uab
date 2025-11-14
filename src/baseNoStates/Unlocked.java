@@ -2,7 +2,7 @@ package baseNoStates;
 
 public class Unlocked extends DoorState {
 
-  public Unlocked(Door door){
+  public Unlocked(Door door) {
     super(door);
     this.name = "unlocked";
   }
@@ -24,17 +24,17 @@ public class Unlocked extends DoorState {
 
   @Override
   public void lock() {
-      if (door.isClosed()) {
-          this.door.setState(new Locked(this.door));
-      }
-      else {
-          System.out.println("Door is not closed");
-      }
+    if (door.isClosed()) {
+      this.door.setState(new Locked(this.door));
+    } else {
+      System.out.println("Door is not closed");
+    }
   }
 
   @Override
   public void unlockShortly() {
-    System.out.println("Can't unlock shortly door " + door.getId() + " because it's already unlocked");
+    System.out.println("Can't unlock shortly door " + door.getId()
+                       + " because it's already unlocked");
   }
 
   @Override
