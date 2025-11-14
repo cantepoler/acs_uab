@@ -31,6 +31,7 @@ class DirectoryAreas
 {static}-rootArea: Area
 {static}-allDoors: Door[]
 {static}+makeAreas()
+{static}+makeDoors()
 {static}+findAreaById(id : String) : Area
 {static}-findDoorsByIds(ids : String[]) : Door[]
 {static}+findDoorById(id : String) : Door
@@ -43,15 +44,12 @@ class Door {
 - id : String
 - closed : boolean
 - currentState : DoorState
+- fromSpace : Space
+- toSpace : Space
 + Door(id : String, Space : fromSpace, Space : toSpace)
 + processRequest(request : RequestReader)
+- doAction(action : String)
 + toJson() : JSONObject
-
-'+ toString() : String
-'+ isClosed() :boolean
-'+ setClosed(b : boolean)
-'+ getStateName() : String
-
 }
 
 class DirectoryUserGroups {
@@ -64,14 +62,16 @@ DirectoryUserGroups o--> "1..*" UserGroup : "userGroups"
 UserGroup "1 userGroup"*-->"users*" User
 
 class UserGroup {
-- users : User
+- name : String
+- users : User[]
 - allowedActions : String[]
 - allowedAreas : String[]
 - schedule : Schedule
 + addUser(user : User)
-+ canSendRequests() : Boolean
-+ canBeInSpace() : Boolean
-+ canDoAction() : Boolean
++ canSendRequests(dateTime : LocalDateTime) : boolean
++ canBeInSpace(space : Space) : boolean
++ canDoAction(action : String) : boolean
++ findUserByCredential(credential : String) : User
 }
 
 UserGroup -right->"1" Schedule
@@ -85,7 +85,7 @@ class Schedule {
 
 + Schedule(weekDays : DayOfWeek[], startTime : LocalTime, endTime : LocalTime
     startDate : LocalDate, endDate : LocalDate)
-+ isAllowedAt(dateTime : LocalDateTime)
++ isAllowedAt(dateTime : LocalDateTime) : boolean
 }
 
 class User {
@@ -93,7 +93,11 @@ class User {
 - credential : String
 - userGroup : UserGroup
 + User(name: String, credential: String)
++ getCredential() : String
 + toString() : String
++ canBeInSpace(space : Space) : boolean
++ canSendRequests(dateTime : LocalDateTime) : boolean
++ canDoAction(action : String) : boolean
 }
 
 
@@ -113,21 +117,9 @@ abstract DoorState{
 }
 
 class Locked extends DoorState{
-+ open()
-+ close()
-+ lock()
-+ unlock()
-+ unlockShortly()
-+ prop()
 }
 
 class Unlocked extends DoorState{
-+ open()
-+ close()
-+ lock()
-+ unlock()
-+ unlockShortly()
-+ prop()
 }
 
 interface Observer{
@@ -136,31 +128,19 @@ interface Observer{
 
 class UnlockedShortly extends DoorState implements Observer{
 {static}- CLOCK
--MAX_PERIOD : int
--startingTime : LocalDateTime
-+ open()
-+ close()
-+ lock()
-+ unlock()
-+ unlockShortly()
-+ prop()
-+ update(o: Observable, arg: Object)
--timeComplete(time : LocalDateTime) : boolean
+- MAX_PERIOD : int
+- startingTime : LocalDateTime
+- timeComplete(time : LocalDateTime) : boolean
 }
 
 class Propped extends DoorState{
-+ open()
-+ close()
-+ lock()
-+ unlock()
-+ unlockShortly()
-+ prop()
 }
 
 abstract Area{
 #id : String
 #name : String
 #parent: Area
++ getId() : String
 {abstract}+ getSpaces() : Space[]
 {abstract}+ getDoorsGivingAccess() : Door[]
 {abstract}+ findAreaById(id : String) : Area
@@ -168,33 +148,23 @@ abstract Area{
 
 class Space extends Area{
 - doors : Door[]
-+ getSpaces() : Space[]
-+ getDoorsGivingAccess() : Door[]
-+ findAreaById(id : String) : Area
 }
 
 class Partition extends Area{
 - areas : Area[]
-+ getSpaces() : Space[]
-+ getDoorsGivingAccess() : Door[]
-+ findAreaById(id : String) : Area
 }
 
 abstract Observable {
-+addObserver(o: Observer)
-+deleteObserver(o: Observer)
-+notifyObservers()
++ addObserver(o: Observer)
++ deleteObserver(o: Observer)
++ notifyObservers()
 }
 
 class Clock extends Observable {
--period : int
--date: LocalDateTime
--timer: Timer
-+addObserver(o: Observer)
-+deleteObserver(o: Observer)
-+notifyObservers()
-+start()
-+stop()
+- period : int
+- date : LocalDateTime
+- timer : Timer
++ start()
 }
 
 UnlockedShortly -left->"1" Clock : CLOCK
