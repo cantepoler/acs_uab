@@ -69,7 +69,11 @@ public class RequestArea implements Request {
 
     // make the door requests and put them into the area request to be authorized later and
     // processed later
-    Area area = DirectoryAreas.findAreaById(areaId);
+    VisitorFindAreaById visitorFindAreaById = new VisitorFindAreaById(areaId);
+    DirectoryAreas directoryAreas = DirectoryAreas.getDirectoryAreas();
+    Area rootArea = directoryAreas.getRootArea();
+    rootArea.acceptVisitor(visitorFindAreaById);
+    Area area = visitorFindAreaById.getArea();
     // an Area is a Space or a Partition
     if (area != null) {
         // is null when from the app we click on an action but no place is selected because
@@ -77,13 +81,21 @@ public class RequestArea implements Request {
 
         // Make all the door requests, one for each door in the area, and process them.
         // Look for the doors in the spaces of this area that give access to them.
-        for (Door door : area.getDoorsGivingAccess()) {
-            RequestReader requestReader = new RequestReader(credential, action, now, door.getId());
-            requestReader.process();
-            // after process() the area request contains the answer as the answer
-            // to each individual door request, that is read by the simulator/Flutter app
-            requests.add(requestReader);
-        }
+      VisitorDoorGivinAccess visitorGetDoorsGivingAccess = new VisitorDoorGivinAccess();
+      area.acceptVisitor(visitorGetDoorsGivingAccess);
+      VisitorGetProppedDoors visitorGetProppedDoors = new VisitorGetProppedDoors();
+      area.acceptVisitor(visitorGetProppedDoors);
+      ArrayList<Door> propped = visitorGetProppedDoors.getProppedDoors();
+      for (Door door : propped) {
+        System.out.println("Door: " + door.getId() + " is Propped");
+      }
+      for (Door door : VisitorDoorGivinAccess.getDoorsGivingAcces()) {
+          RequestReader requestReader = new RequestReader(credential, action, now, door.getId());
+          requestReader.process();
+          // after process() the area request contains the answer as the answer
+          // to each individual door request, that is read by the simulator/Flutter app
+          requests.add(requestReader);
+      }
     }
   }
 }

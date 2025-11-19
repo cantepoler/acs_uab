@@ -10,6 +10,7 @@ public class Door {
   private DoorState currentState;
   public Space fromSpace;
   public Space toSpace;
+  private boolean propped = false;
 
   // public Door(String id, Space fromSpace, Space toSpace) {
   public Door(String id) {
@@ -90,5 +91,13 @@ public class Door {
       default:
         System.out.println("Unrecognized or unimplemented action: " + action);
     }
+  }
+
+  public void changePropped() {
+    this.propped = !propped;
+  }
+
+  public boolean isPropped() {
+    return currentState instanceof Propped;
   }
 }

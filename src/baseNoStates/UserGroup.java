@@ -41,7 +41,11 @@ public class UserGroup {
     if (this.allowedAreas != null) {
       // as we have the id, not the Area object, we have to findAreaById.
       for (String areaId : this.allowedAreas) {
-        Area area = DirectoryAreas.findAreaById(areaId);
+        VisitorFindAreaById visitorFindAreaById = new VisitorFindAreaById(areaId);
+        DirectoryAreas directoryAreas = DirectoryAreas.getDirectoryAreas();
+        Area rootArea = directoryAreas.getRootArea();
+        rootArea.acceptVisitor(visitorFindAreaById);
+        Area area = visitorFindAreaById.getArea();
         if (area == space) {
           return true;
         }

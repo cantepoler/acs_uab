@@ -4,6 +4,7 @@ public class Propped extends DoorState {
   public Propped(Door door) {
     super(door);
     this.name = "propped";
+    door.changePropped();
   }
 
   @Override
@@ -25,6 +26,7 @@ public class Propped extends DoorState {
   @Override
   public void lock() {
     if (door.isClosed()) {
+      door.changePropped();
       this.door.setState(new Locked(this.door));
     } else {
       System.out.println("Door is not closed");

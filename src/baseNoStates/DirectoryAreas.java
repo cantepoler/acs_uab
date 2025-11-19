@@ -7,8 +7,20 @@ import java.util.List;
 public final class DirectoryAreas {
   private static Area rootArea;
   private static ArrayList<Door> doors;
+  private static DirectoryAreas directoryAreas = null;
 
-  public static void makeAreas() {
+  private DirectoryAreas() {
+      makeAreas();
+  }
+
+  public static DirectoryAreas getDirectoryAreas() {
+    if (directoryAreas == null) {
+      directoryAreas = new DirectoryAreas();
+    }
+    return directoryAreas;
+  }
+
+  private static void makeAreas() {
     // create partitions
     Partition building = new Partition("building", "Building", null);
     Partition basement = new Partition("basement", "Basement", building);
@@ -118,10 +130,6 @@ public final class DirectoryAreas {
     return doors;
   }
 
-  public static Area findAreaById(String id) {
-    return rootArea.findAreaById(id);
-  }
-
   public static Door findDoorById(String id) {
     for (Door door : doors) {
       if (door.getId().equals(id)) {
@@ -133,5 +141,9 @@ public final class DirectoryAreas {
 
   public static ArrayList<Door> getAllDoors() {
     return doors;
+  }
+
+  public static Area getRootArea() {
+    return rootArea;
   }
 }
