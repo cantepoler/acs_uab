@@ -3,8 +3,10 @@ package baseNoStates;
 import java.util.ArrayList;
 
 public class VisitorDoorGivinAccess implements Visitor {
-  static ArrayList<Door> doorsGivingAccess =  new ArrayList<>();
-  public VisitorDoorGivinAccess() {}
+  ArrayList<Door> doorsGivingAccess =  null;
+  public VisitorDoorGivinAccess() {
+      doorsGivingAccess = new ArrayList<>();
+  }
   public void visitSpace(Space space) {
     if (space.getDoors() != null) {
       for (Door door : space.getDoors()) {
@@ -20,7 +22,7 @@ public class VisitorDoorGivinAccess implements Visitor {
     }
   }
 
-  public static ArrayList<Door> getDoorsGivingAcces() {
+  public ArrayList<Door> getDoorsGivingAcces() {
     return doorsGivingAccess;
   }
 }

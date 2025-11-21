@@ -94,10 +94,10 @@ public class Door {
   }
 
   public void changePropped() {
-    this.propped = !propped;
+    this.propped = !this.propped;
   }
 
   public boolean isPropped() {
-    return currentState instanceof Propped;
+    return propped;
   }
 }
