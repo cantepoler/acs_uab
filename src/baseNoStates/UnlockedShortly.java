@@ -80,9 +80,13 @@ public class UnlockedShortly extends DoorState implements Observer {
     boolean complete = false;
     Duration elapsed = Duration.between(startingTime, time);
     // TODO: move if statement to a new method
-    if (startingTime.plus(elapsed).isAfter(startingTime.plus(Duration.of(MAX_PERIOD, ChronoUnit.SECONDS)))) {
+    if (checkIsTimeCompleted(time, elapsed)) {
       complete = true;
     }
     return complete;
+  }
+
+  private boolean checkIsTimeCompleted (LocalDateTime time, Duration elapsed) {
+    return startingTime.plus(elapsed).isAfter(startingTime.plus(Duration.of(MAX_PERIOD, ChronoUnit.SECONDS)));
   }
 }

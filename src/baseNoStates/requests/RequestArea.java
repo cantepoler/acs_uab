@@ -13,7 +13,7 @@ public class RequestArea implements Request {
   private final String action;
   private final String areaId;
   private final LocalDateTime now;
-  private ArrayList<RequestReader> requests = new ArrayList<>();
+  private final ArrayList<RequestReader> requests = new ArrayList<>();
 
 
   public RequestArea(String credential, String action, LocalDateTime now, String areaId) {
@@ -80,7 +80,7 @@ public class RequestArea implements Request {
       // there (flutter) I don't control like I do in javascript that all the parameters are provided
       // Make all the door requests, one for each door in the area, and process them.
       // Look for the doors in the spaces of this area that give access to them.
-      VisitorDoorGivinAccess visitorGetDoorsGivingAccess = new VisitorDoorGivinAccess();
+      VisitorDoorGivingAccess visitorGetDoorsGivingAccess = new VisitorDoorGivingAccess();
       area.acceptVisitor(visitorGetDoorsGivingAccess);
       VisitorGetProppedDoors visitorGetProppedDoors = new VisitorGetProppedDoors();
       area.acceptVisitor(visitorGetProppedDoors);
@@ -88,7 +88,7 @@ public class RequestArea implements Request {
       for (Door door : propped) {
         System.out.println("Door: " + door.getId() + " is Propped");
       }
-      for (Door door : visitorGetDoorsGivingAccess.getDoorsGivingAcces()) {
+      for (Door door : visitorGetDoorsGivingAccess.getDoorsGivingAccess()) {
         RequestReader requestReader = new RequestReader(credential, action, now, door.getId());
         requestReader.process();
         // after process() the area request contains the answer as the answer
