@@ -28,14 +28,16 @@ end note
 
 class DirectoryAreas
 {
-{static}-rootArea: Area
-{static}-allDoors: Door[]
-{static}+makeAreas()
-{static}+makeDoors()
-{static}+findAreaById(id : String) : Area
-{static}-findDoorsByIds(ids : String[]) : Door[]
-{static}+findDoorById(id : String) : Door
-{static}+getAllDoors() : Door[]
+{static}- rootArea: Area
+{static}- allDoors: Door[]
+{static}- directoryAreas: DirectoryAreas
+{static}+ getDirectoryAreas(): DirectoryAreas
+{static}- makeAreas()
+{static}- makeDoors()
+{static}+ findAreaById(id : String) : Area
+{static}- findDoorsByIds(ids : String[]) : Door[]
+{static}+ findDoorById(id : String) : Door
+{static}+ getAllDoors() : Door[]
 }
 
 DirectoryAreas --> "*" Area : "rootArea"
@@ -46,16 +48,18 @@ class Door {
 - currentState : DoorState
 - fromSpace : Space
 - toSpace : Space
+- propped : boolean
 + Door(id : String, Space : fromSpace, Space : toSpace)
 + processRequest(request : RequestReader)
 - doAction(action : String)
 + toJson() : JSONObject
++ changePropped()
 }
 
 class DirectoryUserGroups {
-- userGroups : UserGroup[]
-+ makeUserGroups()
-+ findUserByCredential(credential : String) : User
+{static}- userGroups : UserGroup[]
+{static}+ makeUserGroups()
+{static}+ findUserByCredential(credential : String) : User
 }
 
 DirectoryUserGroups o--> "1..*" UserGroup : "userGroups"
@@ -131,6 +135,7 @@ class UnlockedShortly extends DoorState implements Observer{
 - MAX_PERIOD : int
 - startingTime : LocalDateTime
 - timeComplete(time : LocalDateTime) : boolean
+- checkIsTimeCompleted(elapsed : Duration) : boolean
 }
 
 class Propped extends DoorState{
@@ -164,14 +169,46 @@ class Clock extends Observable {
 - period : int
 - date : LocalDateTime
 - timer : Timer
+{static}- clockInstance : Clockd
+{static}+ getClockInstance() : Clock
 + start()
+}
+
+interface Visitor {
+ {abstract}+ visitSpace(space : Space)
+ {abstract}+ visitPartition(partition : Partition)
+}
+
+class VisitorAnotherComputation implements Visitor {
++ visitSpace(space : Space)
++ visitPartition(partition : Partition)
+}
+
+class VisitorDoorGivingAccess implements Visitor {
+- doorsGivingAccess : Door[]
++ visitSpace(space : Space)
++ visitPartition(partition : Partition)
+}
+
+class VisitorFindAreaById implements Visitor {
+- area : Area
+- searchedId : String
++ visitSpace(space : Space)
++ visitPartition(partition : Partition)
++ getArea() : Area
+}
+
+class VisitorGetProppedDoors implements Visitor {
+- proppedDoors : Door[]
++ visitSpace(space : Space)
++ visitPartition(partition : Partition)
 }
 
 UnlockedShortly -left->"1" Clock : CLOCK
 
 note right of Main::main
-DirectoryDoors.makeDoors()
-DiretoryUsers.makeUsers()
+DirectoryAreas.makeAreas()
+DirectoryUserGroups.makeUsers()
 new Webserver()
 end note
 
@@ -179,4 +216,6 @@ Main -[hidden]down- Webserver
 Door -->"1" DoorState : currentState
 Partition *-->"*" Area : areas
 Space -->"*" Door : doors
+
+User -[hidden]down- Visitor
 @enduml

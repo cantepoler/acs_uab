@@ -8,8 +8,8 @@ public class Door {
   private final String id;
   private boolean closed; // physically
   private DoorState currentState;
-  public Space fromSpace;
-  public Space toSpace;
+  private Space fromSpace;
+  private Space toSpace;
   private boolean propped = false;
 
   // public Door(String id, Space fromSpace, Space toSpace) {
@@ -99,5 +99,21 @@ public class Door {
 
   public boolean isPropped() {
     return propped;
+  }
+
+  public Space getFromSpace() {
+    return fromSpace;
+  }
+
+  public void setFromSpace(Space fromSpace) {
+    this.fromSpace = fromSpace;
+  }
+
+  public Space getToSpace() {
+    return toSpace;
+  }
+
+  public void setToSpace(Space toSpace) {
+    this.toSpace = toSpace;
   }
 }

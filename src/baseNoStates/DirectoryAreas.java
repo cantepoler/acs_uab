@@ -9,9 +9,7 @@ public final class DirectoryAreas {
   private static ArrayList<Door> doors;
   private static DirectoryAreas directoryAreas = null;
 
-  private DirectoryAreas() {
-      makeAreas();
-  }
+  private DirectoryAreas() {}
 
   public static DirectoryAreas getDirectoryAreas() {
     if (directoryAreas == null) {
@@ -20,7 +18,7 @@ public final class DirectoryAreas {
     return directoryAreas;
   }
 
-  private static void makeAreas() {
+  public static void makeAreas() {
     // create partitions
     Partition building = new Partition("building", "Building", null);
     Partition basement = new Partition("basement", "Basement", building);
@@ -80,24 +78,24 @@ public final class DirectoryAreas {
     building.setAreas(buildingSpaces);
 
     // set spaces from and to
-    doors.get(0).fromSpace = exterior;
-    doors.get(0).toSpace = parking;
-    doors.get(1).fromSpace = stairs;
-    doors.get(1).toSpace = parking;
-    doors.get(2).fromSpace = exterior;
-    doors.get(2).toSpace = hall;
-    doors.get(3).fromSpace = stairs;
-    doors.get(3).toSpace = hall;
-    doors.get(4).fromSpace = hall;
-    doors.get(4).toSpace = room1;
-    doors.get(5).fromSpace = hall;
-    doors.get(5).toSpace = room2;
-    doors.get(6).fromSpace = stairs;
-    doors.get(6).toSpace = corridor;
-    doors.get(7).fromSpace = corridor;
-    doors.get(7).toSpace = room3;
-    doors.get(8).fromSpace = corridor;
-    doors.get(8).toSpace = it;
+    doors.get(0).setFromSpace(exterior);
+    doors.get(0).setToSpace(parking);
+    doors.get(1).setFromSpace(stairs);
+    doors.get(1).setToSpace(parking);
+    doors.get(2).setFromSpace(exterior);
+    doors.get(2).setToSpace(hall);
+    doors.get(3).setFromSpace(stairs);
+    doors.get(3).setToSpace(hall);
+    doors.get(4).setFromSpace(hall);
+    doors.get(4).setToSpace(room1);
+    doors.get(5).setFromSpace(hall);
+    doors.get(5).setToSpace(room2);
+    doors.get(6).setFromSpace(stairs);
+    doors.get(6).setToSpace(corridor);
+    doors.get(7).setFromSpace(corridor);
+    doors.get(7).setToSpace(room3);
+    doors.get(8).setFromSpace(corridor);
+    doors.get(8).setToSpace(it);
   }
 
   private static void makeDoors() {
@@ -117,6 +115,13 @@ public final class DirectoryAreas {
     Door d9 = new Door("D9"); // corridor, IT
 
     doors = new ArrayList<>(Arrays.asList(d1, d2, d3, d4, d5, d6, d7, d8, d9));
+  }
+
+  public static Area findAreaById(String areaId) {
+    VisitorFindAreaById visitorFindAreaById = new VisitorFindAreaById(areaId);
+    rootArea.acceptVisitor(visitorFindAreaById);
+
+    return visitorFindAreaById.getArea();
   }
 
   private static ArrayList<Door> findDoorsByIds(List<String> ids) {

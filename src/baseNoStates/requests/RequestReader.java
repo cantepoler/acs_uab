@@ -96,18 +96,18 @@ public class RequestReader implements Request {
       //TODO: get the who, where, when and what in order to decide, and if not
       // authorized add the reason(s)
       boolean canSend = user.canSendRequests(now);
-      boolean canBeFrom = user.canBeInSpace(door.fromSpace);
-      boolean canBeTo = user.canBeInSpace(door.toSpace);
+      boolean canBeFrom = user.canBeInSpace(door.getFromSpace());
+      boolean canBeTo = user.canBeInSpace(door.getToSpace());
       boolean canDo = user.canDoAction(action);
 
       if (!canSend){
         addReason("user can't send requests now");
       }
       if (!canBeFrom){
-        addReason("user can't be in the space: " + door.fromSpace.getId());
+        addReason("user can't be in the space: " + door.getFromSpace().getId());
       }
       if (!canBeTo){
-        addReason("user can't be in the space: " + door.toSpace.getId());
+        addReason("user can't be in the space: " + door.getToSpace().getId());
       }
       if (!canDo){
         addReason("user can't do action: " + action);
