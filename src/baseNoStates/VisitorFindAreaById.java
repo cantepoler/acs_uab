@@ -2,7 +2,8 @@ package baseNoStates;
 
 public class VisitorFindAreaById implements Visitor {
   private Area area = null;
-  private String searchedId;
+  private final String searchedId;
+
   public VisitorFindAreaById(String searchedId) {
     this.searchedId = searchedId;
   }

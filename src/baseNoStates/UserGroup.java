@@ -2,13 +2,12 @@ package baseNoStates;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Set;
 
 public class UserGroup {
   // This class defines a group of users and their access rights. The access rights
   // are what, when and where they can interact with the acs system.
 
-  private String name;
+  private final String name;
   public ArrayList<User> users = new ArrayList<>();
   private final ArrayList<String> allowedActions;
   private final ArrayList<String> allowedAreas;

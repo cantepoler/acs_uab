@@ -1,8 +1,12 @@
 package baseNoStates;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public abstract class DoorState {
   // This class executes all the actions that involve the door state. It doesn't control the states,
   // it only implements them.
+  protected final Logger logger = LoggerFactory.getLogger(DoorState.class);
   protected Door door;
   protected String name;
 

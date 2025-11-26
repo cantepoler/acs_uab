@@ -9,32 +9,42 @@ public class Unlocked extends DoorState {
 
   @Override
   public void open() {
-    this.door.setClosed(false);
+    if (door.isClosed()) {
+      this.door.setClosed(false);
+      logger.info("Door {} opened", door.getId());
+    } else {
+      logger.error("Can't Open, door {} is already opened", door.getId());
+    }
   }
 
   @Override
   public void close() {
-    this.door.setClosed(true);
+    if (this.door.isClosed()) {
+      logger.error("Door {} already closed", door.getId());
+    } else {
+      this.door.setClosed(true);
+      logger.info("Closed door {}", door.getId());
+    }
   }
 
   @Override
   public void unlock() {
-    System.out.println("Can't unlock door " + door.getId() + " because it's already unlocked");
+    logger.error("Can't unlock door {} because it's already unlocked",   door.getId());
   }
 
   @Override
   public void lock() {
     if (door.isClosed()) {
+      logger.info("Locked door {}", door.getId());
       this.door.setState(new Locked(this.door));
     } else {
-      System.out.println("Door is not closed");
+      logger.error("Can't lock door {} because it's not closed", door.getId());
     }
   }
 
   @Override
   public void unlockShortly() {
-    System.out.println("Can't unlock shortly door " + door.getId()
-                       + " because it's already unlocked");
+    logger.error("Can't unlock shortly door {} because it's already unlocked", door.getId());
   }
 
   @Override

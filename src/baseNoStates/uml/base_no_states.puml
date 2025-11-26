@@ -10,7 +10,7 @@ class Webserver {
 }
 
 class SocketThread {
-- insocked : Socked
+- inSocked : Socked
 - makeRequest(tokens : String[]) : Request
 - makeRequestReader(tokens : String[]) : RequestReader
 - makeRequestArea(tokens : String[]) : RequestArea
@@ -169,7 +169,7 @@ class Clock extends Observable {
 - period : int
 - date : LocalDateTime
 - timer : Timer
-{static}- clockInstance : Clockd
+{static}- clockInstance : Clock
 {static}+ getClockInstance() : Clock
 + start()
 }

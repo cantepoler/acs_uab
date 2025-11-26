@@ -3,9 +3,9 @@ package baseNoStates;
 import java.util.ArrayList;
 
 public abstract class Area {
-  protected String id;
-  protected String name;
-  protected Area parent;
+  protected final String id;
+  protected final String name;
+  protected final Area parent;
 
   public Area(String id, String name, Area parent) {
     this.id = id;

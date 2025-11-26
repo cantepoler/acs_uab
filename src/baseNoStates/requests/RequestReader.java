@@ -76,7 +76,8 @@ public class RequestReader implements Request {
   // if authorized, perform the action.
   public void process() {
     User user = DirectoryUserGroups.findUserByCredential(credential);
-    Door door = DirectoryAreas.findDoorById(doorId);
+    DirectoryAreas directoryAreas = DirectoryAreas.getDirectoryAreas();
+    Door door = directoryAreas.findDoorById(doorId);
     assert door != null : "door " + doorId + " not found";
     authorize(user, door);
     // this sets the boolean authorize attribute of the request

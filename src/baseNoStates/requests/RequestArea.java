@@ -1,6 +1,5 @@
 package baseNoStates.requests;
 
-import baseNoStates.Actions;
 import baseNoStates.*;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -46,7 +45,7 @@ public class RequestArea implements Request {
   @Override
   public String toString() {
     String requestsDoorsStr;
-    if (requests.size() == 0) {
+    if (requests.isEmpty()) {
       requestsDoorsStr = "";
     } else {
       requestsDoorsStr = requests.toString();

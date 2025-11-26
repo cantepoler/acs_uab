@@ -2,9 +2,11 @@ package baseNoStates;
 
 import baseNoStates.requests.RequestReader;
 import org.json.JSONObject;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class Door {
+  private final Logger logger = LoggerFactory.getLogger(this.getClass());
   private final String id;
   private boolean closed; // physically
   private DoorState currentState;
@@ -12,12 +14,9 @@ public class Door {
   private Space toSpace;
   private boolean propped = false;
 
-  // public Door(String id, Space fromSpace, Space toSpace) {
   public Door(String id) {
     this.id = id;
     closed = true;
-    this.fromSpace = fromSpace;
-    this.toSpace = toSpace;
     this.currentState = new Locked(this);
   }
 
@@ -28,7 +27,7 @@ public class Door {
       String action = request.getAction();
       doAction(action);
     } else {
-      System.out.println("not authorized");
+      logger.error("not authorized");
     }
     request.setDoorStateName(getStateName());
   }
@@ -89,7 +88,7 @@ public class Door {
         currentState.unlockShortly();
         break;
       default:
-        System.out.println("Unrecognized or unimplemented action: " + action);
+        logger.error("Unrecognized or unimplemented action: {}", action);
     }
   }
 

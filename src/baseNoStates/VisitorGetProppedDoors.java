@@ -3,7 +3,7 @@ package baseNoStates;
 import java.util.ArrayList;
 
 public class VisitorGetProppedDoors implements Visitor {
-  private ArrayList<Door> proppedDoors = new ArrayList<>();
+  private final ArrayList<Door> proppedDoors = new ArrayList<>();
   public VisitorGetProppedDoors() {}
   public void visitSpace(Space space) {
     if (space.getDoors() != null) {

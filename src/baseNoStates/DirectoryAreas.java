@@ -18,7 +18,7 @@ public final class DirectoryAreas {
     return directoryAreas;
   }
 
-  public static void makeAreas() {
+  public void makeAreas() {
     // create partitions
     Partition building = new Partition("building", "Building", null);
     Partition basement = new Partition("basement", "Basement", building);
@@ -68,7 +68,7 @@ public final class DirectoryAreas {
     floor_1.setAreas(floor1Spaces);
 
 
-    // buiding parent
+    // building parent
     Space stairs = new Space("stairs", "Stairs", building);
     Space exterior = new Space("exterior", "Exterior", building);
 
@@ -98,7 +98,7 @@ public final class DirectoryAreas {
     doors.get(8).setToSpace(it);
   }
 
-  private static void makeDoors() {
+  private void makeDoors() {
     // basement
     Door d1 = new Door("D1"); // exterior, parking
     Door d2 = new Door("D2"); // stairs, parking
@@ -117,14 +117,14 @@ public final class DirectoryAreas {
     doors = new ArrayList<>(Arrays.asList(d1, d2, d3, d4, d5, d6, d7, d8, d9));
   }
 
-  public static Area findAreaById(String areaId) {
+  public Area findAreaById(String areaId) {
     VisitorFindAreaById visitorFindAreaById = new VisitorFindAreaById(areaId);
     rootArea.acceptVisitor(visitorFindAreaById);
 
     return visitorFindAreaById.getArea();
   }
 
-  private static ArrayList<Door> findDoorsByIds(List<String> ids) {
+  private ArrayList<Door> findDoorsByIds(List<String> ids) {
     ArrayList<Door> doors = new ArrayList<>();
     for (String id : ids) {
       Door door = findDoorById(id);
@@ -135,7 +135,7 @@ public final class DirectoryAreas {
     return doors;
   }
 
-  public static Door findDoorById(String id) {
+  public Door findDoorById(String id) {
     for (Door door : doors) {
       if (door.getId().equals(id)) {
         return door;
@@ -144,11 +144,11 @@ public final class DirectoryAreas {
     return null;
   }
 
-  public static ArrayList<Door> getAllDoors() {
+  public ArrayList<Door> getAllDoors() {
     return doors;
   }
 
-  public static Area getRootArea() {
+  public Area getRootArea() {
     return rootArea;
   }
 }

@@ -9,26 +9,28 @@ public class Locked extends DoorState {
 
   @Override
   public void open() {
-    System.out.println("Can't open door " + door.getId() + " because it's locked");
+    logger.error("Can't open door {} because it's locked", door.getId());
   }
 
   @Override
   public void close() {
-    System.out.println("Can't close door " + door.getId() + " because it's already closed");
+    logger.error("Can't close door {} because it's already closed", door.getId());
   }
 
   @Override
   public void unlock() {
+    logger.info("Door {} is Unlocked", door.getId());
     this.door.setState(new Unlocked(this.door));
   }
 
   @Override
   public void lock() {
-    System.out.println("Can't lock door " + door.getId() + " because it's already locked");
+    logger.error("Can't lock door {} because it's already locked", door.getId());
   }
 
   @Override
   public void unlockShortly() {
+    logger.info("Door {} is Unlocked Shortly", door.getId());
     this.door.setState(new UnlockedShortly(this.door));
   }
 

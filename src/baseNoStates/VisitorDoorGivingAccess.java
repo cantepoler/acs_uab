@@ -3,7 +3,7 @@ package baseNoStates;
 import java.util.ArrayList;
 
 public class VisitorDoorGivingAccess implements Visitor {
-  private ArrayList<Door> doorsGivingAccess =  null;
+  private final ArrayList<Door> doorsGivingAccess;
   public VisitorDoorGivingAccess() {
     doorsGivingAccess = new ArrayList<>();
   }

@@ -5,10 +5,12 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Arrays;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public final class DirectoryUserGroups {
   private static final ArrayList<UserGroup> userGroups = new ArrayList<>();
-
+  private static final Logger logger = LoggerFactory.getLogger(DirectoryUserGroups.class);
   public static void makeUsers() {
 
     // users without any privilege, just to keep temporally users instead of deleting them,
@@ -100,7 +102,7 @@ public final class DirectoryUserGroups {
         return user;
       }
     }
-    System.out.println("user with credential " + credential + " not found");
+    logger.error("user with credential {} not found", credential);
     return null; // otherwise we get a Java error
   }
 
