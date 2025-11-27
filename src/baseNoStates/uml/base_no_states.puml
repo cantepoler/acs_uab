@@ -4,12 +4,14 @@ skinparam classAttributeIconSize 0
 !pragma layout smetana
 
 class Webserver {
+- logger : Logger
 - {static} PORT :int
 - {static} FORMATTER : DateTimeFormatter
 + Webserver()
 }
 
 class SocketThread {
+- logger : Logger
 - inSocked : Socked
 - makeRequest(tokens : String[]) : Request
 - makeRequestReader(tokens : String[]) : RequestReader
@@ -28,6 +30,7 @@ end note
 
 class DirectoryAreas
 {
+- logger : Logger
 {static}- rootArea: Area
 {static}- allDoors: Door[]
 {static}- directoryAreas: DirectoryAreas
@@ -43,6 +46,7 @@ class DirectoryAreas
 DirectoryAreas --> "*" Area : "rootArea"
 
 class Door {
+- logger : Logger
 - id : String
 - closed : boolean
 - currentState : DoorState
@@ -57,6 +61,7 @@ class Door {
 }
 
 class DirectoryUserGroups {
+- logger : Logger
 {static}- userGroups : UserGroup[]
 {static}+ makeUserGroups()
 {static}+ findUserByCredential(credential : String) : User
@@ -66,6 +71,7 @@ DirectoryUserGroups o--> "1..*" UserGroup : "userGroups"
 UserGroup "1 userGroup"*-->"users*" User
 
 class UserGroup {
+- logger : Logger
 - name : String
 - users : User[]
 - allowedActions : String[]
@@ -110,6 +116,7 @@ class Main {
 }
 
 abstract DoorState{
+# logger : Logger
 # door : Door
 # name : String
 {abstract}+ open()
@@ -156,6 +163,7 @@ class Partition extends Area{
 }
 
 class Clock{
+- logger : Logger
 - period : int
 - date : LocalDateTime
 - timer : Timer
@@ -170,17 +178,20 @@ interface Visitor {
 }
 
 class VisitorAnotherComputation implements Visitor {
+- logger : Logger
 + visitSpace(space : Space)
 + visitPartition(partition : Partition)
 }
 
 class VisitorDoorGivingAccess implements Visitor {
+- logger : Logger
 - doorsGivingAccess : Door[]
 + visitSpace(space : Space)
 + visitPartition(partition : Partition)
 }
 
 class VisitorFindAreaById implements Visitor {
+- logger : Logger
 - area : Area
 - searchedId : String
 + visitSpace(space : Space)
@@ -189,6 +200,7 @@ class VisitorFindAreaById implements Visitor {
 }
 
 class VisitorGetProppedDoors implements Visitor {
+- logger : Logger
 - proppedDoors : Door[]
 + visitSpace(space : Space)
 + visitPartition(partition : Partition)
