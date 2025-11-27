@@ -1,20 +1,28 @@
 package baseNoStates;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public final class DirectoryAreas {
+  private static final Logger LOGGER =
+    LoggerFactory.getLogger(DirectoryAreas.class);
   private static Area rootArea;
   private static ArrayList<Door> doors;
   private static DirectoryAreas directoryAreas = null;
 
-  private DirectoryAreas() {}
+  private DirectoryAreas() {
+    LOGGER.info("DirectoryAreas creat");
+  }
 
   public static DirectoryAreas getDirectoryAreas() {
     if (directoryAreas == null) {
       directoryAreas = new DirectoryAreas();
     }
+    LOGGER.info("DirectoryAreas cridat");
     return directoryAreas;
   }
 

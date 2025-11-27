@@ -1,16 +1,21 @@
 package baseNoStates;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.time.LocalDateTime;
 import java.util.Observable;
 import java.util.Timer;
 import java.util.TimerTask;
 
 public class Clock extends Observable {
+  private static final Logger LOGGER = LoggerFactory.getLogger(Clock.class);
   private LocalDateTime date;
   private final Timer timer;
   private static  Clock clockInstance = null;
 
   private Clock() {
+    LOGGER.info("Rellotge creat");
     timer = new Timer();
   }
 
@@ -18,6 +23,7 @@ public class Clock extends Observable {
     if (clockInstance == null) {
       clockInstance = new Clock();
     }
+    LOGGER.info("Rellotge cridat");
     return clockInstance;
   }
 
