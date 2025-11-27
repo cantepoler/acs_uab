@@ -6,9 +6,10 @@ import java.time.temporal.ChronoUnit;
 import java.util.Observable;
 import java.util.Observer;
 
+// the unlockedShortly class is an observer, that when it is created it
+// starts checking the different time of tasks of the Clock class when it updates
+
 public class UnlockedShortly extends DoorState implements Observer {
-  // the unlockedShortly class is an observer, that when it is created it
-  // starts checking the different time of tasks of the Clock class when it updates
   private static final Clock CLOCK = Clock.getClockInstance();
   private static final long MAX_PERIOD = 10;
   private LocalDateTime startingTime;

@@ -2,6 +2,16 @@ package baseNoStates;
 
 import java.util.ArrayList;
 
+
+// The abstract base class for everything in the building structure (rooms, floors, etc.).
+//
+// This is the Component in the Composite Design Pattern. It lets us treat a single room (Space)
+// and a whole floor (Partition) in the same way.
+//
+// It also implements the Visitor Pattern. We use this so we can
+// run operations like searching for an ID or listing info across the whole building structure
+// without changing the code inside the Area classes.
+
 public abstract class Area {
   protected final String id;
   protected final String name;

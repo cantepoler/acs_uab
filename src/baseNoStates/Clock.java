@@ -8,6 +8,16 @@ import java.util.Observable;
 import java.util.Timer;
 import java.util.TimerTask;
 
+// This class handles the system time simulation.
+//
+// It uses the Singleton pattern because we only want one central clock for the whole application.
+// It also acts as the Observable in the Observer Pattern. The class runs a
+// TimerTask that updates every second. The 'UnlockedShortly' state observes this clock
+// to count down the time, so the door knows when to lock itself automatically without
+// having to constantly check the time manually.
+
+
+
 public class Clock extends Observable {
   private static final Logger LOGGER = LoggerFactory.getLogger(Clock.class);
   private LocalDateTime date;

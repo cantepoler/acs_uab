@@ -1,5 +1,8 @@
 package baseNoStates;
 
+// The purpose of this class is to eliminate "magic strings", ensuring consistency
+// between the different class structure.
+
 public final class Actions {
   // possible actions in reader and area requests
   public static final String LOCK = "lock";

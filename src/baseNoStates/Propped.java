@@ -1,5 +1,15 @@
 package baseNoStates;
 
+// Represents a state where the door has been physically held open
+// and will not close automatically.
+//
+// As a Concrete State in the State Design Pattern, this class overrides standard behavior to
+// block most operations (like locking or unlocking) because the physical reality of the door
+// prevents them. This state is distinct from "Unlocked" because it implies
+// a breach of normal protocol that usually requires a specific manual intervention (closing)
+// to reset the cycle back to a Locked state.
+
+
 public class Propped extends DoorState {
   public Propped(Door door) {
     super(door);

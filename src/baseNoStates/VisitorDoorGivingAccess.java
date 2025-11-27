@@ -5,6 +5,12 @@ import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 
+// A concrete Visitor that finds which doors belong to a specific space.
+//
+// Its job is to walk through the building structure
+// and collect all the doors that connect to the space we are interested in.
+// We use the Visitor pattern here to separate this search logic from the Space class.
+
 public class VisitorDoorGivingAccess implements Visitor {
   private final Logger logger =  LoggerFactory.getLogger(VisitorDoorGivingAccess.class);
   private final ArrayList<Door> doorsGivingAccess;

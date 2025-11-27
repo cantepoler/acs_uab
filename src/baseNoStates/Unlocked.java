@@ -1,5 +1,11 @@
 package baseNoStates;
 
+// Represents the standard "Unlocked" state of a door.
+//
+// This is a Concrete State in the State Pattern. When the door is here, it allows
+// "open" and "close" actions freely. It enforces logic like preventing the door from
+// being locked if it is currently open (you have to close it first).
+
 public class Unlocked extends DoorState {
 
   public Unlocked(Door door) {

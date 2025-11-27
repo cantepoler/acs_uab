@@ -6,9 +6,10 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.ArrayList;
 
+// This class is meant to define the schedule when a userGroup is allowed to do actions,
+// also, it is used to make sure if a certain LocalDateTime is inside it.
+
 public class Schedule {
-  // This class is meant to define the schedule when a userGroup is allowed to do actions,
-  // also, it is used to make sure if a certain LocalDateTime is inside it.
   private final ArrayList<DayOfWeek> weekDays;
   private final LocalTime startTime;
   private final LocalTime endTime;

@@ -3,6 +3,13 @@ package baseNoStates;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+
+// A concrete Visitor acting as a search engine for the building.
+//
+// This visitor traverses the whole tree, checking
+// every Partition and Space until it finds the one with the matching ID.
+
+
 public class VisitorFindAreaById implements Visitor {
   private final Logger logger =  LoggerFactory.getLogger(VisitorFindAreaById.class);
   private Area area = null;

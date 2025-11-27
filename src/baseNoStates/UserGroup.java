@@ -5,9 +5,10 @@ import org.slf4j.Logger;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
+// This class defines a group of users and their access rights. The access rights
+// are what, when and where they can interact with the acs system.
+
 public class UserGroup {
-  // This class defines a group of users and their access rights. The access rights
-  // are what, when and where they can interact with the acs system.
   private final Logger logger = LoggerFactory.getLogger(UserGroup.class);
   private final String name;
   public ArrayList<User> users = new ArrayList<>();

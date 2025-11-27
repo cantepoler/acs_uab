@@ -5,6 +5,15 @@ import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+// Represents a physical door and acts as the Context in the
+// State Pattern.
+//
+// Instead of using complex if-else/switch to determine how the
+// door should react to requests based on its current status,
+// this class delegates behavior to a 'currentState' object. This allows the door's
+// behavior to change dynamically at runtime without modifying the Door class itself.
+// This class also serves as the structural link between two Spaces (fromSpace/toSpace).
+
 public class Door {
   private final Logger logger = LoggerFactory.getLogger(this.getClass());
   private final String id;

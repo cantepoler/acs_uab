@@ -2,6 +2,14 @@ package baseNoStates;
 
 import java.time.LocalDateTime;
 
+
+// Represents a real person in the system.
+//
+// It's a simple class that holds personal information. The important design
+// decision here is that the User doesn't decide anything themselves; they delegate
+// all permission checks (canBeInSpace, canDoAction) to their assigned 'UserGroup'.
+
+
 public class User {
   private final String name;
   private final String credential;

@@ -7,6 +7,14 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+// This class is responsible for building the map of the building.
+//
+// It is a Singleton. Its main job is to create the object tree for the Composite Pattern
+// and linking the Doors between them. It also provides methods to find specific
+// areas or doors by ID so we don't have to traverse the tree
+// manually every time we need something.
+
+
 public final class DirectoryAreas {
   private static final Logger LOGGER =
     LoggerFactory.getLogger(DirectoryAreas.class);

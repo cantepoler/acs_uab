@@ -2,6 +2,14 @@ package baseNoStates;
 
 import java.util.ArrayList;
 
+
+// Represents a container area, like a Floor or a Building, that holds other areas inside it.
+//
+// This is the Composite part of the Composite Design Pattern. It keeps a list of children
+// (which can be Spaces or other Partitions). When a Visitor visits this partition,
+// this class passes the visitor down to all its children, allowing us to go through the
+// whole building recursively.
+
 public class Partition extends Area {
   private ArrayList<Area> areas;
 

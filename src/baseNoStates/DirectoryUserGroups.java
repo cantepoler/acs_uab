@@ -8,6 +8,10 @@ import java.util.Arrays;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+// This class manually creates all the Users, Groups, and Schedules and keeps them in a list.
+// Since we don't have a real database, we use this to load the initial data and to
+// find users by their credentials when they try to access a door.
+
 public final class DirectoryUserGroups {
   private static final ArrayList<UserGroup> userGroups = new ArrayList<>();
   private static final Logger LOGGER = LoggerFactory.getLogger(DirectoryUserGroups.class);
