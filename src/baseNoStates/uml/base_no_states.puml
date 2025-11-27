@@ -126,11 +126,7 @@ class Locked extends DoorState{
 class Unlocked extends DoorState{
 }
 
-interface Observer{
-{abstract}+ update(o: Observable, arg: Object)
-}
-
-class UnlockedShortly extends DoorState implements Observer{
+class UnlockedShortly extends DoorState{
 {static}- CLOCK
 - MAX_PERIOD : int
 - startingTime : LocalDateTime
@@ -146,26 +142,20 @@ abstract Area{
 #name : String
 #parent: Area
 + getId() : String
-{abstract}+ getSpaces() : Space[]
-{abstract}+ getDoorsGivingAccess() : Door[]
-{abstract}+ findAreaById(id : String) : Area
+{abstract}+ acceptVisitor(visitor : Visitor);
 }
 
 class Space extends Area{
 - doors : Door[]
++ acceptVisitor(visitor : Visitor);
 }
 
 class Partition extends Area{
 - areas : Area[]
++ acceptVisitor(visitor : Visitor);
 }
 
-abstract Observable {
-+ addObserver(o: Observer)
-+ deleteObserver(o: Observer)
-+ notifyObservers()
-}
-
-class Clock extends Observable {
+class Clock{
 - period : int
 - date : LocalDateTime
 - timer : Timer
@@ -217,5 +207,32 @@ Door -->"1" DoorState : currentState
 Partition *-->"*" Area : areas
 Space -->"*" Door : doors
 
+package Java.util {
+abstract Observable {
++ addObserver(o: Observer)
++ deleteObserver(o: Observer)
++ notifyObservers()
+}
+interface Observer{
+{abstract}+ update(o: Observable, arg: Object)
+}
+
+Observable <|-- Clock
+Observer <|.. UnlockedShortly
+}
+
+package org.slf4j {
+    class Logger {
+    + error (msg : String)
+    + info (msg : String)
+    + debug (msg : String)
+    }
+    class LoggerFactory {
+    + getLogger(object : Object)
+    }
+}
+
 User -[hidden]down- Visitor
+Area -[hidden]left- Visitor
+SocketThread -[hidden]up- VisitorGetProppedDoors
 @enduml

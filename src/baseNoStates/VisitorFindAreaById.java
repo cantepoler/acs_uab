@@ -1,6 +1,10 @@
 package baseNoStates;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class VisitorFindAreaById implements Visitor {
+  private final Logger logger =  LoggerFactory.getLogger(VisitorFindAreaById.class);
   private Area area = null;
   private final String searchedId;
 
@@ -8,11 +12,13 @@ public class VisitorFindAreaById implements Visitor {
     this.searchedId = searchedId;
   }
   public void visitSpace(Space space) {
+    logger.info("VisitorFindAreaById visit space: {}", space.getName());
     if (space != null && space.getId().equals(searchedId)) {
       this.area = space;
     }
   }
   public void visitPartition(Partition partition) {
+    logger.info("VisitorFindAreaById visit partition: {}", partition.getName());
     if (partition != null && partition.getId().equals(searchedId)) {
       this.area = partition;
     } else  {

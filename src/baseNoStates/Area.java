@@ -20,4 +20,8 @@ public abstract class Area {
   public abstract ArrayList<Space> getSpaces();
 
   public abstract void acceptVisitor(Visitor visitor);
+
+  public String getName() {
+    return name;
+  }
 }
