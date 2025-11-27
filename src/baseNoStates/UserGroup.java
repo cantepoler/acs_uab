@@ -1,12 +1,14 @@
 package baseNoStates;
 
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class UserGroup {
   // This class defines a group of users and their access rights. The access rights
   // are what, when and where they can interact with the acs system.
-
+  private final Logger logger = LoggerFactory.getLogger(UserGroup.class);
   private final String name;
   public ArrayList<User> users = new ArrayList<>();
   private final ArrayList<String> allowedActions;
@@ -31,6 +33,7 @@ public class UserGroup {
     if (this.schedule != null) {
       return schedule.isAllowedAt(dateTime);
     }
+    logger.error("User {} can't send requests", this.name);
     return false;
   }
 
@@ -55,22 +58,27 @@ public class UserGroup {
         }
       }
     }
+    logger.error("Space {} not found", space.getName());
     return false;
   }
 
   public boolean canDoAction(String action) {
     if (this.allowedActions != null) {
+      logger.info("Doing action {}", action);
       return allowedActions.contains(action);
     }
+    logger.error("Action {} not allowed", action);
     return false;
   }
 
   public User findUserByCredential(String credential) {
     for (User user : users) {
       if (user.getCredential().equals(credential)) {
+        logger.info("User {} found", this.name);
         return user;
       }
     }
+    logger.error("Can't find user {}", this.name);
     return null;
   }
 }

@@ -22,33 +22,44 @@ public class UnlockedShortly extends DoorState implements Observer {
 
   @Override
   public void open() {
-    this.door.setClosed(false);
+      if (door.isClosed()) {
+          this.door.setClosed(false);
+          logger.info("Door {} opened in Unlocked Shortly", door.getId());
+      } else {
+          logger.error("Can't Open, door {} is already opened", door.getId());
+      }
   }
 
   @Override
   public void close() {
-    this.door.setClosed(true);
+      if (this.door.isClosed()) {
+          logger.error("Door {} already closed", door.getId());
+      } else {
+          this.door.setClosed(true);
+          logger.info("Closed door {} in Unlocked Shortly", door.getId());
+      }
   }
 
   @Override
   public void unlock() {
-    System.out.println("Can't unlock door " + door.getId() + " because it's already unlocked");
+    logger.error("Can't unlock door {} while in Unlocked Shortly", door.getId());
   }
 
   @Override
   public void lock() {
     this.door.setState(new Locked(this.door));
+    logger.info("Door {} is Locked", door.getId());
   }
 
   @Override
   public void unlockShortly() {
-    System.out.println("Can't unlock shortly door " + door.getId()
-            + " because it's already unlocked");
+    logger.error("Can't Unlock Shortly while door {} already Unlocked Shortly", door.getId());
   }
 
   @Override
   public void prop() {
     this.door.setState(new Propped(this.door));
+    logger.info("Door {} is Propped", door.getId());
   }
 
   // First gets the time in which it has been added to the observer list,
@@ -81,6 +92,7 @@ public class UnlockedShortly extends DoorState implements Observer {
     Duration elapsed = Duration.between(startingTime, time);
     if (checkIsTimeCompleted(elapsed)) {
       complete = true;
+      logger.info("Timer is completed");
     }
     return complete;
   }
