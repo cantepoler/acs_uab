@@ -1,10 +1,8 @@
 package baseNoStates.requests;
 
 import baseNoStates.*;
-
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -94,23 +92,21 @@ public class RequestReader implements Request {
       authorized = false;
       addReason("user doesn't exists");
     } else {
-      //TODO: get the who, where, when and what in order to decide, and if not
-      // authorized add the reason(s)
       boolean canSend = user.canSendRequests(now);
       boolean canBeFrom = user.canBeInSpace(door.getFromSpace());
       boolean canBeTo = user.canBeInSpace(door.getToSpace());
       boolean canDo = user.canDoAction(action);
 
-      if (!canSend){
+      if (!canSend) {
         addReason("user can't send requests now");
       }
-      if (!canBeFrom){
+      if (!canBeFrom) {
         addReason("user can't be in the space: " + door.getFromSpace().getId());
       }
-      if (!canBeTo){
+      if (!canBeTo) {
         addReason("user can't be in the space: " + door.getToSpace().getId());
       }
-      if (!canDo){
+      if (!canDo) {
         addReason("user can't do action: " + action);
       }
 

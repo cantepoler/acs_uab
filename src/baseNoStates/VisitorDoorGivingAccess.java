@@ -1,9 +1,8 @@
 package baseNoStates;
 
+import java.util.ArrayList;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.util.ArrayList;
 
 // A concrete Visitor that finds which doors belong to a specific space.
 //
@@ -14,9 +13,11 @@ import java.util.ArrayList;
 public class VisitorDoorGivingAccess implements Visitor {
   private final Logger logger =  LoggerFactory.getLogger(VisitorDoorGivingAccess.class);
   private final ArrayList<Door> doorsGivingAccess;
+
   public VisitorDoorGivingAccess() {
     doorsGivingAccess = new ArrayList<>();
   }
+
   public void visitSpace(Space space) {
     logger.info("VisitorDoorGivingAccess visiting space {}", space.getName());
     if (space.getDoors() != null) {
@@ -27,6 +28,7 @@ public class VisitorDoorGivingAccess implements Visitor {
       }
     }
   }
+
   public void visitPartition(Partition partition) {
     logger.info("VisitorDoorGivingAccess visiting partition {}", partition.getName());
     for (Area area : partition.getAreas()) {

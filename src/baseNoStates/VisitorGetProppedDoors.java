@@ -10,7 +10,9 @@ import java.util.ArrayList;
 
 public class VisitorGetProppedDoors implements Visitor {
   private final ArrayList<Door> proppedDoors = new ArrayList<>();
+
   public VisitorGetProppedDoors() {}
+
   public void visitSpace(Space space) {
     if (space.getDoors() != null) {
       for (Door door : space.getDoors()) {
@@ -20,6 +22,7 @@ public class VisitorGetProppedDoors implements Visitor {
       }
     }
   }
+
   public void visitPartition(Partition partition) {
     for (Area area : partition.getAreas()) {
       area.acceptVisitor(this);

@@ -18,12 +18,14 @@ public class VisitorFindAreaById implements Visitor {
   public VisitorFindAreaById(String searchedId) {
     this.searchedId = searchedId;
   }
+
   public void visitSpace(Space space) {
     logger.info("VisitorFindAreaById visit space: {}", space.getName());
     if (space != null && space.getId().equals(searchedId)) {
       this.area = space;
     }
   }
+
   public void visitPartition(Partition partition) {
     logger.info("VisitorFindAreaById visit partition: {}", partition.getName());
     if (partition != null && partition.getId().equals(searchedId)) {

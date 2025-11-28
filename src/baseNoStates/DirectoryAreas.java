@@ -1,11 +1,10 @@
 package baseNoStates;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 // This class is responsible for building the map of the building.
 //
@@ -16,8 +15,7 @@ import java.util.List;
 
 
 public final class DirectoryAreas {
-  private static final Logger LOGGER =
-    LoggerFactory.getLogger(DirectoryAreas.class);
+  private static final Logger LOGGER = LoggerFactory.getLogger(DirectoryAreas.class);
   private static Area rootArea;
   private static ArrayList<Door> doors;
   private static DirectoryAreas directoryAreas = null;
@@ -38,8 +36,8 @@ public final class DirectoryAreas {
     // create partitions
     Partition building = new Partition("building", "Building", null);
     Partition basement = new Partition("basement", "Basement", building);
-    Partition ground_floor = new Partition("ground_floor", "Ground floor", building);
-    Partition floor_1 = new Partition("floor1", "Floor 1", building);
+    Partition groundFloor = new Partition("ground_floor", "Ground floor", building);
+    Partition floor1 = new Partition("floor1", "Floor 1", building);
 
     // set rootArea
     rootArea = building;
@@ -66,22 +64,22 @@ public final class DirectoryAreas {
 
     // ground_floor parent
     // hall = A8
-    Space hall = new Space("hall", "Floor", hallDoors, ground_floor);
-    Space room1 = new Space("room1", "Room", room1Doors, ground_floor);
-    Space room2 = new Space("room2", "Room", room2Doors, ground_floor);
+    Space hall = new Space("hall", "Floor", hallDoors, groundFloor);
+    Space room1 = new Space("room1", "Room", room1Doors, groundFloor);
+    Space room2 = new Space("room2", "Room", room2Doors, groundFloor);
 
     ArrayList<Area> groundFloorSpaces = new ArrayList<>(Arrays.asList(hall, room1, room2));
 
-    ground_floor.setAreas(groundFloorSpaces);
+    groundFloor.setAreas(groundFloorSpaces);
 
     // floor_1 parent
-    Space room3 = new Space("room3", "Room", room3Doors, floor_1);
-    Space corridor = new Space("corridor", "Corridor", corridorDoors, floor_1);
-    Space it = new Space("it", "It", itDoors, floor_1);
+    Space room3 = new Space("room3", "Room", room3Doors, floor1);
+    Space corridor = new Space("corridor", "Corridor", corridorDoors, floor1);
+    Space it = new Space("it", "It", itDoors, floor1);
 
     ArrayList<Area> floor1Spaces = new ArrayList<>(Arrays.asList(room3, corridor, it));
 
-    floor_1.setAreas(floor1Spaces);
+    floor1.setAreas(floor1Spaces);
 
 
     // building parent
@@ -89,7 +87,7 @@ public final class DirectoryAreas {
     Space exterior = new Space("exterior", "Exterior", building);
 
     ArrayList<Area> buildingSpaces = new ArrayList<>(Arrays.asList(
-        basement, ground_floor, floor_1, stairs, exterior
+        basement, groundFloor, floor1, stairs, exterior
     ));
     building.setAreas(buildingSpaces);
 

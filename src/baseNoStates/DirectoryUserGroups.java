@@ -15,6 +15,7 @@ import org.slf4j.LoggerFactory;
 public final class DirectoryUserGroups {
   private static final ArrayList<UserGroup> userGroups = new ArrayList<>();
   private static final Logger LOGGER = LoggerFactory.getLogger(DirectoryUserGroups.class);
+
   public static void makeUsers() {
 
     // users without any privilege, just to keep temporally users instead of deleting them,

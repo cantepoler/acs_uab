@@ -23,22 +23,22 @@ public class UnlockedShortly extends DoorState implements Observer {
 
   @Override
   public void open() {
-      if (door.isClosed()) {
-          this.door.setClosed(false);
-          logger.info("Door {} opened in Unlocked Shortly", door.getId());
-      } else {
-          logger.error("Can't Open, door {} is already opened", door.getId());
-      }
+    if (door.isClosed()) {
+      this.door.setClosed(false);
+      logger.info("Door {} opened in Unlocked Shortly", door.getId());
+    } else {
+      logger.error("Can't Open, door {} is already opened", door.getId());
+    }
   }
 
   @Override
   public void close() {
-      if (this.door.isClosed()) {
-          logger.error("Door {} already closed", door.getId());
-      } else {
-          this.door.setClosed(true);
-          logger.info("Closed door {} in Unlocked Shortly", door.getId());
-      }
+    if (this.door.isClosed()) {
+      logger.error("Door {} already closed", door.getId());
+    } else {
+      this.door.setClosed(true);
+      logger.info("Closed door {} in Unlocked Shortly", door.getId());
+    }
   }
 
   @Override
@@ -98,7 +98,8 @@ public class UnlockedShortly extends DoorState implements Observer {
     return complete;
   }
 
-  private boolean checkIsTimeCompleted (Duration elapsed) {
-    return startingTime.plus(elapsed).isAfter(startingTime.plus(Duration.of(MAX_PERIOD, ChronoUnit.SECONDS)));
+  private boolean checkIsTimeCompleted(Duration elapsed) {
+    return startingTime.plus(elapsed).isAfter(startingTime.plus(
+                        Duration.of(MAX_PERIOD, ChronoUnit.SECONDS)));
   }
 }
