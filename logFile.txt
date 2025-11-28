@@ -1,0 +1,242 @@
+11:03:04 [main] INFO  baseNoStates.DirectoryAreas - DirectoryAreas creat
+11:03:04 [main] INFO  baseNoStates.DirectoryAreas - DirectoryAreas cridat
+11:03:04 [main] INFO  baseNoStates.WebServer - Server started.
+Listening for connections on port : 8080 ...
+
+11:03:09 [Thread-0] INFO  baseNoStates.WebServer$SocketThread - socked thread : GET /refresh HTTP/1.1
+11:03:09 [Thread-0] INFO  baseNoStates.WebServer$SocketThread - Input GET /refresh HTTP/1.1
+11:03:09 [Thread-0] INFO  baseNoStates.WebServer$SocketThread - Method GET
+11:03:09 [Thread-0] INFO  baseNoStates.WebServer$SocketThread - Resource /refresh
+11:03:09 [Thread-0] INFO  baseNoStates.WebServer$SocketThread - 0 refresh
+11:03:09 [Thread-0] INFO  baseNoStates.WebServer$SocketThread - tokens : refresh, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null
+11:03:09 [Thread-0] INFO  baseNoStates.WebServer$SocketThread - created request refresh RequestRefresh{[]}
+11:03:09 [Thread-0] INFO  baseNoStates.DirectoryAreas - DirectoryAreas cridat
+11:03:09 [Thread-0] INFO  baseNoStates.WebServer$SocketThread - processed request refresh RequestRefresh{[{"closed":true,"id":"D1","state":"locked"}, {"closed":true,"id":"D2","state":"locked"}, {"closed":true,"id":"D3","state":"locked"}, {"closed":true,"id":"D4","state":"locked"}, {"closed":true,"id":"D5","state":"locked"}, {"closed":true,"id":"D6","state":"locked"}, {"closed":true,"id":"D7","state":"locked"}, {"closed":true,"id":"D8","state":"locked"}, {"closed":true,"id":"D9","state":"locked"}]}
+11:03:09 [Thread-0] INFO  baseNoStates.WebServer$SocketThread - answer HTTP/1.0 200 OK
+Content-type: application/json
+Access-Control-Allow-Origin: *
+
+{"doors":[{"closed":true,"id":"D1","state":"locked"},{"closed":true,"id":"D2","state":"locked"},{"closed":true,"id":"D3","state":"locked"},{"closed":true,"id":"D4","state":"locked"},{"closed":true,"id":"D5","state":"locked"},{"closed":true,"id":"D6","state":"locked"},{"closed":true,"id":"D7","state":"locked"},{"closed":true,"id":"D8","state":"locked"},{"closed":true,"id":"D9","state":"locked"}]}
+11:03:13 [Thread-1] INFO  baseNoStates.WebServer$SocketThread - socked thread : GET /area?credential=11343&action=lock&datetime=2025-11-28T09:30&areaId=ground_floor HTTP/1.1
+11:03:13 [Thread-1] INFO  baseNoStates.WebServer$SocketThread - Input GET /area?credential=11343&action=lock&datetime=2025-11-28T09:30&areaId=ground_floor HTTP/1.1
+11:03:13 [Thread-1] INFO  baseNoStates.WebServer$SocketThread - Method GET
+11:03:13 [Thread-1] INFO  baseNoStates.WebServer$SocketThread - Resource /area?credential=11343&action=lock&datetime=2025-11-28T09:30&areaId=ground_floor
+11:03:13 [Thread-1] INFO  baseNoStates.WebServer$SocketThread - 0 area
+11:03:13 [Thread-1] INFO  baseNoStates.WebServer$SocketThread - 1 credential
+11:03:13 [Thread-1] INFO  baseNoStates.WebServer$SocketThread - 2 11343
+11:03:13 [Thread-1] INFO  baseNoStates.WebServer$SocketThread - 3 action
+11:03:13 [Thread-1] INFO  baseNoStates.WebServer$SocketThread - 4 lock
+11:03:13 [Thread-1] INFO  baseNoStates.WebServer$SocketThread - 5 datetime
+11:03:13 [Thread-1] INFO  baseNoStates.WebServer$SocketThread - 6 2025-11-28T09:30
+11:03:13 [Thread-1] INFO  baseNoStates.WebServer$SocketThread - 7 areaId
+11:03:13 [Thread-1] INFO  baseNoStates.WebServer$SocketThread - 8 ground_floor
+11:03:13 [Thread-1] INFO  baseNoStates.WebServer$SocketThread - tokens : area, credential, 11343, action, lock, datetime, 2025-11-28T09:30, areaId, ground_floor, null, null, null, null, null, null, null, null, null, null, null
+11:03:13 [Thread-1] INFO  baseNoStates.WebServer$SocketThread - created request area Request{credential=11343, action=lock, now=2025-11-28T09:30, areaId=ground_floor, requestsDoors=}
+11:03:13 [Thread-1] INFO  baseNoStates.DirectoryAreas - DirectoryAreas cridat
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit partition: Building
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit partition: Basement
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Parking
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit partition: Ground floor
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit partition: Floor 1
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Room
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Corridor
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: It
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Stairs
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Exterior
+11:03:13 [Thread-1] INFO  b.VisitorDoorGivingAccess - VisitorDoorGivingAccess visiting partition Ground floor
+11:03:13 [Thread-1] INFO  b.VisitorDoorGivingAccess - VisitorDoorGivingAccess visiting space Floor
+11:03:13 [Thread-1] INFO  b.VisitorDoorGivingAccess - VisitorDoorGivingAccess visiting space Room
+11:03:13 [Thread-1] INFO  b.VisitorDoorGivingAccess - VisitorDoorGivingAccess visiting space Room
+11:03:13 [Thread-1] ERROR baseNoStates.UserGroup - Can't find user blank
+11:03:13 [Thread-1] ERROR baseNoStates.UserGroup - Can't find user employees
+11:03:13 [Thread-1] ERROR baseNoStates.UserGroup - Can't find user managers
+11:03:13 [Thread-1] INFO  baseNoStates.UserGroup - User admin found
+11:03:13 [Thread-1] INFO  baseNoStates.DirectoryAreas - DirectoryAreas cridat
+11:03:13 [Thread-1] INFO  baseNoStates.DirectoryAreas - DirectoryAreas cridat
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit partition: Building
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit partition: Basement
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Parking
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit partition: Ground floor
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit partition: Floor 1
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Room
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Corridor
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: It
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Stairs
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Exterior
+11:03:13 [Thread-1] INFO  baseNoStates.DirectoryAreas - DirectoryAreas cridat
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit partition: Building
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit partition: Basement
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Parking
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit partition: Ground floor
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Floor
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Room
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Room
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit partition: Floor 1
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Stairs
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Exterior
+11:03:13 [Thread-1] INFO  baseNoStates.DirectoryAreas - DirectoryAreas cridat
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit partition: Building
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit partition: Basement
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Parking
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit partition: Ground floor
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Floor
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Room
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Room
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit partition: Floor 1
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Room
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Corridor
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: It
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Stairs
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Exterior
+11:03:13 [Thread-1] INFO  baseNoStates.DirectoryAreas - DirectoryAreas cridat
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit partition: Building
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit partition: Basement
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Parking
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit partition: Ground floor
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit partition: Floor 1
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Room
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Corridor
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: It
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Stairs
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Exterior
+11:03:13 [Thread-1] INFO  baseNoStates.UserGroup - Doing action lock
+11:03:13 [Thread-1] ERROR baseNoStates.DoorState - Can't lock door D3 because it's already locked
+11:03:13 [Thread-1] ERROR baseNoStates.UserGroup - Can't find user blank
+11:03:13 [Thread-1] ERROR baseNoStates.UserGroup - Can't find user employees
+11:03:13 [Thread-1] ERROR baseNoStates.UserGroup - Can't find user managers
+11:03:13 [Thread-1] INFO  baseNoStates.UserGroup - User admin found
+11:03:13 [Thread-1] INFO  baseNoStates.DirectoryAreas - DirectoryAreas cridat
+11:03:13 [Thread-1] INFO  baseNoStates.DirectoryAreas - DirectoryAreas cridat
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit partition: Building
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit partition: Basement
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Parking
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit partition: Ground floor
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit partition: Floor 1
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Room
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Corridor
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: It
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Stairs
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Exterior
+11:03:13 [Thread-1] INFO  baseNoStates.DirectoryAreas - DirectoryAreas cridat
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit partition: Building
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit partition: Basement
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Parking
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit partition: Ground floor
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Floor
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Room
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Room
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit partition: Floor 1
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Stairs
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Exterior
+11:03:13 [Thread-1] INFO  baseNoStates.DirectoryAreas - DirectoryAreas cridat
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit partition: Building
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit partition: Basement
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Parking
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit partition: Ground floor
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Floor
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Room
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Room
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit partition: Floor 1
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Room
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Corridor
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: It
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Stairs
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Exterior
+11:03:13 [Thread-1] INFO  baseNoStates.DirectoryAreas - DirectoryAreas cridat
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit partition: Building
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit partition: Basement
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Parking
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit partition: Ground floor
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Floor
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Room
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Room
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit partition: Floor 1
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Room
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Corridor
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: It
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Stairs
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Exterior
+11:03:13 [Thread-1] INFO  baseNoStates.DirectoryAreas - DirectoryAreas cridat
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit partition: Building
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit partition: Basement
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Parking
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit partition: Ground floor
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit partition: Floor 1
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Room
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Corridor
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: It
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Stairs
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Exterior
+11:03:13 [Thread-1] INFO  baseNoStates.UserGroup - Doing action lock
+11:03:13 [Thread-1] ERROR baseNoStates.DoorState - Can't lock door D4 because it's already locked
+11:03:13 [Thread-1] ERROR baseNoStates.UserGroup - Can't find user blank
+11:03:13 [Thread-1] ERROR baseNoStates.UserGroup - Can't find user employees
+11:03:13 [Thread-1] ERROR baseNoStates.UserGroup - Can't find user managers
+11:03:13 [Thread-1] INFO  baseNoStates.UserGroup - User admin found
+11:03:13 [Thread-1] INFO  baseNoStates.DirectoryAreas - DirectoryAreas cridat
+11:03:13 [Thread-1] INFO  baseNoStates.DirectoryAreas - DirectoryAreas cridat
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit partition: Building
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit partition: Basement
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Parking
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit partition: Ground floor
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit partition: Floor 1
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Room
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Corridor
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: It
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Stairs
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Exterior
+11:03:13 [Thread-1] INFO  baseNoStates.DirectoryAreas - DirectoryAreas cridat
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit partition: Building
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit partition: Basement
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Parking
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit partition: Ground floor
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit partition: Floor 1
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Room
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Corridor
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: It
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Stairs
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Exterior
+11:03:13 [Thread-1] INFO  baseNoStates.UserGroup - Doing action lock
+11:03:13 [Thread-1] ERROR baseNoStates.DoorState - Can't lock door D5 because it's already locked
+11:03:13 [Thread-1] ERROR baseNoStates.UserGroup - Can't find user blank
+11:03:13 [Thread-1] ERROR baseNoStates.UserGroup - Can't find user employees
+11:03:13 [Thread-1] ERROR baseNoStates.UserGroup - Can't find user managers
+11:03:13 [Thread-1] INFO  baseNoStates.UserGroup - User admin found
+11:03:13 [Thread-1] INFO  baseNoStates.DirectoryAreas - DirectoryAreas cridat
+11:03:13 [Thread-1] INFO  baseNoStates.DirectoryAreas - DirectoryAreas cridat
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit partition: Building
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit partition: Basement
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Parking
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit partition: Ground floor
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit partition: Floor 1
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Room
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Corridor
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: It
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Stairs
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Exterior
+11:03:13 [Thread-1] INFO  baseNoStates.DirectoryAreas - DirectoryAreas cridat
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit partition: Building
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit partition: Basement
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Parking
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit partition: Ground floor
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit partition: Floor 1
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Room
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Corridor
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: It
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Stairs
+11:03:13 [Thread-1] INFO  baseNoStates.VisitorFindAreaById - VisitorFindAreaById visit space: Exterior
+11:03:13 [Thread-1] INFO  baseNoStates.UserGroup - Doing action lock
+11:03:13 [Thread-1] ERROR baseNoStates.DoorState - Can't lock door D6 because it's already locked
+11:03:13 [Thread-1] INFO  baseNoStates.WebServer$SocketThread - processed request area Request{credential=11343, action=lock, now=2025-11-28T09:30, areaId=ground_floor, requestsDoors=[Request{credential=11343, userName=unknown, action=lock, now=2025-11-28T09:30, doorID=D3, closed=true, authorized=true, reasons=[]}, Request{credential=11343, userName=unknown, action=lock, now=2025-11-28T09:30, doorID=D4, closed=true, authorized=true, reasons=[]}, Request{credential=11343, userName=unknown, action=lock, now=2025-11-28T09:30, doorID=D5, closed=true, authorized=true, reasons=[]}, Request{credential=11343, userName=unknown, action=lock, now=2025-11-28T09:30, doorID=D6, closed=true, authorized=true, reasons=[]}]}
+11:03:13 [Thread-1] INFO  baseNoStates.WebServer$SocketThread - answer HTTP/1.0 200 OK
+Content-type: application/json
+Access-Control-Allow-Origin: *
+
+{"areaId":"ground_floor","action":"lock","requestsDoors":[{"reasons":[],"authorized":true,"action":"lock","closed":true,"state":"locked","doorId":"D3"},{"reasons":[],"authorized":true,"action":"lock","closed":true,"state":"locked","doorId":"D4"},{"reasons":[],"authorized":true,"action":"lock","closed":true,"state":"locked","doorId":"D5"},{"reasons":[],"authorized":true,"action":"lock","closed":true,"state":"locked","doorId":"D6"}]}
+11:27:59 [main] INFO  FITA1 - DirectoryAreas creat
+11:27:59 [main] INFO  FITA1 - DirectoryAreas creat
+11:27:59 [main] INFO  FITA1 - DirectoryAreas cridat
+11:27:59 [main] INFO  FITA1 - DirectoryAreas cridat
+11:27:59 [main] INFO  baseNoStates.WebServer - Server started.
+Listening for connections on port : 8080 ...
+

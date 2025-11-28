@@ -27,14 +27,14 @@ public class UnlockedShortly extends DoorState implements Observer {
       this.door.setClosed(false);
       logger.info("Door {} opened in Unlocked Shortly", door.getId());
     } else {
-      logger.error("Can't Open, door {} is already opened", door.getId());
+      logger.info("Can't Open, door {} is already opened", door.getId());
     }
   }
 
   @Override
   public void close() {
     if (this.door.isClosed()) {
-      logger.error("Door {} already closed", door.getId());
+      logger.info("Door {} already closed", door.getId());
     } else {
       this.door.setClosed(true);
       logger.info("Closed door {} in Unlocked Shortly", door.getId());
@@ -43,7 +43,7 @@ public class UnlockedShortly extends DoorState implements Observer {
 
   @Override
   public void unlock() {
-    logger.error("Can't unlock door {} while in Unlocked Shortly", door.getId());
+    logger.info("Can't unlock door {} while in Unlocked Shortly", door.getId());
   }
 
   @Override
@@ -54,7 +54,7 @@ public class UnlockedShortly extends DoorState implements Observer {
 
   @Override
   public void unlockShortly() {
-    logger.error("Can't Unlock Shortly while door {} already Unlocked Shortly", door.getId());
+    logger.info("Can't Unlock Shortly while door {} already Unlocked Shortly", door.getId());
   }
 
   @Override

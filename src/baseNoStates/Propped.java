@@ -19,7 +19,7 @@ public class Propped extends DoorState {
 
   @Override
   public void open() {
-    logger.error("Can't open door {} because it's already open", door.getId());
+    logger.info("Can't open door {} because it's already open", door.getId());
   }
 
   @Override
@@ -31,7 +31,7 @@ public class Propped extends DoorState {
 
   @Override
   public void unlock() {
-    logger.error("Can't Unlock, door {} is propped",   door.getId());
+    logger.info("Can't Unlock, door {} is propped",   door.getId());
   }
 
   @Override
@@ -41,13 +41,13 @@ public class Propped extends DoorState {
       logger.info("Door {} locked", door.getId());
       this.door.setState(new Locked(this.door));
     } else {
-      logger.error("Door {} is not closed",  door.getId());
+      logger.info("Door {} is not closed",  door.getId());
     }
   }
 
   @Override
   public void unlockShortly() {
-    logger.error("Can't Unlock Shortly, door {} is propped",   door.getId());
+    logger.info("Can't Unlock Shortly, door {} is propped",   door.getId());
   }
 
   @Override

@@ -9,7 +9,7 @@ import org.slf4j.LoggerFactory;
 
 public class VisitorAnotherComputation implements Visitor {
 
-  private final Logger logger = LoggerFactory.getLogger(VisitorAnotherComputation.class);
+  private final Logger logger = LoggerFactory.getLogger("FITA2");
 
   public void visitSpace(Space space) {
     logger.info("VisitorAnotherComputation visit space: {}", space.getName());

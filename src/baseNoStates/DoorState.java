@@ -7,7 +7,7 @@ import org.slf4j.LoggerFactory;
 // it only implements them.
 
 public abstract class DoorState {
-  protected final Logger logger = LoggerFactory.getLogger(DoorState.class);
+  protected final Logger logger =  LoggerFactory.getLogger("FITA1");
   protected Door door;
   protected String name;
 

@@ -15,7 +15,7 @@ import org.slf4j.LoggerFactory;
 // This class also serves as the structural link between two Spaces (fromSpace/toSpace).
 
 public class Door {
-  private final Logger logger = LoggerFactory.getLogger(this.getClass());
+  private final Logger logger =  LoggerFactory.getLogger("FITA1");
   private final String id;
   private boolean closed; // physically
   private DoorState currentState;
@@ -36,7 +36,7 @@ public class Door {
       String action = request.getAction();
       doAction(action);
     } else {
-      logger.error("not authorized");
+      logger.info("not authorized");
     }
     request.setDoorStateName(getStateName());
   }
@@ -97,7 +97,7 @@ public class Door {
         currentState.unlockShortly();
         break;
       default:
-        logger.error("Unrecognized or unimplemented action: {}", action);
+        logger.info("Unrecognized or unimplemented action: {}", action);
     }
   }
 

@@ -14,7 +14,7 @@ import org.slf4j.LoggerFactory;
 
 public final class DirectoryUserGroups {
   private static final ArrayList<UserGroup> userGroups = new ArrayList<>();
-  private static final Logger LOGGER = LoggerFactory.getLogger(DirectoryUserGroups.class);
+  private static final Logger LOGGER =  LoggerFactory.getLogger("FITA1");
 
   public static void makeUsers() {
 
@@ -107,7 +107,7 @@ public final class DirectoryUserGroups {
         return user;
       }
     }
-    LOGGER.error("user with credential {} not found", credential);
+    LOGGER.debug("user with credential {} not found", credential);
     return null; // otherwise we get a Java error
   }
 

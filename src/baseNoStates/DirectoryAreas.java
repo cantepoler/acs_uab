@@ -15,7 +15,7 @@ import org.slf4j.LoggerFactory;
 
 
 public final class DirectoryAreas {
-  private static final Logger LOGGER = LoggerFactory.getLogger(DirectoryAreas.class);
+  private static final Logger LOGGER = LoggerFactory.getLogger("FITA1");
   private static Area rootArea;
   private static ArrayList<Door> doors;
   private static DirectoryAreas directoryAreas = null;

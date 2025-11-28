@@ -11,7 +11,7 @@ import org.slf4j.LoggerFactory;
 
 
 public class VisitorFindAreaById implements Visitor {
-  private final Logger logger =  LoggerFactory.getLogger(VisitorFindAreaById.class);
+  private final Logger logger =  LoggerFactory.getLogger("FITA2");
   private Area area = null;
   private final String searchedId;
 

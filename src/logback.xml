@@ -31,7 +31,20 @@
             </layout>
         </encoder>
     </appender>
-    <root level="info">
+
+    <logger name="FITA1" level="debug">
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="FILE"/>
+        <appender-ref ref="HTML"/>
+    </logger>
+
+    <logger name="FITA2" level="debug">
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="FILE"/>
+        <appender-ref ref="HTML"/>
+    </logger>
+
+    <root level="debug">
         <appender-ref ref="STDOUT"/>
         <appender-ref ref="FILE"/>
         <appender-ref ref="HTML"/>

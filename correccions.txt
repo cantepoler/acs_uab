@@ -1,1 +1,1 @@
-A classe s'ens ha comentat el fet que mancaven comentaris, els hem afegit a on hem cregut necessaris com clock ja que considerem que el nom de les altres funcions representen clarament el que pretenen.
+Hem de fer un logger per a la fita 2 i un altre per a la fita 1, treure errors i posar debugs. Web server segueix amb el logger general, ja que no pertany a cap fita.

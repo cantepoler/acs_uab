@@ -19,14 +19,14 @@ public class Unlocked extends DoorState {
       this.door.setClosed(false);
       logger.info("Door {} opened", door.getId());
     } else {
-      logger.error("Can't Open, door {} is already opened", door.getId());
+      logger.info("Can't Open, door {} is already opened", door.getId());
     }
   }
 
   @Override
   public void close() {
     if (this.door.isClosed()) {
-      logger.error("Door {} already closed", door.getId());
+      logger.info("Door {} already closed", door.getId());
     } else {
       this.door.setClosed(true);
       logger.info("Closed door {}", door.getId());
@@ -35,7 +35,7 @@ public class Unlocked extends DoorState {
 
   @Override
   public void unlock() {
-    logger.error("Can't unlock door {} because it's already unlocked",   door.getId());
+    logger.info("Can't unlock door {} because it's already unlocked",   door.getId());
   }
 
   @Override
@@ -44,13 +44,13 @@ public class Unlocked extends DoorState {
       logger.info("Locked door {}", door.getId());
       this.door.setState(new Locked(this.door));
     } else {
-      logger.error("Can't lock door {} because it's not closed", door.getId());
+      logger.info("Can't lock door {} because it's not closed", door.getId());
     }
   }
 
   @Override
   public void unlockShortly() {
-    logger.error("Can't unlock shortly door {} because it's already unlocked", door.getId());
+    logger.info("Can't unlock shortly door {} because it's already unlocked", door.getId());
   }
 
   @Override

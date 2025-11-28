@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
 // are what, when and where they can interact with the acs system.
 
 public class UserGroup {
-  private final Logger logger = LoggerFactory.getLogger(UserGroup.class);
+  private final Logger logger =  LoggerFactory.getLogger("FITA1");
   private final String name;
   public ArrayList<User> users = new ArrayList<>();
   private final ArrayList<String> allowedActions;
@@ -35,7 +35,7 @@ public class UserGroup {
     if (this.schedule != null) {
       return schedule.isAllowedAt(dateTime);
     }
-    logger.error("User {} can't send requests", this.name);
+    logger.debug("User {} can't send requests", this.name);
     return false;
   }
 
@@ -60,7 +60,7 @@ public class UserGroup {
         }
       }
     }
-    logger.error("Space {} not found", space.getName());
+    logger.debug("Space {} not found", space.getName());
     return false;
   }
 
@@ -69,7 +69,7 @@ public class UserGroup {
       logger.info("Doing action {}", action);
       return allowedActions.contains(action);
     }
-    logger.error("Action {} not allowed", action);
+    logger.debug("Action {} not allowed", action);
     return false;
   }
 
@@ -80,7 +80,7 @@ public class UserGroup {
         return user;
       }
     }
-    logger.error("Can't find user {}", this.name);
+    logger.debug("Can't find user {}", this.name);
     return null;
   }
 }

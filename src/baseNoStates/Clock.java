@@ -18,7 +18,7 @@ import org.slf4j.LoggerFactory;
 
 
 public class Clock extends Observable {
-  private static final Logger LOGGER = LoggerFactory.getLogger(Clock.class);
+  private static final Logger LOGGER = LoggerFactory.getLogger("FITA1");
   private LocalDateTime date;
   private final Timer timer;
   private static  Clock clockInstance = null;

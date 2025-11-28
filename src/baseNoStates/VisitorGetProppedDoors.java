@@ -1,5 +1,8 @@
 package baseNoStates;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.ArrayList;
 
 // A specific Visitor designed to find all the doors that are currently propped.
@@ -9,11 +12,13 @@ import java.util.ArrayList;
 // and if a door is propped, it adds it to the list.
 
 public class VisitorGetProppedDoors implements Visitor {
-  private final ArrayList<Door> proppedDoors = new ArrayList<>();
+    private final Logger logger =  LoggerFactory.getLogger("FITA2");
+    private final ArrayList<Door> proppedDoors = new ArrayList<>();
 
   public VisitorGetProppedDoors() {}
 
   public void visitSpace(Space space) {
+    logger.info("Visiting sapce {}", space.getName());
     if (space.getDoors() != null) {
       for (Door door : space.getDoors()) {
         if (door.isPropped()) {
@@ -24,6 +29,7 @@ public class VisitorGetProppedDoors implements Visitor {
   }
 
   public void visitPartition(Partition partition) {
+    logger.info("Visiting partition {}", partition.getName());
     for (Area area : partition.getAreas()) {
       area.acceptVisitor(this);
     }

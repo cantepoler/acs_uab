@@ -39,7 +39,7 @@ public class WebServer {
       }
     } catch (IOException e) {
       if (logger.isErrorEnabled()) {
-        logger.error("Server Connection error : {}", e.getMessage());
+        logger.debug("Server Connection error : {}", e.getMessage());
       }
     }
   }
@@ -76,7 +76,7 @@ public class WebServer {
         StringTokenizer parse = new StringTokenizer(input);
         String method = parse.nextToken().toUpperCase(); // we get the HTTP method of the client
         if (!method.equals("GET")) {
-          logger.error("501 Not Implemented : {} method.", method);
+          logger.debug("501 Not Implemented : {} method.", method);
         } else {
           // what comes after "localhost:8080"
           resource = parse.nextToken();
@@ -113,7 +113,7 @@ public class WebServer {
         out.close();
         inSocked.close(); // we close socket connection
       } catch (Exception e) {
-        logger.error("Exception : {}", e.getMessage());
+        logger.debug("Exception : {}", e.getMessage());
       }
     }
 

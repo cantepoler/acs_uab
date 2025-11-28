@@ -11,7 +11,7 @@ import org.slf4j.LoggerFactory;
 // We use the Visitor pattern here to separate this search logic from the Space class.
 
 public class VisitorDoorGivingAccess implements Visitor {
-  private final Logger logger =  LoggerFactory.getLogger(VisitorDoorGivingAccess.class);
+  private final Logger logger =  LoggerFactory.getLogger("FITA2");
   private final ArrayList<Door> doorsGivingAccess;
 
   public VisitorDoorGivingAccess() {
