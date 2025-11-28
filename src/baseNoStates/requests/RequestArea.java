@@ -78,12 +78,6 @@ public class RequestArea implements Request {
       // Look for the doors in the spaces of this area that give access to them.
       VisitorDoorGivingAccess visitorGetDoorsGivingAccess = new VisitorDoorGivingAccess();
       area.acceptVisitor(visitorGetDoorsGivingAccess);
-      VisitorGetProppedDoors visitorGetProppedDoors = new VisitorGetProppedDoors();
-      area.acceptVisitor(visitorGetProppedDoors);
-      ArrayList<Door> propped = visitorGetProppedDoors.getProppedDoors();
-      for (Door door : propped) {
-        System.out.println("Door: " + door.getId() + " is Propped");
-      }
       for (Door door : visitorGetDoorsGivingAccess.getDoorsGivingAccess()) {
         RequestReader requestReader = new RequestReader(credential, action, now, door.getId());
         requestReader.process();
