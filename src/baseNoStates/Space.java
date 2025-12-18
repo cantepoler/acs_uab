@@ -1,5 +1,8 @@
 package baseNoStates;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -10,7 +13,7 @@ import java.util.Arrays;
 // visitors to perform operations on it.
 
 public class Space extends Area {
-  private ArrayList<Door> doors;
+  private ArrayList<Door> doors = new ArrayList<>();
 
   public Space(String id, String name, Area parent) {
     super(id, name, parent);
@@ -33,5 +36,17 @@ public class Space extends Area {
 
   public ArrayList<Door> getDoors() {
     return doors;
+  }
+
+  public JSONObject toJson(int depth) { // depth not used here
+    JSONObject json = new JSONObject();
+    json.put("class", "space");
+    json.put("id", id);
+    JSONArray jsonDoors = new JSONArray();
+    for (Door d : doors) {
+      jsonDoors.put(d.toJson());
+    }
+    json.put("access_doors", jsonDoors);
+    return json;
   }
 }

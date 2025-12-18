@@ -1,5 +1,7 @@
 package baseNoStates;
 
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 
 
@@ -34,4 +36,6 @@ public abstract class Area {
   public String getName() {
     return name;
   }
+
+  public abstract JSONObject toJson(int depth);
 }

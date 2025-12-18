@@ -131,11 +131,18 @@ public final class DirectoryAreas {
     doors = new ArrayList<>(Arrays.asList(d1, d2, d3, d4, d5, d6, d7, d8, d9));
   }
 
-  public Area findAreaById(String areaId) {
-    VisitorFindAreaById visitorFindAreaById = new VisitorFindAreaById(areaId);
-    rootArea.acceptVisitor(visitorFindAreaById);
+  public static Area findAreaById(String areaId) {
+    if (areaId.equals("ROOT")) {
+      // Special id that means that the wanted area is the root.
+      // This is because the Flutter app client doesn't know the
+      // id of the root, differently from the simulator
+      return rootArea;
+    } else {
+      VisitorFindAreaById visitorFindAreaById = new VisitorFindAreaById(areaId);
+      rootArea.acceptVisitor(visitorFindAreaById);
 
-    return visitorFindAreaById.getArea();
+      return visitorFindAreaById.getArea();
+    }
   }
 
   private ArrayList<Door> findDoorsByIds(List<String> ids) {
