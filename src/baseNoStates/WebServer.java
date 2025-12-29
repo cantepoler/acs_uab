@@ -167,11 +167,8 @@ public class WebServer {
     }
 
     private RequestPropped makeRequestPropped(String[] tokens) {
-      String credential = tokens[2];
-      String action = tokens[4];
-      LocalDateTime dateTime = LocalDateTime.parse(tokens[6], formatter);
-      String areaId = tokens[8];
-      return new RequestPropped(credential, action, dateTime, areaId);
+      String areaId = tokens[2];
+      return new RequestPropped(areaId);
     }
 
     private String makeHeaderAnswer() {

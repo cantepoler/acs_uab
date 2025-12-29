@@ -92,18 +92,6 @@ public class Door {
     }
   }
 
-  @Override
-  public String toString() {
-    return "Door{" +
-            "id='" + id + '\'' +
-            ", closed=" + closed +
-            ", currentState=" + currentState +
-            ", fromSpace=" + fromSpace +
-            ", toSpace=" + toSpace +
-            ", propped=" + propped +
-            '}';
-  }
-
   public void changePropped() {
     this.propped = !this.propped;
   }

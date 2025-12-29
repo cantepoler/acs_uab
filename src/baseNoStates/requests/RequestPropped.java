@@ -8,37 +8,24 @@ import org.json.JSONObject;
 
 
 public class RequestPropped implements Request {
-    private final String credential;
-    private final String action;
     private final String areaId;
-    private final LocalDateTime now;
     private ArrayList<Door> proppedDoors = new ArrayList<>();
     private boolean error;
 
 
-    public RequestPropped(String credential, String action, LocalDateTime now, String areaId) {
-        this.credential = credential;
+    public RequestPropped(String areaId) {
         this.areaId = areaId;
-        assert action.equals(Actions.LOCK) || action.equals(Actions.UNLOCK)
-                : "invalid action " + action + " for an area request";
-        this.action = action;
-        this.now = now;
-    }
-
-    public String getAction() {
-        return action;
     }
 
     @Override
     public JSONObject answerToJson() {
         JSONObject json = new JSONObject();
-        json.put("action", action);
         json.put("areaId", areaId);
         JSONArray jsonDoors = new JSONArray();
         for (Door door : proppedDoors) {
-            jsonDoors.put(door);
+            jsonDoors.put(door.toJson());
         }
-        json.put("proppedDoorsDoors", jsonDoors);
+        json.put("proppedDoors", jsonDoors);
         // json.put("todo", "request areas not yet implemented");
         return json;
     }
@@ -46,9 +33,6 @@ public class RequestPropped implements Request {
     @Override
     public String toString() {
         return "Request{"
-                + "credential=" + credential
-                + ", action=" + action
-                + ", now=" + now
                 + ", areaId=" + areaId
                 + ", proppedDoors=" + proppedDoors
                 + "}";
