@@ -12,7 +12,8 @@ public class RequestPropped implements Request {
     private final String action;
     private final String areaId;
     private final LocalDateTime now;
-    private final ArrayList<RequestReader> requests = new ArrayList<>();
+    private ArrayList<Door> proppedDoors = new ArrayList<>();
+    private boolean error;
 
 
     public RequestPropped(String credential, String action, LocalDateTime now, String areaId) {
@@ -33,29 +34,23 @@ public class RequestPropped implements Request {
         JSONObject json = new JSONObject();
         json.put("action", action);
         json.put("areaId", areaId);
-        JSONArray jsonRequests = new JSONArray();
-        for (RequestReader rd : requests) {
-            jsonRequests.put(rd.answerToJson());
+        JSONArray jsonDoors = new JSONArray();
+        for (Door door : proppedDoors) {
+            jsonDoors.put(door);
         }
-        json.put("requestsDoors", jsonRequests);
+        json.put("proppedDoorsDoors", jsonDoors);
         // json.put("todo", "request areas not yet implemented");
         return json;
     }
 
     @Override
     public String toString() {
-        String requestsDoorsStr;
-        if (requests.isEmpty()) {
-            requestsDoorsStr = "";
-        } else {
-            requestsDoorsStr = requests.toString();
-        }
         return "Request{"
                 + "credential=" + credential
                 + ", action=" + action
                 + ", now=" + now
                 + ", areaId=" + areaId
-                + ", requestsDoors=" + requestsDoorsStr
+                + ", proppedDoors=" + proppedDoors
                 + "}";
     }
 
@@ -79,13 +74,11 @@ public class RequestPropped implements Request {
             // Look for the doors in the spaces of this area that give access to them.
             VisitorGetProppedDoors visitorGetProppedDoors = new VisitorGetProppedDoors();
             area.acceptVisitor(visitorGetProppedDoors);
-            for (Door door : visitorGetProppedDoors.getProppedDoors()) {
-                RequestReader requestReader = new RequestReader(credential, action, now, door.getId());
-                requestReader.process();
-                // after process() the area request contains the answer as the answer
-                // to each individual door request, that is read by the simulator/Flutter app
-                requests.add(requestReader);
-            }
+            proppedDoors = visitorGetProppedDoors.getProppedDoors();
         }
+    }
+
+    public boolean hasError() {
+        return error;
     }
 }

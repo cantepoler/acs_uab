@@ -61,15 +61,6 @@ public class Door {
     return currentState.name;
   }
 
-  @Override
-  public String toString() {
-    return "Door{"
-        + ", id='" + id + '\''
-        + ", closed=" + closed
-        + ", state=" + getStateName()
-        + "}";
-  }
-
   public JSONObject toJson() {
     JSONObject json = new JSONObject();
     json.put("id", id);
@@ -99,6 +90,18 @@ public class Door {
       default:
         logger.info("Unrecognized or unimplemented action: {}", action);
     }
+  }
+
+  @Override
+  public String toString() {
+    return "Door{" +
+            "id='" + id + '\'' +
+            ", closed=" + closed +
+            ", currentState=" + currentState +
+            ", fromSpace=" + fromSpace +
+            ", toSpace=" + toSpace +
+            ", propped=" + propped +
+            '}';
   }
 
   public void changePropped() {

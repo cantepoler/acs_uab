@@ -186,8 +186,25 @@ public class WebServer {
       return answer;
     }
 
+    private String makeErrorHeaderAnswer() {
+      String answer = "";
+      answer += "HTTP/1.0 409 Conflict\r\n";
+      answer += "Content-type: application/json\r\n";
+      answer += "Access-Control-Allow-Origin: *\r\n";
+      // SUPERIMPORTANT to avoid the CORS problem :
+      // "Cross-Origin Request Blocked: The Same Origin Policy disallows reading
+      // the remote resource..."
+      answer += "\r\n"; // blank line between headers and content, very important !
+      return answer;
+    }
+
     private String makeJsonAnswer(Request request) {
-      String answer = makeHeaderAnswer();
+      String answer = "";
+      if (request.hasError()) {
+        answer += makeErrorHeaderAnswer();
+      } else {
+        answer += makeHeaderAnswer();
+      }
       answer += request.answerToJson().toString();
       return answer;
     }

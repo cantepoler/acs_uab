@@ -16,6 +16,7 @@ public class RequestReader implements Request {
   private final ArrayList<String> reasons; // why not authorized
   private String doorStateName;
   private boolean doorClosed;
+  private boolean error;
 
   public RequestReader(String credential, String action, LocalDateTime now, String doorId) {
     this.credential = credential;
@@ -112,6 +113,10 @@ public class RequestReader implements Request {
 
       authorized = canSend && canBeFrom && canBeTo && canDo;
     }
+  }
+
+  public boolean hasError() {
+    return error;
   }
 }
 

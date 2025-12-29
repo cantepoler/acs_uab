@@ -13,6 +13,7 @@ public class RequestArea implements Request {
   private final String areaId;
   private final LocalDateTime now;
   private final ArrayList<RequestReader> requests = new ArrayList<>();
+  private boolean error = false;
 
 
   public RequestArea(String credential, String action, LocalDateTime now, String areaId) {
@@ -89,7 +90,13 @@ public class RequestArea implements Request {
           // to each individual door request, that is read by the simulator/Flutter app
           requests.add(requestReader);
         }
+      } else {
+        error = true;
       }
     }
+  }
+
+  public boolean hasError() {
+    return error;
   }
 }

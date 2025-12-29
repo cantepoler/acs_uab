@@ -8,4 +8,6 @@ public interface Request {
   String toString();
 
   void process();
+
+  boolean hasError();
 }

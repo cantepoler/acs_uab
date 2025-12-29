@@ -8,6 +8,7 @@ import org.json.JSONObject;
 
 public class RequestRefresh implements Request {
   private final ArrayList<JSONObject> jsonsDoors = new ArrayList<>();
+  private boolean error;
 
   @Override
   public JSONObject answerToJson() {
@@ -35,5 +36,9 @@ public class RequestRefresh implements Request {
     for (Door door : directoryAreas.getAllDoors()) {
       jsonsDoors.add(door.toJson());
     }
+  }
+
+  public boolean hasError() {
+    return error;
   }
 }
