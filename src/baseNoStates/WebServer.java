@@ -1,9 +1,7 @@
 package baseNoStates;
 
-import baseNoStates.requests.Request;
-import baseNoStates.requests.RequestArea;
-import baseNoStates.requests.RequestReader;
-import baseNoStates.requests.RequestRefresh;
+import baseNoStates.requests.*;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -140,6 +138,9 @@ public class WebServer {
           // in order to navigate the hierarchy of partitions, spaces and doors
           request = makeRequestChildren(tokens);
           break;
+        case "get_propped":
+          request = makeRequestPropped(tokens);
+          break;
         default:
           // just in case we change the user interface or the simulator
           assert false : "unknown request " + tokens[0];
@@ -163,6 +164,14 @@ public class WebServer {
       LocalDateTime dateTime = LocalDateTime.parse(tokens[6], formatter);
       String areaId = tokens[8];
       return new RequestArea(credential, action, dateTime, areaId);
+    }
+
+    private RequestPropped makeRequestPropped(String[] tokens) {
+      String credential = tokens[2];
+      String action = tokens[4];
+      LocalDateTime dateTime = LocalDateTime.parse(tokens[6], formatter);
+      String areaId = tokens[8];
+      return new RequestPropped(credential, action, dateTime, areaId);
     }
 
     private String makeHeaderAnswer() {

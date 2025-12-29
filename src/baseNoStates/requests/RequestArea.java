@@ -79,12 +79,16 @@ public class RequestArea implements Request {
       // Look for the doors in the spaces of this area that give access to them.
       VisitorDoorGivingAccess visitorGetDoorsGivingAccess = new VisitorDoorGivingAccess();
       area.acceptVisitor(visitorGetDoorsGivingAccess);
-      for (Door door : visitorGetDoorsGivingAccess.getDoorsGivingAccess()) {
-        RequestReader requestReader = new RequestReader(credential, action, now, door.getId());
-        requestReader.process();
-        // after process() the area request contains the answer as the answer
-        // to each individual door request, that is read by the simulator/Flutter app
-        requests.add(requestReader);
+      VisitorGetProppedDoors visitorGetProppedDoors = new VisitorGetProppedDoors();
+      area.acceptVisitor(visitorGetProppedDoors);
+      if (visitorGetProppedDoors.getProppedDoors().isEmpty()) {
+        for (Door door : visitorGetDoorsGivingAccess.getDoorsGivingAccess()) {
+          RequestReader requestReader = new RequestReader(credential, action, now, door.getId());
+          requestReader.process();
+          // after process() the area request contains the answer as the answer
+          // to each individual door request, that is read by the simulator/Flutter app
+          requests.add(requestReader);
+        }
       }
     }
   }
