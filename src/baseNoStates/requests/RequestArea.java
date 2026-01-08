@@ -80,9 +80,7 @@ public class RequestArea implements Request {
       // Look for the doors in the spaces of this area that give access to them.
       VisitorDoorGivingAccess visitorGetDoorsGivingAccess = new VisitorDoorGivingAccess();
       area.acceptVisitor(visitorGetDoorsGivingAccess);
-      VisitorGetProppedDoors visitorGetProppedDoors = new VisitorGetProppedDoors();
-      area.acceptVisitor(visitorGetProppedDoors);
-      if (visitorGetProppedDoors.getProppedDoors().isEmpty()) {
+      if (canProcess(area)) {
         for (Door door : visitorGetDoorsGivingAccess.getDoorsGivingAccess()) {
           RequestReader requestReader = new RequestReader(credential, action, now, door.getId());
           requestReader.process();
@@ -94,6 +92,16 @@ public class RequestArea implements Request {
         error = true;
       }
     }
+  }
+
+  private boolean canProcess(Area area) {
+    VisitorGetProppedDoors visitorGetProppedDoors = new VisitorGetProppedDoors();
+    area.acceptVisitor(visitorGetProppedDoors);
+    VisitorGetUnlockedShortly visitorGetUnlockedShortly = new VisitorGetUnlockedShortly();
+    area.acceptVisitor(visitorGetUnlockedShortly);
+
+    return visitorGetProppedDoors.getProppedDoors().isEmpty()
+        && visitorGetUnlockedShortly.getUnlockedAreas().isEmpty();
   }
 
   public boolean hasError() {
