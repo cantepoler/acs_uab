@@ -1,0 +1,1 @@
+Hem de fer un logger per a la fita 2 i un altre per a la fita 1, treure errors i posar debugs. Web server segueix amb el logger general, ja que no pertany a cap fita.

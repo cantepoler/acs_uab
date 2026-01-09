@@ -1,0 +1,640 @@
+12:13:14 [main] INFO  FITA1 - DirectoryAreas creat
+12:13:14 [main] INFO  FITA1 - DirectoryAreas creat
+12:13:14 [main] INFO  FITA1 - DirectoryAreas cridat
+12:13:14 [main] INFO  FITA1 - DirectoryAreas cridat
+12:13:14 [main] INFO  baseNoStates.WebServer - Server started.
+Listening for connections on port : 8080 ...
+
+12:13:22 [Thread-0] INFO  baseNoStates.WebServer$SocketThread - socked thread : GET /get_children?building HTTP/1.1
+12:13:22 [Thread-0] INFO  baseNoStates.WebServer$SocketThread - Input GET /get_children?building HTTP/1.1
+12:13:22 [Thread-0] INFO  baseNoStates.WebServer$SocketThread - Method GET
+12:13:22 [Thread-0] INFO  baseNoStates.WebServer$SocketThread - Resource /get_children?building
+12:13:22 [Thread-0] INFO  baseNoStates.WebServer$SocketThread - 0 get_children
+12:13:22 [Thread-0] INFO  baseNoStates.WebServer$SocketThread - 1 building
+12:13:22 [Thread-0] INFO  baseNoStates.WebServer$SocketThread - tokens : get_children, building, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null
+12:13:22 [Thread-0] INFO  baseNoStates.WebServer$SocketThread - created request get_children RequestChildren{areaId=building}
+12:13:22 [Thread-0] INFO  FITA2 - VisitorFindAreaById visit partition: Building
+12:13:22 [Thread-0] INFO  FITA2 - VisitorFindAreaById visit partition: Building
+12:13:22 [Thread-0] INFO  baseNoStates.WebServer$SocketThread - processed request get_children RequestChildren{areaId=building}
+12:13:22 [Thread-0] INFO  baseNoStates.WebServer$SocketThread - answer HTTP/1.0 200 OK
+Content-type: application/json
+Access-Control-Allow-Origin: *
+
+{"areas":[{"id":"basement","class":"partition"},{"id":"ground_floor","class":"partition"},{"id":"floor1","class":"partition"},{"access_doors":[],"id":"stairs","class":"space"},{"access_doors":[],"id":"exterior","class":"space"}],"id":"building","class":"partition"}
+12:13:23 [Thread-1] INFO  baseNoStates.WebServer$SocketThread - socked thread : GET /get_children?building HTTP/1.1
+12:13:23 [Thread-1] INFO  baseNoStates.WebServer$SocketThread - Input GET /get_children?building HTTP/1.1
+12:13:23 [Thread-1] INFO  baseNoStates.WebServer$SocketThread - Method GET
+12:13:23 [Thread-1] INFO  baseNoStates.WebServer$SocketThread - Resource /get_children?building
+12:13:23 [Thread-1] INFO  baseNoStates.WebServer$SocketThread - 0 get_children
+12:13:23 [Thread-1] INFO  baseNoStates.WebServer$SocketThread - 1 building
+12:13:23 [Thread-1] INFO  baseNoStates.WebServer$SocketThread - tokens : get_children, building, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null
+12:13:23 [Thread-1] INFO  baseNoStates.WebServer$SocketThread - created request get_children RequestChildren{areaId=building}
+12:13:23 [Thread-1] INFO  FITA2 - VisitorFindAreaById visit partition: Building
+12:13:23 [Thread-1] INFO  FITA2 - VisitorFindAreaById visit partition: Building
+12:13:23 [Thread-1] INFO  baseNoStates.WebServer$SocketThread - processed request get_children RequestChildren{areaId=building}
+12:13:23 [Thread-1] INFO  baseNoStates.WebServer$SocketThread - answer HTTP/1.0 200 OK
+Content-type: application/json
+Access-Control-Allow-Origin: *
+
+{"areas":[{"id":"basement","class":"partition"},{"id":"ground_floor","class":"partition"},{"id":"floor1","class":"partition"},{"access_doors":[],"id":"stairs","class":"space"},{"access_doors":[],"id":"exterior","class":"space"}],"id":"building","class":"partition"}
+12:13:29 [Thread-2] INFO  baseNoStates.WebServer$SocketThread - socked thread : GET /get_children?basement HTTP/1.1
+12:13:29 [Thread-2] INFO  baseNoStates.WebServer$SocketThread - Input GET /get_children?basement HTTP/1.1
+12:13:29 [Thread-2] INFO  baseNoStates.WebServer$SocketThread - Method GET
+12:13:29 [Thread-2] INFO  baseNoStates.WebServer$SocketThread - Resource /get_children?basement
+12:13:29 [Thread-2] INFO  baseNoStates.WebServer$SocketThread - 0 get_children
+12:13:29 [Thread-2] INFO  baseNoStates.WebServer$SocketThread - 1 basement
+12:13:29 [Thread-2] INFO  baseNoStates.WebServer$SocketThread - tokens : get_children, basement, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null
+12:13:29 [Thread-2] INFO  baseNoStates.WebServer$SocketThread - created request get_children RequestChildren{areaId=basement}
+12:13:29 [Thread-2] INFO  FITA2 - VisitorFindAreaById visit partition: Building
+12:13:29 [Thread-2] INFO  FITA2 - VisitorFindAreaById visit partition: Building
+12:13:29 [Thread-2] INFO  FITA2 - VisitorFindAreaById visit partition: Basement
+12:13:29 [Thread-2] INFO  FITA2 - VisitorFindAreaById visit partition: Basement
+12:13:29 [Thread-2] INFO  FITA2 - VisitorFindAreaById visit partition: Ground floor
+12:13:29 [Thread-2] INFO  FITA2 - VisitorFindAreaById visit partition: Ground floor
+12:13:29 [Thread-2] INFO  FITA2 - VisitorFindAreaById visit space: Floor
+12:13:29 [Thread-2] INFO  FITA2 - VisitorFindAreaById visit space: Floor
+12:13:29 [Thread-2] INFO  FITA2 - VisitorFindAreaById visit space: Room
+12:13:29 [Thread-2] INFO  FITA2 - VisitorFindAreaById visit space: Room
+12:13:29 [Thread-2] INFO  FITA2 - VisitorFindAreaById visit space: Room
+12:13:29 [Thread-2] INFO  FITA2 - VisitorFindAreaById visit space: Room
+12:13:29 [Thread-2] INFO  FITA2 - VisitorFindAreaById visit partition: Floor 1
+12:13:29 [Thread-2] INFO  FITA2 - VisitorFindAreaById visit partition: Floor 1
+12:13:29 [Thread-2] INFO  FITA2 - VisitorFindAreaById visit space: Room
+12:13:29 [Thread-2] INFO  FITA2 - VisitorFindAreaById visit space: Room
+12:13:29 [Thread-2] INFO  FITA2 - VisitorFindAreaById visit space: Corridor
+12:13:29 [Thread-2] INFO  FITA2 - VisitorFindAreaById visit space: Corridor
+12:13:29 [Thread-2] INFO  FITA2 - VisitorFindAreaById visit space: It
+12:13:29 [Thread-2] INFO  FITA2 - VisitorFindAreaById visit space: It
+12:13:29 [Thread-2] INFO  FITA2 - VisitorFindAreaById visit space: Stairs
+12:13:29 [Thread-2] INFO  FITA2 - VisitorFindAreaById visit space: Stairs
+12:13:29 [Thread-2] INFO  FITA2 - VisitorFindAreaById visit space: Exterior
+12:13:29 [Thread-2] INFO  FITA2 - VisitorFindAreaById visit space: Exterior
+12:13:29 [Thread-2] INFO  baseNoStates.WebServer$SocketThread - processed request get_children RequestChildren{areaId=basement}
+12:13:29 [Thread-2] INFO  baseNoStates.WebServer$SocketThread - answer HTTP/1.0 200 OK
+Content-type: application/json
+Access-Control-Allow-Origin: *
+
+{"areas":[{"access_doors":[{"closed":true,"id":"D1","state":"locked"},{"closed":true,"id":"D2","state":"locked"}],"id":"parking","class":"space"}],"id":"basement","class":"partition"}
+12:13:29 [Thread-3] INFO  baseNoStates.WebServer$SocketThread - socked thread : GET /get_children?basement HTTP/1.1
+12:13:29 [Thread-3] INFO  baseNoStates.WebServer$SocketThread - Input GET /get_children?basement HTTP/1.1
+12:13:29 [Thread-3] INFO  baseNoStates.WebServer$SocketThread - Method GET
+12:13:29 [Thread-3] INFO  baseNoStates.WebServer$SocketThread - Resource /get_children?basement
+12:13:29 [Thread-3] INFO  baseNoStates.WebServer$SocketThread - 0 get_children
+12:13:29 [Thread-3] INFO  baseNoStates.WebServer$SocketThread - 1 basement
+12:13:29 [Thread-3] INFO  baseNoStates.WebServer$SocketThread - tokens : get_children, basement, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null
+12:13:29 [Thread-3] INFO  baseNoStates.WebServer$SocketThread - created request get_children RequestChildren{areaId=basement}
+12:13:29 [Thread-3] INFO  FITA2 - VisitorFindAreaById visit partition: Building
+12:13:29 [Thread-3] INFO  FITA2 - VisitorFindAreaById visit partition: Building
+12:13:29 [Thread-3] INFO  FITA2 - VisitorFindAreaById visit partition: Basement
+12:13:29 [Thread-3] INFO  FITA2 - VisitorFindAreaById visit partition: Basement
+12:13:29 [Thread-3] INFO  FITA2 - VisitorFindAreaById visit partition: Ground floor
+12:13:29 [Thread-3] INFO  FITA2 - VisitorFindAreaById visit partition: Ground floor
+12:13:29 [Thread-3] INFO  FITA2 - VisitorFindAreaById visit space: Floor
+12:13:29 [Thread-3] INFO  FITA2 - VisitorFindAreaById visit space: Floor
+12:13:29 [Thread-3] INFO  FITA2 - VisitorFindAreaById visit space: Room
+12:13:29 [Thread-3] INFO  FITA2 - VisitorFindAreaById visit space: Room
+12:13:29 [Thread-3] INFO  FITA2 - VisitorFindAreaById visit space: Room
+12:13:29 [Thread-3] INFO  FITA2 - VisitorFindAreaById visit space: Room
+12:13:29 [Thread-3] INFO  FITA2 - VisitorFindAreaById visit partition: Floor 1
+12:13:29 [Thread-3] INFO  FITA2 - VisitorFindAreaById visit partition: Floor 1
+12:13:29 [Thread-3] INFO  FITA2 - VisitorFindAreaById visit space: Room
+12:13:29 [Thread-3] INFO  FITA2 - VisitorFindAreaById visit space: Room
+12:13:29 [Thread-3] INFO  FITA2 - VisitorFindAreaById visit space: Corridor
+12:13:29 [Thread-3] INFO  FITA2 - VisitorFindAreaById visit space: Corridor
+12:13:29 [Thread-3] INFO  FITA2 - VisitorFindAreaById visit space: It
+12:13:29 [Thread-3] INFO  FITA2 - VisitorFindAreaById visit space: It
+12:13:29 [Thread-3] INFO  FITA2 - VisitorFindAreaById visit space: Stairs
+12:13:29 [Thread-3] INFO  FITA2 - VisitorFindAreaById visit space: Stairs
+12:13:29 [Thread-3] INFO  FITA2 - VisitorFindAreaById visit space: Exterior
+12:13:29 [Thread-3] INFO  FITA2 - VisitorFindAreaById visit space: Exterior
+12:13:29 [Thread-3] INFO  baseNoStates.WebServer$SocketThread - processed request get_children RequestChildren{areaId=basement}
+12:13:29 [Thread-3] INFO  baseNoStates.WebServer$SocketThread - answer HTTP/1.0 200 OK
+Content-type: application/json
+Access-Control-Allow-Origin: *
+
+{"areas":[{"access_doors":[{"closed":true,"id":"D1","state":"locked"},{"closed":true,"id":"D2","state":"locked"}],"id":"parking","class":"space"}],"id":"basement","class":"partition"}
+12:13:30 [Thread-4] INFO  baseNoStates.WebServer$SocketThread - socked thread : GET /get_children?parking HTTP/1.1
+12:13:30 [Thread-4] INFO  baseNoStates.WebServer$SocketThread - Input GET /get_children?parking HTTP/1.1
+12:13:30 [Thread-4] INFO  baseNoStates.WebServer$SocketThread - Method GET
+12:13:30 [Thread-4] INFO  baseNoStates.WebServer$SocketThread - Resource /get_children?parking
+12:13:30 [Thread-4] INFO  baseNoStates.WebServer$SocketThread - 0 get_children
+12:13:30 [Thread-4] INFO  baseNoStates.WebServer$SocketThread - 1 parking
+12:13:30 [Thread-4] INFO  baseNoStates.WebServer$SocketThread - tokens : get_children, parking, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null
+12:13:30 [Thread-4] INFO  baseNoStates.WebServer$SocketThread - created request get_children RequestChildren{areaId=parking}
+12:13:30 [Thread-4] INFO  FITA2 - VisitorFindAreaById visit partition: Building
+12:13:30 [Thread-4] INFO  FITA2 - VisitorFindAreaById visit partition: Building
+12:13:30 [Thread-4] INFO  FITA2 - VisitorFindAreaById visit partition: Basement
+12:13:30 [Thread-4] INFO  FITA2 - VisitorFindAreaById visit partition: Basement
+12:13:30 [Thread-4] INFO  FITA2 - VisitorFindAreaById visit space: Parking
+12:13:30 [Thread-4] INFO  FITA2 - VisitorFindAreaById visit space: Parking
+12:13:30 [Thread-4] INFO  FITA2 - VisitorFindAreaById visit partition: Ground floor
+12:13:30 [Thread-4] INFO  FITA2 - VisitorFindAreaById visit partition: Ground floor
+12:13:30 [Thread-4] INFO  FITA2 - VisitorFindAreaById visit space: Floor
+12:13:30 [Thread-4] INFO  FITA2 - VisitorFindAreaById visit space: Floor
+12:13:30 [Thread-4] INFO  FITA2 - VisitorFindAreaById visit space: Room
+12:13:30 [Thread-4] INFO  FITA2 - VisitorFindAreaById visit space: Room
+12:13:30 [Thread-4] INFO  FITA2 - VisitorFindAreaById visit space: Room
+12:13:30 [Thread-4] INFO  FITA2 - VisitorFindAreaById visit space: Room
+12:13:30 [Thread-4] INFO  FITA2 - VisitorFindAreaById visit partition: Floor 1
+12:13:30 [Thread-4] INFO  FITA2 - VisitorFindAreaById visit partition: Floor 1
+12:13:30 [Thread-4] INFO  FITA2 - VisitorFindAreaById visit space: Room
+12:13:30 [Thread-4] INFO  FITA2 - VisitorFindAreaById visit space: Room
+12:13:30 [Thread-4] INFO  FITA2 - VisitorFindAreaById visit space: Corridor
+12:13:30 [Thread-4] INFO  FITA2 - VisitorFindAreaById visit space: Corridor
+12:13:30 [Thread-4] INFO  FITA2 - VisitorFindAreaById visit space: It
+12:13:30 [Thread-4] INFO  FITA2 - VisitorFindAreaById visit space: It
+12:13:30 [Thread-4] INFO  FITA2 - VisitorFindAreaById visit space: Stairs
+12:13:30 [Thread-4] INFO  FITA2 - VisitorFindAreaById visit space: Stairs
+12:13:30 [Thread-4] INFO  FITA2 - VisitorFindAreaById visit space: Exterior
+12:13:30 [Thread-4] INFO  FITA2 - VisitorFindAreaById visit space: Exterior
+12:13:30 [Thread-4] INFO  baseNoStates.WebServer$SocketThread - processed request get_children RequestChildren{areaId=parking}
+12:13:30 [Thread-4] INFO  baseNoStates.WebServer$SocketThread - answer HTTP/1.0 200 OK
+Content-type: application/json
+Access-Control-Allow-Origin: *
+
+{"access_doors":[{"closed":true,"id":"D1","state":"locked"},{"closed":true,"id":"D2","state":"locked"}],"id":"parking","class":"space"}
+12:13:30 [Thread-5] INFO  baseNoStates.WebServer$SocketThread - socked thread : GET /get_children?parking HTTP/1.1
+12:13:30 [Thread-5] INFO  baseNoStates.WebServer$SocketThread - Input GET /get_children?parking HTTP/1.1
+12:13:30 [Thread-5] INFO  baseNoStates.WebServer$SocketThread - Method GET
+12:13:30 [Thread-5] INFO  baseNoStates.WebServer$SocketThread - Resource /get_children?parking
+12:13:30 [Thread-5] INFO  baseNoStates.WebServer$SocketThread - 0 get_children
+12:13:30 [Thread-5] INFO  baseNoStates.WebServer$SocketThread - 1 parking
+12:13:30 [Thread-5] INFO  baseNoStates.WebServer$SocketThread - tokens : get_children, parking, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null
+12:13:30 [Thread-5] INFO  baseNoStates.WebServer$SocketThread - created request get_children RequestChildren{areaId=parking}
+12:13:30 [Thread-5] INFO  FITA2 - VisitorFindAreaById visit partition: Building
+12:13:30 [Thread-5] INFO  FITA2 - VisitorFindAreaById visit partition: Building
+12:13:30 [Thread-5] INFO  FITA2 - VisitorFindAreaById visit partition: Basement
+12:13:30 [Thread-5] INFO  FITA2 - VisitorFindAreaById visit partition: Basement
+12:13:30 [Thread-5] INFO  FITA2 - VisitorFindAreaById visit space: Parking
+12:13:30 [Thread-5] INFO  FITA2 - VisitorFindAreaById visit space: Parking
+12:13:30 [Thread-5] INFO  FITA2 - VisitorFindAreaById visit partition: Ground floor
+12:13:30 [Thread-5] INFO  FITA2 - VisitorFindAreaById visit partition: Ground floor
+12:13:30 [Thread-5] INFO  FITA2 - VisitorFindAreaById visit space: Floor
+12:13:30 [Thread-5] INFO  FITA2 - VisitorFindAreaById visit space: Floor
+12:13:30 [Thread-5] INFO  FITA2 - VisitorFindAreaById visit space: Room
+12:13:30 [Thread-5] INFO  FITA2 - VisitorFindAreaById visit space: Room
+12:13:30 [Thread-5] INFO  FITA2 - VisitorFindAreaById visit space: Room
+12:13:30 [Thread-5] INFO  FITA2 - VisitorFindAreaById visit space: Room
+12:13:30 [Thread-5] INFO  FITA2 - VisitorFindAreaById visit partition: Floor 1
+12:13:30 [Thread-5] INFO  FITA2 - VisitorFindAreaById visit partition: Floor 1
+12:13:30 [Thread-5] INFO  FITA2 - VisitorFindAreaById visit space: Room
+12:13:30 [Thread-5] INFO  FITA2 - VisitorFindAreaById visit space: Room
+12:13:30 [Thread-5] INFO  FITA2 - VisitorFindAreaById visit space: Corridor
+12:13:30 [Thread-5] INFO  FITA2 - VisitorFindAreaById visit space: Corridor
+12:13:30 [Thread-5] INFO  FITA2 - VisitorFindAreaById visit space: It
+12:13:30 [Thread-5] INFO  FITA2 - VisitorFindAreaById visit space: It
+12:13:30 [Thread-5] INFO  FITA2 - VisitorFindAreaById visit space: Stairs
+12:13:30 [Thread-5] INFO  FITA2 - VisitorFindAreaById visit space: Stairs
+12:13:30 [Thread-5] INFO  FITA2 - VisitorFindAreaById visit space: Exterior
+12:13:30 [Thread-5] INFO  FITA2 - VisitorFindAreaById visit space: Exterior
+12:13:30 [Thread-5] INFO  baseNoStates.WebServer$SocketThread - processed request get_children RequestChildren{areaId=parking}
+12:13:30 [Thread-5] INFO  baseNoStates.WebServer$SocketThread - answer HTTP/1.0 200 OK
+Content-type: application/json
+Access-Control-Allow-Origin: *
+
+{"access_doors":[{"closed":true,"id":"D1","state":"locked"},{"closed":true,"id":"D2","state":"locked"}],"id":"parking","class":"space"}
+12:13:43 [Thread-6] INFO  baseNoStates.WebServer$SocketThread - socked thread : GET /get_children?ground_floor HTTP/1.1
+12:13:43 [Thread-6] INFO  baseNoStates.WebServer$SocketThread - Input GET /get_children?ground_floor HTTP/1.1
+12:13:43 [Thread-6] INFO  baseNoStates.WebServer$SocketThread - Method GET
+12:13:43 [Thread-6] INFO  baseNoStates.WebServer$SocketThread - Resource /get_children?ground_floor
+12:13:43 [Thread-6] INFO  baseNoStates.WebServer$SocketThread - 0 get_children
+12:13:43 [Thread-6] INFO  baseNoStates.WebServer$SocketThread - 1 ground_floor
+12:13:43 [Thread-6] INFO  baseNoStates.WebServer$SocketThread - tokens : get_children, ground_floor, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null
+12:13:43 [Thread-6] INFO  baseNoStates.WebServer$SocketThread - created request get_children RequestChildren{areaId=ground_floor}
+12:13:43 [Thread-6] INFO  FITA2 - VisitorFindAreaById visit partition: Building
+12:13:43 [Thread-6] INFO  FITA2 - VisitorFindAreaById visit partition: Building
+12:13:43 [Thread-6] INFO  FITA2 - VisitorFindAreaById visit partition: Basement
+12:13:43 [Thread-6] INFO  FITA2 - VisitorFindAreaById visit partition: Basement
+12:13:43 [Thread-6] INFO  FITA2 - VisitorFindAreaById visit space: Parking
+12:13:43 [Thread-6] INFO  FITA2 - VisitorFindAreaById visit space: Parking
+12:13:43 [Thread-6] INFO  FITA2 - VisitorFindAreaById visit partition: Ground floor
+12:13:43 [Thread-6] INFO  FITA2 - VisitorFindAreaById visit partition: Ground floor
+12:13:43 [Thread-6] INFO  FITA2 - VisitorFindAreaById visit partition: Floor 1
+12:13:43 [Thread-6] INFO  FITA2 - VisitorFindAreaById visit partition: Floor 1
+12:13:43 [Thread-6] INFO  FITA2 - VisitorFindAreaById visit space: Room
+12:13:43 [Thread-6] INFO  FITA2 - VisitorFindAreaById visit space: Room
+12:13:43 [Thread-6] INFO  FITA2 - VisitorFindAreaById visit space: Corridor
+12:13:43 [Thread-6] INFO  FITA2 - VisitorFindAreaById visit space: Corridor
+12:13:43 [Thread-6] INFO  FITA2 - VisitorFindAreaById visit space: It
+12:13:43 [Thread-6] INFO  FITA2 - VisitorFindAreaById visit space: It
+12:13:43 [Thread-6] INFO  FITA2 - VisitorFindAreaById visit space: Stairs
+12:13:43 [Thread-6] INFO  FITA2 - VisitorFindAreaById visit space: Stairs
+12:13:43 [Thread-6] INFO  FITA2 - VisitorFindAreaById visit space: Exterior
+12:13:43 [Thread-6] INFO  FITA2 - VisitorFindAreaById visit space: Exterior
+12:13:43 [Thread-6] INFO  baseNoStates.WebServer$SocketThread - processed request get_children RequestChildren{areaId=ground_floor}
+12:13:43 [Thread-6] INFO  baseNoStates.WebServer$SocketThread - answer HTTP/1.0 200 OK
+Content-type: application/json
+Access-Control-Allow-Origin: *
+
+{"areas":[{"access_doors":[{"closed":true,"id":"D3","state":"locked"},{"closed":true,"id":"D4","state":"locked"}],"id":"hall","class":"space"},{"access_doors":[{"closed":true,"id":"D5","state":"locked"}],"id":"room1","class":"space"},{"access_doors":[{"closed":true,"id":"D6","state":"locked"}],"id":"room2","class":"space"}],"id":"ground_floor","class":"partition"}
+12:13:43 [Thread-7] INFO  baseNoStates.WebServer$SocketThread - socked thread : GET /get_children?ground_floor HTTP/1.1
+12:13:43 [Thread-7] INFO  baseNoStates.WebServer$SocketThread - Input GET /get_children?ground_floor HTTP/1.1
+12:13:43 [Thread-7] INFO  baseNoStates.WebServer$SocketThread - Method GET
+12:13:43 [Thread-7] INFO  baseNoStates.WebServer$SocketThread - Resource /get_children?ground_floor
+12:13:43 [Thread-7] INFO  baseNoStates.WebServer$SocketThread - 0 get_children
+12:13:43 [Thread-7] INFO  baseNoStates.WebServer$SocketThread - 1 ground_floor
+12:13:43 [Thread-7] INFO  baseNoStates.WebServer$SocketThread - tokens : get_children, ground_floor, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null
+12:13:43 [Thread-7] INFO  baseNoStates.WebServer$SocketThread - created request get_children RequestChildren{areaId=ground_floor}
+12:13:43 [Thread-7] INFO  FITA2 - VisitorFindAreaById visit partition: Building
+12:13:43 [Thread-7] INFO  FITA2 - VisitorFindAreaById visit partition: Building
+12:13:43 [Thread-7] INFO  FITA2 - VisitorFindAreaById visit partition: Basement
+12:13:43 [Thread-7] INFO  FITA2 - VisitorFindAreaById visit partition: Basement
+12:13:43 [Thread-7] INFO  FITA2 - VisitorFindAreaById visit space: Parking
+12:13:43 [Thread-7] INFO  FITA2 - VisitorFindAreaById visit space: Parking
+12:13:43 [Thread-7] INFO  FITA2 - VisitorFindAreaById visit partition: Ground floor
+12:13:43 [Thread-7] INFO  FITA2 - VisitorFindAreaById visit partition: Ground floor
+12:13:43 [Thread-7] INFO  FITA2 - VisitorFindAreaById visit partition: Floor 1
+12:13:43 [Thread-7] INFO  FITA2 - VisitorFindAreaById visit partition: Floor 1
+12:13:43 [Thread-7] INFO  FITA2 - VisitorFindAreaById visit space: Room
+12:13:43 [Thread-7] INFO  FITA2 - VisitorFindAreaById visit space: Room
+12:13:43 [Thread-7] INFO  FITA2 - VisitorFindAreaById visit space: Corridor
+12:13:43 [Thread-7] INFO  FITA2 - VisitorFindAreaById visit space: Corridor
+12:13:43 [Thread-7] INFO  FITA2 - VisitorFindAreaById visit space: It
+12:13:43 [Thread-7] INFO  FITA2 - VisitorFindAreaById visit space: It
+12:13:43 [Thread-7] INFO  FITA2 - VisitorFindAreaById visit space: Stairs
+12:13:43 [Thread-7] INFO  FITA2 - VisitorFindAreaById visit space: Stairs
+12:13:43 [Thread-7] INFO  FITA2 - VisitorFindAreaById visit space: Exterior
+12:13:43 [Thread-7] INFO  FITA2 - VisitorFindAreaById visit space: Exterior
+12:13:43 [Thread-7] INFO  baseNoStates.WebServer$SocketThread - processed request get_children RequestChildren{areaId=ground_floor}
+12:13:43 [Thread-7] INFO  baseNoStates.WebServer$SocketThread - answer HTTP/1.0 200 OK
+Content-type: application/json
+Access-Control-Allow-Origin: *
+
+{"areas":[{"access_doors":[{"closed":true,"id":"D3","state":"locked"},{"closed":true,"id":"D4","state":"locked"}],"id":"hall","class":"space"},{"access_doors":[{"closed":true,"id":"D5","state":"locked"}],"id":"room1","class":"space"},{"access_doors":[{"closed":true,"id":"D6","state":"locked"}],"id":"room2","class":"space"}],"id":"ground_floor","class":"partition"}
+12:13:44 [Thread-8] INFO  baseNoStates.WebServer$SocketThread - socked thread : GET /get_children?hall HTTP/1.1
+12:13:44 [Thread-8] INFO  baseNoStates.WebServer$SocketThread - Input GET /get_children?hall HTTP/1.1
+12:13:44 [Thread-8] INFO  baseNoStates.WebServer$SocketThread - Method GET
+12:13:44 [Thread-8] INFO  baseNoStates.WebServer$SocketThread - Resource /get_children?hall
+12:13:44 [Thread-8] INFO  baseNoStates.WebServer$SocketThread - 0 get_children
+12:13:44 [Thread-8] INFO  baseNoStates.WebServer$SocketThread - 1 hall
+12:13:44 [Thread-8] INFO  baseNoStates.WebServer$SocketThread - tokens : get_children, hall, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null
+12:13:44 [Thread-8] INFO  baseNoStates.WebServer$SocketThread - created request get_children RequestChildren{areaId=hall}
+12:13:44 [Thread-8] INFO  FITA2 - VisitorFindAreaById visit partition: Building
+12:13:44 [Thread-8] INFO  FITA2 - VisitorFindAreaById visit partition: Building
+12:13:44 [Thread-8] INFO  FITA2 - VisitorFindAreaById visit partition: Basement
+12:13:44 [Thread-8] INFO  FITA2 - VisitorFindAreaById visit partition: Basement
+12:13:44 [Thread-8] INFO  FITA2 - VisitorFindAreaById visit space: Parking
+12:13:44 [Thread-8] INFO  FITA2 - VisitorFindAreaById visit space: Parking
+12:13:44 [Thread-8] INFO  FITA2 - VisitorFindAreaById visit partition: Ground floor
+12:13:44 [Thread-8] INFO  FITA2 - VisitorFindAreaById visit partition: Ground floor
+12:13:44 [Thread-8] INFO  FITA2 - VisitorFindAreaById visit space: Floor
+12:13:44 [Thread-8] INFO  FITA2 - VisitorFindAreaById visit space: Floor
+12:13:44 [Thread-8] INFO  FITA2 - VisitorFindAreaById visit space: Room
+12:13:44 [Thread-8] INFO  FITA2 - VisitorFindAreaById visit space: Room
+12:13:44 [Thread-8] INFO  FITA2 - VisitorFindAreaById visit space: Room
+12:13:44 [Thread-8] INFO  FITA2 - VisitorFindAreaById visit space: Room
+12:13:44 [Thread-8] INFO  FITA2 - VisitorFindAreaById visit partition: Floor 1
+12:13:44 [Thread-8] INFO  FITA2 - VisitorFindAreaById visit partition: Floor 1
+12:13:44 [Thread-8] INFO  FITA2 - VisitorFindAreaById visit space: Room
+12:13:44 [Thread-8] INFO  FITA2 - VisitorFindAreaById visit space: Room
+12:13:44 [Thread-8] INFO  FITA2 - VisitorFindAreaById visit space: Corridor
+12:13:44 [Thread-8] INFO  FITA2 - VisitorFindAreaById visit space: Corridor
+12:13:44 [Thread-8] INFO  FITA2 - VisitorFindAreaById visit space: It
+12:13:44 [Thread-8] INFO  FITA2 - VisitorFindAreaById visit space: It
+12:13:44 [Thread-8] INFO  FITA2 - VisitorFindAreaById visit space: Stairs
+12:13:44 [Thread-8] INFO  FITA2 - VisitorFindAreaById visit space: Stairs
+12:13:44 [Thread-8] INFO  FITA2 - VisitorFindAreaById visit space: Exterior
+12:13:44 [Thread-8] INFO  FITA2 - VisitorFindAreaById visit space: Exterior
+12:13:44 [Thread-8] INFO  baseNoStates.WebServer$SocketThread - processed request get_children RequestChildren{areaId=hall}
+12:13:44 [Thread-8] INFO  baseNoStates.WebServer$SocketThread - answer HTTP/1.0 200 OK
+Content-type: application/json
+Access-Control-Allow-Origin: *
+
+{"access_doors":[{"closed":true,"id":"D3","state":"locked"},{"closed":true,"id":"D4","state":"locked"}],"id":"hall","class":"space"}
+12:13:44 [Thread-9] INFO  baseNoStates.WebServer$SocketThread - socked thread : GET /get_children?hall HTTP/1.1
+12:13:44 [Thread-9] INFO  baseNoStates.WebServer$SocketThread - Input GET /get_children?hall HTTP/1.1
+12:13:44 [Thread-9] INFO  baseNoStates.WebServer$SocketThread - Method GET
+12:13:44 [Thread-9] INFO  baseNoStates.WebServer$SocketThread - Resource /get_children?hall
+12:13:44 [Thread-9] INFO  baseNoStates.WebServer$SocketThread - 0 get_children
+12:13:44 [Thread-9] INFO  baseNoStates.WebServer$SocketThread - 1 hall
+12:13:44 [Thread-9] INFO  baseNoStates.WebServer$SocketThread - tokens : get_children, hall, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null
+12:13:44 [Thread-9] INFO  baseNoStates.WebServer$SocketThread - created request get_children RequestChildren{areaId=hall}
+12:13:44 [Thread-9] INFO  FITA2 - VisitorFindAreaById visit partition: Building
+12:13:44 [Thread-9] INFO  FITA2 - VisitorFindAreaById visit partition: Building
+12:13:44 [Thread-9] INFO  FITA2 - VisitorFindAreaById visit partition: Basement
+12:13:44 [Thread-9] INFO  FITA2 - VisitorFindAreaById visit partition: Basement
+12:13:44 [Thread-9] INFO  FITA2 - VisitorFindAreaById visit space: Parking
+12:13:44 [Thread-9] INFO  FITA2 - VisitorFindAreaById visit space: Parking
+12:13:44 [Thread-9] INFO  FITA2 - VisitorFindAreaById visit partition: Ground floor
+12:13:44 [Thread-9] INFO  FITA2 - VisitorFindAreaById visit partition: Ground floor
+12:13:44 [Thread-9] INFO  FITA2 - VisitorFindAreaById visit space: Floor
+12:13:44 [Thread-9] INFO  FITA2 - VisitorFindAreaById visit space: Floor
+12:13:44 [Thread-9] INFO  FITA2 - VisitorFindAreaById visit space: Room
+12:13:44 [Thread-9] INFO  FITA2 - VisitorFindAreaById visit space: Room
+12:13:44 [Thread-9] INFO  FITA2 - VisitorFindAreaById visit space: Room
+12:13:44 [Thread-9] INFO  FITA2 - VisitorFindAreaById visit space: Room
+12:13:44 [Thread-9] INFO  FITA2 - VisitorFindAreaById visit partition: Floor 1
+12:13:44 [Thread-9] INFO  FITA2 - VisitorFindAreaById visit partition: Floor 1
+12:13:44 [Thread-9] INFO  FITA2 - VisitorFindAreaById visit space: Room
+12:13:44 [Thread-9] INFO  FITA2 - VisitorFindAreaById visit space: Room
+12:13:44 [Thread-9] INFO  FITA2 - VisitorFindAreaById visit space: Corridor
+12:13:44 [Thread-9] INFO  FITA2 - VisitorFindAreaById visit space: Corridor
+12:13:44 [Thread-9] INFO  FITA2 - VisitorFindAreaById visit space: It
+12:13:44 [Thread-9] INFO  FITA2 - VisitorFindAreaById visit space: It
+12:13:44 [Thread-9] INFO  FITA2 - VisitorFindAreaById visit space: Stairs
+12:13:44 [Thread-9] INFO  FITA2 - VisitorFindAreaById visit space: Stairs
+12:13:44 [Thread-9] INFO  FITA2 - VisitorFindAreaById visit space: Exterior
+12:13:44 [Thread-9] INFO  FITA2 - VisitorFindAreaById visit space: Exterior
+12:13:44 [Thread-9] INFO  baseNoStates.WebServer$SocketThread - processed request get_children RequestChildren{areaId=hall}
+12:13:44 [Thread-9] INFO  baseNoStates.WebServer$SocketThread - answer HTTP/1.0 200 OK
+Content-type: application/json
+Access-Control-Allow-Origin: *
+
+{"access_doors":[{"closed":true,"id":"D3","state":"locked"},{"closed":true,"id":"D4","state":"locked"}],"id":"hall","class":"space"}
+12:20:17 [Thread-10] INFO  baseNoStates.WebServer$SocketThread - socked thread : GET /get_children?building HTTP/1.1
+12:20:17 [Thread-10] INFO  baseNoStates.WebServer$SocketThread - Input GET /get_children?building HTTP/1.1
+12:20:17 [Thread-10] INFO  baseNoStates.WebServer$SocketThread - Method GET
+12:20:17 [Thread-10] INFO  baseNoStates.WebServer$SocketThread - Resource /get_children?building
+12:20:17 [Thread-10] INFO  baseNoStates.WebServer$SocketThread - 0 get_children
+12:20:17 [Thread-10] INFO  baseNoStates.WebServer$SocketThread - 1 building
+12:20:17 [Thread-10] INFO  baseNoStates.WebServer$SocketThread - tokens : get_children, building, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null
+12:20:17 [Thread-10] INFO  baseNoStates.WebServer$SocketThread - created request get_children RequestChildren{areaId=building}
+12:20:17 [Thread-10] INFO  FITA2 - VisitorFindAreaById visit partition: Building
+12:20:17 [Thread-10] INFO  FITA2 - VisitorFindAreaById visit partition: Building
+12:20:17 [Thread-10] INFO  baseNoStates.WebServer$SocketThread - processed request get_children RequestChildren{areaId=building}
+12:20:17 [Thread-10] INFO  baseNoStates.WebServer$SocketThread - answer HTTP/1.0 200 OK
+Content-type: application/json
+Access-Control-Allow-Origin: *
+
+{"areas":[{"id":"basement","class":"partition"},{"id":"ground_floor","class":"partition"},{"id":"floor1","class":"partition"},{"access_doors":[],"id":"stairs","class":"space"},{"access_doors":[],"id":"exterior","class":"space"}],"id":"building","class":"partition"}
+12:20:17 [Thread-11] INFO  baseNoStates.WebServer$SocketThread - socked thread : GET /get_children?building HTTP/1.1
+12:20:17 [Thread-11] INFO  baseNoStates.WebServer$SocketThread - Input GET /get_children?building HTTP/1.1
+12:20:17 [Thread-11] INFO  baseNoStates.WebServer$SocketThread - Method GET
+12:20:17 [Thread-11] INFO  baseNoStates.WebServer$SocketThread - Resource /get_children?building
+12:20:17 [Thread-11] INFO  baseNoStates.WebServer$SocketThread - 0 get_children
+12:20:17 [Thread-11] INFO  baseNoStates.WebServer$SocketThread - 1 building
+12:20:17 [Thread-11] INFO  baseNoStates.WebServer$SocketThread - tokens : get_children, building, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null
+12:20:17 [Thread-11] INFO  baseNoStates.WebServer$SocketThread - created request get_children RequestChildren{areaId=building}
+12:20:17 [Thread-11] INFO  FITA2 - VisitorFindAreaById visit partition: Building
+12:20:17 [Thread-11] INFO  FITA2 - VisitorFindAreaById visit partition: Building
+12:20:17 [Thread-11] INFO  baseNoStates.WebServer$SocketThread - processed request get_children RequestChildren{areaId=building}
+12:20:17 [Thread-11] INFO  baseNoStates.WebServer$SocketThread - answer HTTP/1.0 200 OK
+Content-type: application/json
+Access-Control-Allow-Origin: *
+
+{"areas":[{"id":"basement","class":"partition"},{"id":"ground_floor","class":"partition"},{"id":"floor1","class":"partition"},{"access_doors":[],"id":"stairs","class":"space"},{"access_doors":[],"id":"exterior","class":"space"}],"id":"building","class":"partition"}
+12:20:23 [Thread-12] INFO  baseNoStates.WebServer$SocketThread - socked thread : GET /get_children?building HTTP/1.1
+12:20:23 [Thread-12] INFO  baseNoStates.WebServer$SocketThread - Input GET /get_children?building HTTP/1.1
+12:20:23 [Thread-12] INFO  baseNoStates.WebServer$SocketThread - Method GET
+12:20:23 [Thread-12] INFO  baseNoStates.WebServer$SocketThread - Resource /get_children?building
+12:20:23 [Thread-12] INFO  baseNoStates.WebServer$SocketThread - 0 get_children
+12:20:23 [Thread-12] INFO  baseNoStates.WebServer$SocketThread - 1 building
+12:20:23 [Thread-12] INFO  baseNoStates.WebServer$SocketThread - tokens : get_children, building, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null
+12:20:23 [Thread-12] INFO  baseNoStates.WebServer$SocketThread - created request get_children RequestChildren{areaId=building}
+12:20:23 [Thread-12] INFO  FITA2 - VisitorFindAreaById visit partition: Building
+12:20:23 [Thread-12] INFO  FITA2 - VisitorFindAreaById visit partition: Building
+12:20:23 [Thread-12] INFO  baseNoStates.WebServer$SocketThread - processed request get_children RequestChildren{areaId=building}
+12:20:23 [Thread-12] INFO  baseNoStates.WebServer$SocketThread - answer HTTP/1.0 200 OK
+Content-type: application/json
+Access-Control-Allow-Origin: *
+
+{"areas":[{"id":"basement","class":"partition"},{"id":"ground_floor","class":"partition"},{"id":"floor1","class":"partition"},{"access_doors":[],"id":"stairs","class":"space"},{"access_doors":[],"id":"exterior","class":"space"}],"id":"building","class":"partition"}
+12:20:23 [Thread-13] INFO  baseNoStates.WebServer$SocketThread - socked thread : GET /get_children?building HTTP/1.1
+12:20:23 [Thread-13] INFO  baseNoStates.WebServer$SocketThread - Input GET /get_children?building HTTP/1.1
+12:20:23 [Thread-13] INFO  baseNoStates.WebServer$SocketThread - Method GET
+12:20:23 [Thread-13] INFO  baseNoStates.WebServer$SocketThread - Resource /get_children?building
+12:20:23 [Thread-13] INFO  baseNoStates.WebServer$SocketThread - 0 get_children
+12:20:23 [Thread-13] INFO  baseNoStates.WebServer$SocketThread - 1 building
+12:20:23 [Thread-13] INFO  baseNoStates.WebServer$SocketThread - tokens : get_children, building, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null
+12:20:23 [Thread-13] INFO  baseNoStates.WebServer$SocketThread - created request get_children RequestChildren{areaId=building}
+12:20:23 [Thread-13] INFO  FITA2 - VisitorFindAreaById visit partition: Building
+12:20:23 [Thread-13] INFO  FITA2 - VisitorFindAreaById visit partition: Building
+12:20:23 [Thread-13] INFO  baseNoStates.WebServer$SocketThread - processed request get_children RequestChildren{areaId=building}
+12:20:23 [Thread-13] INFO  baseNoStates.WebServer$SocketThread - answer HTTP/1.0 200 OK
+Content-type: application/json
+Access-Control-Allow-Origin: *
+
+{"areas":[{"id":"basement","class":"partition"},{"id":"ground_floor","class":"partition"},{"id":"floor1","class":"partition"},{"access_doors":[],"id":"stairs","class":"space"},{"access_doors":[],"id":"exterior","class":"space"}],"id":"building","class":"partition"}
+12:20:32 [Thread-14] INFO  baseNoStates.WebServer$SocketThread - socked thread : GET /get_children?basement HTTP/1.1
+12:20:32 [Thread-14] INFO  baseNoStates.WebServer$SocketThread - Input GET /get_children?basement HTTP/1.1
+12:20:32 [Thread-14] INFO  baseNoStates.WebServer$SocketThread - Method GET
+12:20:32 [Thread-14] INFO  baseNoStates.WebServer$SocketThread - Resource /get_children?basement
+12:20:32 [Thread-14] INFO  baseNoStates.WebServer$SocketThread - 0 get_children
+12:20:32 [Thread-14] INFO  baseNoStates.WebServer$SocketThread - 1 basement
+12:20:32 [Thread-14] INFO  baseNoStates.WebServer$SocketThread - tokens : get_children, basement, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null
+12:20:32 [Thread-14] INFO  baseNoStates.WebServer$SocketThread - created request get_children RequestChildren{areaId=basement}
+12:20:32 [Thread-14] INFO  FITA2 - VisitorFindAreaById visit partition: Building
+12:20:32 [Thread-14] INFO  FITA2 - VisitorFindAreaById visit partition: Building
+12:20:32 [Thread-14] INFO  FITA2 - VisitorFindAreaById visit partition: Basement
+12:20:32 [Thread-14] INFO  FITA2 - VisitorFindAreaById visit partition: Basement
+12:20:32 [Thread-14] INFO  FITA2 - VisitorFindAreaById visit partition: Ground floor
+12:20:32 [Thread-14] INFO  FITA2 - VisitorFindAreaById visit partition: Ground floor
+12:20:32 [Thread-14] INFO  FITA2 - VisitorFindAreaById visit space: Floor
+12:20:32 [Thread-14] INFO  FITA2 - VisitorFindAreaById visit space: Floor
+12:20:32 [Thread-14] INFO  FITA2 - VisitorFindAreaById visit space: Room
+12:20:32 [Thread-14] INFO  FITA2 - VisitorFindAreaById visit space: Room
+12:20:32 [Thread-14] INFO  FITA2 - VisitorFindAreaById visit space: Room
+12:20:32 [Thread-14] INFO  FITA2 - VisitorFindAreaById visit space: Room
+12:20:32 [Thread-14] INFO  FITA2 - VisitorFindAreaById visit partition: Floor 1
+12:20:32 [Thread-14] INFO  FITA2 - VisitorFindAreaById visit partition: Floor 1
+12:20:32 [Thread-14] INFO  FITA2 - VisitorFindAreaById visit space: Room
+12:20:32 [Thread-14] INFO  FITA2 - VisitorFindAreaById visit space: Room
+12:20:32 [Thread-14] INFO  FITA2 - VisitorFindAreaById visit space: Corridor
+12:20:32 [Thread-14] INFO  FITA2 - VisitorFindAreaById visit space: Corridor
+12:20:32 [Thread-14] INFO  FITA2 - VisitorFindAreaById visit space: It
+12:20:32 [Thread-14] INFO  FITA2 - VisitorFindAreaById visit space: It
+12:20:32 [Thread-14] INFO  FITA2 - VisitorFindAreaById visit space: Stairs
+12:20:32 [Thread-14] INFO  FITA2 - VisitorFindAreaById visit space: Stairs
+12:20:32 [Thread-14] INFO  FITA2 - VisitorFindAreaById visit space: Exterior
+12:20:32 [Thread-14] INFO  FITA2 - VisitorFindAreaById visit space: Exterior
+12:20:32 [Thread-14] INFO  baseNoStates.WebServer$SocketThread - processed request get_children RequestChildren{areaId=basement}
+12:20:32 [Thread-14] INFO  baseNoStates.WebServer$SocketThread - answer HTTP/1.0 200 OK
+Content-type: application/json
+Access-Control-Allow-Origin: *
+
+{"areas":[{"access_doors":[{"closed":true,"id":"D1","state":"locked"},{"closed":true,"id":"D2","state":"locked"}],"id":"parking","class":"space"}],"id":"basement","class":"partition"}
+12:20:32 [Thread-15] INFO  baseNoStates.WebServer$SocketThread - socked thread : GET /get_children?basement HTTP/1.1
+12:20:32 [Thread-15] INFO  baseNoStates.WebServer$SocketThread - Input GET /get_children?basement HTTP/1.1
+12:20:32 [Thread-15] INFO  baseNoStates.WebServer$SocketThread - Method GET
+12:20:32 [Thread-15] INFO  baseNoStates.WebServer$SocketThread - Resource /get_children?basement
+12:20:32 [Thread-15] INFO  baseNoStates.WebServer$SocketThread - 0 get_children
+12:20:32 [Thread-15] INFO  baseNoStates.WebServer$SocketThread - 1 basement
+12:20:32 [Thread-15] INFO  baseNoStates.WebServer$SocketThread - tokens : get_children, basement, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null
+12:20:32 [Thread-15] INFO  baseNoStates.WebServer$SocketThread - created request get_children RequestChildren{areaId=basement}
+12:20:32 [Thread-15] INFO  FITA2 - VisitorFindAreaById visit partition: Building
+12:20:32 [Thread-15] INFO  FITA2 - VisitorFindAreaById visit partition: Building
+12:20:32 [Thread-15] INFO  FITA2 - VisitorFindAreaById visit partition: Basement
+12:20:32 [Thread-15] INFO  FITA2 - VisitorFindAreaById visit partition: Basement
+12:20:32 [Thread-15] INFO  FITA2 - VisitorFindAreaById visit partition: Ground floor
+12:20:32 [Thread-15] INFO  FITA2 - VisitorFindAreaById visit partition: Ground floor
+12:20:32 [Thread-15] INFO  FITA2 - VisitorFindAreaById visit space: Floor
+12:20:32 [Thread-15] INFO  FITA2 - VisitorFindAreaById visit space: Floor
+12:20:32 [Thread-15] INFO  FITA2 - VisitorFindAreaById visit space: Room
+12:20:32 [Thread-15] INFO  FITA2 - VisitorFindAreaById visit space: Room
+12:20:32 [Thread-15] INFO  FITA2 - VisitorFindAreaById visit space: Room
+12:20:32 [Thread-15] INFO  FITA2 - VisitorFindAreaById visit space: Room
+12:20:32 [Thread-15] INFO  FITA2 - VisitorFindAreaById visit partition: Floor 1
+12:20:32 [Thread-15] INFO  FITA2 - VisitorFindAreaById visit partition: Floor 1
+12:20:32 [Thread-15] INFO  FITA2 - VisitorFindAreaById visit space: Room
+12:20:32 [Thread-15] INFO  FITA2 - VisitorFindAreaById visit space: Room
+12:20:32 [Thread-15] INFO  FITA2 - VisitorFindAreaById visit space: Corridor
+12:20:32 [Thread-15] INFO  FITA2 - VisitorFindAreaById visit space: Corridor
+12:20:32 [Thread-15] INFO  FITA2 - VisitorFindAreaById visit space: It
+12:20:32 [Thread-15] INFO  FITA2 - VisitorFindAreaById visit space: It
+12:20:32 [Thread-15] INFO  FITA2 - VisitorFindAreaById visit space: Stairs
+12:20:32 [Thread-15] INFO  FITA2 - VisitorFindAreaById visit space: Stairs
+12:20:32 [Thread-15] INFO  FITA2 - VisitorFindAreaById visit space: Exterior
+12:20:32 [Thread-15] INFO  FITA2 - VisitorFindAreaById visit space: Exterior
+12:20:32 [Thread-15] INFO  baseNoStates.WebServer$SocketThread - processed request get_children RequestChildren{areaId=basement}
+12:20:32 [Thread-15] INFO  baseNoStates.WebServer$SocketThread - answer HTTP/1.0 200 OK
+Content-type: application/json
+Access-Control-Allow-Origin: *
+
+{"areas":[{"access_doors":[{"closed":true,"id":"D1","state":"locked"},{"closed":true,"id":"D2","state":"locked"}],"id":"parking","class":"space"}],"id":"basement","class":"partition"}
+12:20:34 [Thread-16] INFO  baseNoStates.WebServer$SocketThread - socked thread : GET /get_children?parking HTTP/1.1
+12:20:34 [Thread-16] INFO  baseNoStates.WebServer$SocketThread - Input GET /get_children?parking HTTP/1.1
+12:20:34 [Thread-16] INFO  baseNoStates.WebServer$SocketThread - Method GET
+12:20:34 [Thread-16] INFO  baseNoStates.WebServer$SocketThread - Resource /get_children?parking
+12:20:34 [Thread-16] INFO  baseNoStates.WebServer$SocketThread - 0 get_children
+12:20:34 [Thread-16] INFO  baseNoStates.WebServer$SocketThread - 1 parking
+12:20:34 [Thread-16] INFO  baseNoStates.WebServer$SocketThread - tokens : get_children, parking, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null
+12:20:34 [Thread-16] INFO  baseNoStates.WebServer$SocketThread - created request get_children RequestChildren{areaId=parking}
+12:20:34 [Thread-16] INFO  FITA2 - VisitorFindAreaById visit partition: Building
+12:20:34 [Thread-16] INFO  FITA2 - VisitorFindAreaById visit partition: Building
+12:20:34 [Thread-16] INFO  FITA2 - VisitorFindAreaById visit partition: Basement
+12:20:34 [Thread-16] INFO  FITA2 - VisitorFindAreaById visit partition: Basement
+12:20:34 [Thread-16] INFO  FITA2 - VisitorFindAreaById visit space: Parking
+12:20:34 [Thread-16] INFO  FITA2 - VisitorFindAreaById visit space: Parking
+12:20:34 [Thread-16] INFO  FITA2 - VisitorFindAreaById visit partition: Ground floor
+12:20:34 [Thread-16] INFO  FITA2 - VisitorFindAreaById visit partition: Ground floor
+12:20:34 [Thread-16] INFO  FITA2 - VisitorFindAreaById visit space: Floor
+12:20:34 [Thread-16] INFO  FITA2 - VisitorFindAreaById visit space: Floor
+12:20:34 [Thread-16] INFO  FITA2 - VisitorFindAreaById visit space: Room
+12:20:34 [Thread-16] INFO  FITA2 - VisitorFindAreaById visit space: Room
+12:20:34 [Thread-16] INFO  FITA2 - VisitorFindAreaById visit space: Room
+12:20:34 [Thread-16] INFO  FITA2 - VisitorFindAreaById visit space: Room
+12:20:34 [Thread-16] INFO  FITA2 - VisitorFindAreaById visit partition: Floor 1
+12:20:34 [Thread-16] INFO  FITA2 - VisitorFindAreaById visit partition: Floor 1
+12:20:34 [Thread-16] INFO  FITA2 - VisitorFindAreaById visit space: Room
+12:20:34 [Thread-16] INFO  FITA2 - VisitorFindAreaById visit space: Room
+12:20:34 [Thread-16] INFO  FITA2 - VisitorFindAreaById visit space: Corridor
+12:20:34 [Thread-16] INFO  FITA2 - VisitorFindAreaById visit space: Corridor
+12:20:34 [Thread-16] INFO  FITA2 - VisitorFindAreaById visit space: It
+12:20:34 [Thread-16] INFO  FITA2 - VisitorFindAreaById visit space: It
+12:20:34 [Thread-16] INFO  FITA2 - VisitorFindAreaById visit space: Stairs
+12:20:34 [Thread-16] INFO  FITA2 - VisitorFindAreaById visit space: Stairs
+12:20:34 [Thread-16] INFO  FITA2 - VisitorFindAreaById visit space: Exterior
+12:20:34 [Thread-16] INFO  FITA2 - VisitorFindAreaById visit space: Exterior
+12:20:34 [Thread-16] INFO  baseNoStates.WebServer$SocketThread - processed request get_children RequestChildren{areaId=parking}
+12:20:34 [Thread-16] INFO  baseNoStates.WebServer$SocketThread - answer HTTP/1.0 200 OK
+Content-type: application/json
+Access-Control-Allow-Origin: *
+
+{"access_doors":[{"closed":true,"id":"D1","state":"locked"},{"closed":true,"id":"D2","state":"locked"}],"id":"parking","class":"space"}
+12:20:34 [Thread-17] INFO  baseNoStates.WebServer$SocketThread - socked thread : GET /get_children?parking HTTP/1.1
+12:20:34 [Thread-17] INFO  baseNoStates.WebServer$SocketThread - Input GET /get_children?parking HTTP/1.1
+12:20:34 [Thread-17] INFO  baseNoStates.WebServer$SocketThread - Method GET
+12:20:34 [Thread-17] INFO  baseNoStates.WebServer$SocketThread - Resource /get_children?parking
+12:20:34 [Thread-17] INFO  baseNoStates.WebServer$SocketThread - 0 get_children
+12:20:34 [Thread-17] INFO  baseNoStates.WebServer$SocketThread - 1 parking
+12:20:34 [Thread-17] INFO  baseNoStates.WebServer$SocketThread - tokens : get_children, parking, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null
+12:20:34 [Thread-17] INFO  baseNoStates.WebServer$SocketThread - created request get_children RequestChildren{areaId=parking}
+12:20:34 [Thread-17] INFO  FITA2 - VisitorFindAreaById visit partition: Building
+12:20:34 [Thread-17] INFO  FITA2 - VisitorFindAreaById visit partition: Building
+12:20:34 [Thread-17] INFO  FITA2 - VisitorFindAreaById visit partition: Basement
+12:20:34 [Thread-17] INFO  FITA2 - VisitorFindAreaById visit partition: Basement
+12:20:34 [Thread-17] INFO  FITA2 - VisitorFindAreaById visit space: Parking
+12:20:34 [Thread-17] INFO  FITA2 - VisitorFindAreaById visit space: Parking
+12:20:34 [Thread-17] INFO  FITA2 - VisitorFindAreaById visit partition: Ground floor
+12:20:34 [Thread-17] INFO  FITA2 - VisitorFindAreaById visit partition: Ground floor
+12:20:34 [Thread-17] INFO  FITA2 - VisitorFindAreaById visit space: Floor
+12:20:34 [Thread-17] INFO  FITA2 - VisitorFindAreaById visit space: Floor
+12:20:34 [Thread-17] INFO  FITA2 - VisitorFindAreaById visit space: Room
+12:20:34 [Thread-17] INFO  FITA2 - VisitorFindAreaById visit space: Room
+12:20:34 [Thread-17] INFO  FITA2 - VisitorFindAreaById visit space: Room
+12:20:34 [Thread-17] INFO  FITA2 - VisitorFindAreaById visit space: Room
+12:20:34 [Thread-17] INFO  FITA2 - VisitorFindAreaById visit partition: Floor 1
+12:20:34 [Thread-17] INFO  FITA2 - VisitorFindAreaById visit partition: Floor 1
+12:20:34 [Thread-17] INFO  FITA2 - VisitorFindAreaById visit space: Room
+12:20:34 [Thread-17] INFO  FITA2 - VisitorFindAreaById visit space: Room
+12:20:34 [Thread-17] INFO  FITA2 - VisitorFindAreaById visit space: Corridor
+12:20:34 [Thread-17] INFO  FITA2 - VisitorFindAreaById visit space: Corridor
+12:20:34 [Thread-17] INFO  FITA2 - VisitorFindAreaById visit space: It
+12:20:34 [Thread-17] INFO  FITA2 - VisitorFindAreaById visit space: It
+12:20:34 [Thread-17] INFO  FITA2 - VisitorFindAreaById visit space: Stairs
+12:20:34 [Thread-17] INFO  FITA2 - VisitorFindAreaById visit space: Stairs
+12:20:34 [Thread-17] INFO  FITA2 - VisitorFindAreaById visit space: Exterior
+12:20:34 [Thread-17] INFO  FITA2 - VisitorFindAreaById visit space: Exterior
+12:20:34 [Thread-17] INFO  baseNoStates.WebServer$SocketThread - processed request get_children RequestChildren{areaId=parking}
+12:20:34 [Thread-17] INFO  baseNoStates.WebServer$SocketThread - answer HTTP/1.0 200 OK
+Content-type: application/json
+Access-Control-Allow-Origin: *
+
+{"access_doors":[{"closed":true,"id":"D1","state":"locked"},{"closed":true,"id":"D2","state":"locked"}],"id":"parking","class":"space"}
+12:23:17 [Thread-18] INFO  baseNoStates.WebServer$SocketThread - socked thread : GET /get_children?building HTTP/1.1
+12:23:17 [Thread-18] INFO  baseNoStates.WebServer$SocketThread - Input GET /get_children?building HTTP/1.1
+12:23:17 [Thread-18] INFO  baseNoStates.WebServer$SocketThread - Method GET
+12:23:17 [Thread-18] INFO  baseNoStates.WebServer$SocketThread - Resource /get_children?building
+12:23:17 [Thread-18] INFO  baseNoStates.WebServer$SocketThread - 0 get_children
+12:23:17 [Thread-18] INFO  baseNoStates.WebServer$SocketThread - 1 building
+12:23:17 [Thread-18] INFO  baseNoStates.WebServer$SocketThread - tokens : get_children, building, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null
+12:23:17 [Thread-18] INFO  baseNoStates.WebServer$SocketThread - created request get_children RequestChildren{areaId=building}
+12:23:17 [Thread-18] INFO  FITA2 - VisitorFindAreaById visit partition: Building
+12:23:17 [Thread-18] INFO  FITA2 - VisitorFindAreaById visit partition: Building
+12:23:17 [Thread-18] INFO  baseNoStates.WebServer$SocketThread - processed request get_children RequestChildren{areaId=building}
+12:23:17 [Thread-18] INFO  baseNoStates.WebServer$SocketThread - answer HTTP/1.0 200 OK
+Content-type: application/json
+Access-Control-Allow-Origin: *
+
+{"areas":[{"id":"basement","class":"partition"},{"id":"ground_floor","class":"partition"},{"id":"floor1","class":"partition"},{"access_doors":[],"id":"stairs","class":"space"},{"access_doors":[],"id":"exterior","class":"space"}],"id":"building","class":"partition"}
+12:23:18 [Thread-19] INFO  baseNoStates.WebServer$SocketThread - socked thread : GET /get_children?building HTTP/1.1
+12:23:18 [Thread-19] INFO  baseNoStates.WebServer$SocketThread - Input GET /get_children?building HTTP/1.1
+12:23:18 [Thread-19] INFO  baseNoStates.WebServer$SocketThread - Method GET
+12:23:18 [Thread-19] INFO  baseNoStates.WebServer$SocketThread - Resource /get_children?building
+12:23:18 [Thread-19] INFO  baseNoStates.WebServer$SocketThread - 0 get_children
+12:23:18 [Thread-19] INFO  baseNoStates.WebServer$SocketThread - 1 building
+12:23:18 [Thread-19] INFO  baseNoStates.WebServer$SocketThread - tokens : get_children, building, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null
+12:23:18 [Thread-19] INFO  baseNoStates.WebServer$SocketThread - created request get_children RequestChildren{areaId=building}
+12:23:18 [Thread-19] INFO  FITA2 - VisitorFindAreaById visit partition: Building
+12:23:18 [Thread-19] INFO  FITA2 - VisitorFindAreaById visit partition: Building
+12:23:18 [Thread-19] INFO  baseNoStates.WebServer$SocketThread - processed request get_children RequestChildren{areaId=building}
+12:23:18 [Thread-19] INFO  baseNoStates.WebServer$SocketThread - answer HTTP/1.0 200 OK
+Content-type: application/json
+Access-Control-Allow-Origin: *
+
+{"areas":[{"id":"basement","class":"partition"},{"id":"ground_floor","class":"partition"},{"id":"floor1","class":"partition"},{"access_doors":[],"id":"stairs","class":"space"},{"access_doors":[],"id":"exterior","class":"space"}],"id":"building","class":"partition"}
+12:23:32 [Thread-20] INFO  baseNoStates.WebServer$SocketThread - socked thread : GET /get_propped?areaId=building HTTP/1.1
+12:23:32 [Thread-20] INFO  baseNoStates.WebServer$SocketThread - Input GET /get_propped?areaId=building HTTP/1.1
+12:23:32 [Thread-20] INFO  baseNoStates.WebServer$SocketThread - Method GET
+12:23:32 [Thread-20] INFO  baseNoStates.WebServer$SocketThread - Resource /get_propped?areaId=building
+12:23:32 [Thread-20] INFO  baseNoStates.WebServer$SocketThread - 0 get_propped
+12:23:32 [Thread-20] INFO  baseNoStates.WebServer$SocketThread - 1 areaId
+12:23:32 [Thread-20] INFO  baseNoStates.WebServer$SocketThread - 2 building
+12:23:32 [Thread-20] INFO  baseNoStates.WebServer$SocketThread - tokens : get_propped, areaId, building, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null
+12:23:32 [Thread-20] INFO  baseNoStates.WebServer$SocketThread - created request get_propped Request{, areaId=building, proppedDoors=[]}
+12:23:32 [Thread-20] INFO  FITA1 - DirectoryAreas cridat
+12:23:32 [Thread-20] INFO  FITA1 - DirectoryAreas cridat
+12:23:32 [Thread-20] INFO  FITA2 - VisitorFindAreaById visit partition: Building
+12:23:32 [Thread-20] INFO  FITA2 - VisitorFindAreaById visit partition: Building
+12:23:32 [Thread-20] INFO  FITA2 - Visiting partition Building
+12:23:32 [Thread-20] INFO  FITA2 - Visiting partition Building
+12:23:32 [Thread-20] INFO  FITA2 - Visiting partition Basement
+12:23:32 [Thread-20] INFO  FITA2 - Visiting partition Basement
+12:23:32 [Thread-20] INFO  FITA2 - Visiting sapce Parking
+12:23:32 [Thread-20] INFO  FITA2 - Visiting sapce Parking
+12:23:32 [Thread-20] INFO  FITA2 - Visiting partition Ground floor
+12:23:32 [Thread-20] INFO  FITA2 - Visiting partition Ground floor
+12:23:32 [Thread-20] INFO  FITA2 - Visiting sapce Floor
+12:23:32 [Thread-20] INFO  FITA2 - Visiting sapce Floor
+12:23:32 [Thread-20] INFO  FITA2 - Visiting sapce Room
+12:23:32 [Thread-20] INFO  FITA2 - Visiting sapce Room
+12:23:32 [Thread-20] INFO  FITA2 - Visiting sapce Room
+12:23:32 [Thread-20] INFO  FITA2 - Visiting sapce Room
+12:23:32 [Thread-20] INFO  FITA2 - Visiting partition Floor 1
+12:23:32 [Thread-20] INFO  FITA2 - Visiting partition Floor 1
+12:23:32 [Thread-20] INFO  FITA2 - Visiting sapce Room
+12:23:32 [Thread-20] INFO  FITA2 - Visiting sapce Room
+12:23:32 [Thread-20] INFO  FITA2 - Visiting sapce Corridor
+12:23:32 [Thread-20] INFO  FITA2 - Visiting sapce Corridor
+12:23:32 [Thread-20] INFO  FITA2 - Visiting sapce It
+12:23:32 [Thread-20] INFO  FITA2 - Visiting sapce It
+12:23:32 [Thread-20] INFO  FITA2 - Visiting sapce Stairs
+12:23:32 [Thread-20] INFO  FITA2 - Visiting sapce Stairs
+12:23:32 [Thread-20] INFO  FITA2 - Visiting sapce Exterior
+12:23:32 [Thread-20] INFO  FITA2 - Visiting sapce Exterior
+12:23:32 [Thread-20] INFO  baseNoStates.WebServer$SocketThread - processed request get_propped Request{, areaId=building, proppedDoors=[]}
+12:23:32 [Thread-20] INFO  baseNoStates.WebServer$SocketThread - answer HTTP/1.0 200 OK
+Content-type: application/json
+Access-Control-Allow-Origin: *
+
+{"proppedDoors":[],"areaId":"building"}

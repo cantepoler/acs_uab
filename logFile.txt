@@ -1,0 +1,75 @@
+12:20:30 [main] INFO  FITA1 - DirectoryAreas creat
+12:20:30 [main] INFO  FITA1 - DirectoryAreas creat
+12:20:30 [main] INFO  FITA1 - DirectoryAreas cridat
+12:20:30 [main] INFO  FITA1 - DirectoryAreas cridat
+12:20:30 [main] INFO  baseNoStates.WebServer - Server started.
+Listening for connections on port : 8080 ...
+
+14:12:39 [main] INFO  FITA1 - DirectoryAreas creat
+14:12:39 [main] INFO  FITA1 - DirectoryAreas creat
+14:12:39 [main] INFO  FITA1 - DirectoryAreas cridat
+14:12:39 [main] INFO  FITA1 - DirectoryAreas cridat
+14:12:39 [main] INFO  baseNoStates.WebServer - Server started.
+Listening for connections on port : 8080 ...
+
+14:19:31 [main] INFO  FITA1 - DirectoryAreas creat
+14:19:31 [main] INFO  FITA1 - DirectoryAreas creat
+14:19:31 [main] INFO  FITA1 - DirectoryAreas cridat
+14:19:31 [main] INFO  FITA1 - DirectoryAreas cridat
+14:19:31 [main] INFO  baseNoStates.WebServer - Server started.
+Listening for connections on port : 8080 ...
+
+14:19:33 [Thread-0] INFO  baseNoStates.WebServer$SocketThread - socked thread : GET /get_children?building HTTP/1.1
+14:19:33 [Thread-0] INFO  baseNoStates.WebServer$SocketThread - Input GET /get_children?building HTTP/1.1
+14:19:33 [Thread-0] INFO  baseNoStates.WebServer$SocketThread - Method GET
+14:19:33 [Thread-0] INFO  baseNoStates.WebServer$SocketThread - Resource /get_children?building
+14:19:33 [Thread-0] INFO  baseNoStates.WebServer$SocketThread - 0 get_children
+14:19:33 [Thread-0] INFO  baseNoStates.WebServer$SocketThread - 1 building
+14:19:33 [Thread-0] INFO  baseNoStates.WebServer$SocketThread - tokens : get_children, building, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null
+14:19:33 [Thread-0] INFO  baseNoStates.WebServer$SocketThread - created request get_children RequestChildren{areaId=building}
+14:19:33 [Thread-0] INFO  FITA2 - VisitorFindAreaById visit partition: Building
+14:19:33 [Thread-0] INFO  FITA2 - VisitorFindAreaById visit partition: Building
+14:19:33 [Thread-0] INFO  baseNoStates.WebServer$SocketThread - processed request get_children RequestChildren{areaId=building}
+14:19:33 [Thread-0] INFO  baseNoStates.WebServer$SocketThread - answer HTTP/1.0 200 OK
+Content-type: application/json
+Access-Control-Allow-Origin: *
+
+{"areas":[{"id":"basement","class":"partition"},{"id":"ground_floor","class":"partition"},{"id":"floor1","class":"partition"},{"access_doors":[],"id":"stairs","class":"space"},{"access_doors":[],"id":"exterior","class":"space"}],"id":"building","class":"partition"}
+14:19:34 [Thread-1] INFO  baseNoStates.WebServer$SocketThread - socked thread : GET /get_children?building HTTP/1.1
+14:19:34 [Thread-1] INFO  baseNoStates.WebServer$SocketThread - Input GET /get_children?building HTTP/1.1
+14:19:34 [Thread-1] INFO  baseNoStates.WebServer$SocketThread - Method GET
+14:19:34 [Thread-1] INFO  baseNoStates.WebServer$SocketThread - Resource /get_children?building
+14:19:34 [Thread-1] INFO  baseNoStates.WebServer$SocketThread - 0 get_children
+14:19:34 [Thread-1] INFO  baseNoStates.WebServer$SocketThread - 1 building
+14:19:34 [Thread-1] INFO  baseNoStates.WebServer$SocketThread - tokens : get_children, building, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null
+14:19:34 [Thread-1] INFO  baseNoStates.WebServer$SocketThread - created request get_children RequestChildren{areaId=building}
+14:19:34 [Thread-1] INFO  FITA2 - VisitorFindAreaById visit partition: Building
+14:19:34 [Thread-1] INFO  FITA2 - VisitorFindAreaById visit partition: Building
+14:19:34 [Thread-1] INFO  baseNoStates.WebServer$SocketThread - processed request get_children RequestChildren{areaId=building}
+14:19:34 [Thread-1] INFO  baseNoStates.WebServer$SocketThread - answer HTTP/1.0 200 OK
+Content-type: application/json
+Access-Control-Allow-Origin: *
+
+{"areas":[{"id":"basement","class":"partition"},{"id":"ground_floor","class":"partition"},{"id":"floor1","class":"partition"},{"access_doors":[],"id":"stairs","class":"space"},{"access_doors":[],"id":"exterior","class":"space"}],"id":"building","class":"partition"}
+14:57:48 [main] INFO  FITA1 - DirectoryAreas creat
+14:57:48 [main] INFO  FITA1 - DirectoryAreas creat
+14:57:48 [main] INFO  FITA1 - DirectoryAreas cridat
+14:57:48 [main] INFO  FITA1 - DirectoryAreas cridat
+14:57:48 [main] INFO  baseNoStates.WebServer - Server started.
+Listening for connections on port : 8080 ...
+
+14:58:13 [Thread-0] INFO  baseNoStates.WebServer$SocketThread - socked thread : GET /refresh HTTP/1.1
+14:58:13 [Thread-0] INFO  baseNoStates.WebServer$SocketThread - Input GET /refresh HTTP/1.1
+14:58:13 [Thread-0] INFO  baseNoStates.WebServer$SocketThread - Method GET
+14:58:13 [Thread-0] INFO  baseNoStates.WebServer$SocketThread - Resource /refresh
+14:58:13 [Thread-0] INFO  baseNoStates.WebServer$SocketThread - 0 refresh
+14:58:13 [Thread-0] INFO  baseNoStates.WebServer$SocketThread - tokens : refresh, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null
+14:58:13 [Thread-0] INFO  baseNoStates.WebServer$SocketThread - created request refresh RequestRefresh{[]}
+14:58:13 [Thread-0] INFO  FITA1 - DirectoryAreas cridat
+14:58:13 [Thread-0] INFO  FITA1 - DirectoryAreas cridat
+14:58:13 [Thread-0] INFO  baseNoStates.WebServer$SocketThread - processed request refresh RequestRefresh{[{"closed":true,"id":"D1","state":"locked"}, {"closed":true,"id":"D2","state":"locked"}, {"closed":true,"id":"D3","state":"locked"}, {"closed":true,"id":"D4","state":"locked"}, {"closed":true,"id":"D5","state":"locked"}, {"closed":true,"id":"D6","state":"locked"}, {"closed":true,"id":"D7","state":"locked"}, {"closed":true,"id":"D8","state":"locked"}, {"closed":true,"id":"D9","state":"locked"}]}
+14:58:13 [Thread-0] INFO  baseNoStates.WebServer$SocketThread - answer HTTP/1.0 200 OK
+Content-type: application/json
+Access-Control-Allow-Origin: *
+
+{"doors":[{"closed":true,"id":"D1","state":"locked"},{"closed":true,"id":"D2","state":"locked"},{"closed":true,"id":"D3","state":"locked"},{"closed":true,"id":"D4","state":"locked"},{"closed":true,"id":"D5","state":"locked"},{"closed":true,"id":"D6","state":"locked"},{"closed":true,"id":"D7","state":"locked"},{"closed":true,"id":"D8","state":"locked"},{"closed":true,"id":"D9","state":"locked"}]}
